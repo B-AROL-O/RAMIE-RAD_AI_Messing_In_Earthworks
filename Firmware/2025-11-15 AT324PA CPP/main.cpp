@@ -193,6 +193,8 @@
 
 extern U8 seesaw();
 
+extern bool init_parser_commands( Orangebot::Uniparser &i_rcl_parser );
+
 /****************************************************************************
 **	PROTOTYPE: GLOBAL VARIABILE
 ****************************************************************************/
@@ -238,7 +240,7 @@ U8 v1[ UART_TX_BUF_SIZE ];
 	//-----------------------------------------------------------------------
 
 //Create a new parser
-Orangebot::Uniparser my_parser;
+Orangebot::Uniparser g_cl_parser;
 	
 	//-----------------------------------------------------------------------
 	//	SERVOS VARS
@@ -314,6 +316,9 @@ int main( void )
 
 	//Initialize devices
 	global_init();
+	//Register the commands for the parser
+	init_parser_commands( g_cl_parser );
+	
 	//The proud name of this unit
 	lcd_print_str( LCD_POS(0,0), (U8 *)"RAMIE");
 	lcd_print_str( LCD_POS(1,0), (U8 *)"Time:");
@@ -416,7 +421,7 @@ int main( void )
 			
 			//Feed the byte to the parser for decoding
 			//It will take care to call the callback functions
-			my_parser.parse( u8t );
+			g_cl_parser.parse( u8t );
 		}
 			
 		///----------------------------------------------------------------------
