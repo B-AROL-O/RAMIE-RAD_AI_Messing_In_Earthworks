@@ -26,6 +26,8 @@ Interfaces with a UART bidirectional link with the SBC, answer to a serial proto
 
 - [ELN: Board Motor Screen](/Electronics/Board%20motor%20screen) *(not qualifying for hackaton)*
 - [FW: Board Motor Screen](/Firmware/Motor%20Board%20Atmel%20AT324PA) *(not qualifying for hackaton)*
+- [FW: Test Bench Serial Communication](/Firmware/Test%20Bench%20Parser) *(not qualifying for hackaton)*
+
 
 ### SBC Latte Panda Mu N100 16GB
 
