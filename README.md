@@ -1,5 +1,22 @@
 # RAMIE-RAD_AI_Messing_In_Earthworks
+
 A local Gradio MCP server controlling a robot platform
+
+## Scope
+
+The scope of this repository is to document the Hugging Face MCP 1° birthday hackaton
+
+The scope of this repository is to document all instruction to replicate in full the robot project
+
+Work is divided in two parts:
+
+- Work that is qualifying for the hackaton itself, that was started 2025-11-14, this includes learning GRADIO, learning MPC, preparing the MCP tools, interfacing ollama with AI models needed
+
+- Work that is not qualifying for the hackaton and was recycled from previous projects and is in this repository in order to make a complete set of instructions to replicate this project. This include the electronics, the mechanical part of the robot, learning the compute board, and learning that was done for ollama testing of the microphone
+
+## Documentation
+
+[Motor Control Board](/Electronics/Board%20motor%20screen/README.md)
 
 
 ## Contributors
