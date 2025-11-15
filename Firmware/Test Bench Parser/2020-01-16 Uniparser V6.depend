@@ -1,0 +1,91 @@
+# depslib dependency file v1.0
+1578489603 source:d:\project\project programming\project codeblock incomplete\2020-01-16 uniparser v6\debug.cpp
+	<cstdio>
+	"debug.h"
+
+1579154064 d:\project\project programming\project codeblock incomplete\2020-01-16 uniparser v6\debug.h
+
+1579159563 source:d:\project\project programming\project codeblock incomplete\2020-01-16 uniparser v6\example.cpp
+	<iostream>
+	"debug.h"
+	"uniparser.h"
+
+1579158026 d:\project\project programming\project codeblock incomplete\2020-01-16 uniparser v6\uniparser.h
+
+1579160003 source:d:\project\project programming\project codeblock incomplete\2020-01-16 uniparser v6\uniparser.cpp
+	<cstdio>
+	<stdint.h>
+	"debug.h"
+	"uniparser.h"
+
+1578489603 source:f:\data\project\project programming\project codeblock incomplete\2020-01-16 uniparser v6\debug.cpp
+	<cstdio>
+	"debug.h"
+
+1579154064 f:\data\project\project programming\project codeblock incomplete\2020-01-16 uniparser v6\debug.h
+
+1763027237 source:f:\data\project\project programming\project codeblock incomplete\2020-01-16 uniparser v6\example.cpp
+	<stdint.h>
+	<iostream>
+	"debug.h"
+	"uniparser.h"
+
+1579158026 f:\data\project\project programming\project codeblock incomplete\2020-01-16 uniparser v6\uniparser.h
+
+1579160003 source:f:\data\project\project programming\project codeblock incomplete\2020-01-16 uniparser v6\uniparser.cpp
+	<cstdio>
+	<stdint.h>
+	"debug.h"
+	"uniparser.h"
+
+1578489603 source:f:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench parser\debug.cpp
+	<cstdio>
+	"debug.h"
+
+1579154064 f:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench parser\debug.h
+
+1579160003 source:f:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench parser\uniparser.cpp
+	<cstdio>
+	<stdint.h>
+	"debug.h"
+	"uniparser.h"
+
+1579158026 f:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench parser\uniparser.h
+
+1578489603 source:d:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench parser\debug.cpp
+	<cstdio>
+	"debug.h"
+
+1579154064 d:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench parser\debug.h
+
+1763100957 source:d:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench parser\parser_handlers.cpp
+	<stdint.h>
+	<cstdio>
+	"debug.h"
+	"uniparser.h"
+	<stdlib.h>
+	<avr/interrupt.h>
+	<avr/io.h>
+	"at_utils.h"
+	"at4809_port.h"
+	"global.h"
+	<util/delay.h>
+	"uart.h"
+	"string_uc.h"
+	"servo.h"
+
+1579158026 d:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench parser\uniparser.h
+
+1763100749 source:d:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench parser\serial_parser.cpp
+	<stdint.h>
+	<iostream>
+	<string>
+	"debug.h"
+	"uniparser.h"
+
+1763101448 source:d:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench parser\uniparser.cpp
+	<cstdio>
+	<stdint.h>
+	"debug.h"
+	"uniparser.h"
+
