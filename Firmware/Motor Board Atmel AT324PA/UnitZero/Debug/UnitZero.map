@@ -1,146 +1,12 @@
 Archive member included to satisfy reference by file (symbol)
 
-f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
-                              at_string.o (__udivmodqi4)
-f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                              at_string.o (__udivmodhi4)
-f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                              main.o (__divmodhi4)
 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
                               F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o (exit)
-f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
-                              at_string.o (__do_copy_data)
-f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
-                              at_lcd.o (__do_clear_bss)
-
-Allocating common symbols
-Common symbol       size              file
-
-uart_tx_buf         0x5               main.o
-f                   0x1               main.o
-v1                  0x8               main.o
-lcd_updt            0x4               at_lcd.o
-servo_target_speed  0x7               main.o
-lcd_cfg_flags       0x1               at_lcd.o
-v0                  0x10              main.o
-servo_off           0x7               main.o
-servo_target_pos    0x7               main.o
-servo_delay         0xe               main.o
-lcd_error           0x1               at_lcd.o
-lcd_show            0x20              at_lcd.o
-uart_rx_buf         0x6               main.o
 
 Discarded input sections
 
  .data          0x00000000        0x0 F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  .bss           0x00000000        0x0 F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
- .text          0x00000000        0x0 at_lcd.o
- .data          0x00000000        0x0 at_lcd.o
- .bss           0x00000000        0x0 at_lcd.o
- .text.lcd_config
-                0x00000000       0x24 at_lcd.o
- .text.lcd_print_u8
-                0x00000000       0xb4 at_lcd.o
- .text.lcd_print_s8
-                0x00000000       0xd4 at_lcd.o
- .text.lcd_print_s16
-                0x00000000       0xdc at_lcd.o
- .text          0x00000000        0x0 at_string.o
- .data          0x00000000        0x0 at_string.o
- .bss           0x00000000        0x0 at_string.o
- .text.u8_to_str
-                0x00000000       0x90 at_string.o
- .text.s8_to_str
-                0x00000000       0x28 at_string.o
- .text.s16_to_str
-                0x00000000       0x2c at_string.o
- .text          0x00000000        0x0 At_trig8.o
- .data          0x00000000        0x0 At_trig8.o
- .bss           0x00000000        0x0 At_trig8.o
- .text.at_arc8  0x00000000       0x16 At_trig8.o
- .text.at_sin8  0x00000000       0x52 At_trig8.o
- .text.at_cos8  0x00000000       0x34 At_trig8.o
- .text.at_tan8  0x00000000       0x48 At_trig8.o
- .text.at_aarc8
-                0x00000000       0xbe At_trig8.o
- .text.at_asin8
-                0x00000000       0x1c At_trig8.o
- .text.at_acos8
-                0x00000000       0x26 At_trig8.o
- .text.at_atan8
-                0x00000000       0xc0 At_trig8.o
- .text.at_atan8_2
-                0x00000000       0xb0 At_trig8.o
- .progmem.data.lut_tan8
-                0x00000000       0x1f At_trig8.o
- .progmem.data.lut_arc8
-                0x00000000       0x3f At_trig8.o
- .debug_info    0x00000000      0x6ca At_trig8.o
- .debug_abbrev  0x00000000      0x121 At_trig8.o
- .debug_loc     0x00000000      0xdcc At_trig8.o
- .debug_aranges
-                0x00000000       0x60 At_trig8.o
- .debug_ranges  0x00000000       0x80 At_trig8.o
- .debug_line    0x00000000      0x519 At_trig8.o
- .debug_str     0x00000000      0x260 At_trig8.o
- .comment       0x00000000       0x31 At_trig8.o
- .debug_frame   0x00000000       0xbc At_trig8.o
- .text          0x00000000        0x0 initialisation.o
- .data          0x00000000        0x0 initialisation.o
- .bss           0x00000000        0x0 initialisation.o
- .text          0x00000000        0x0 interrupt.o
- .data          0x00000000        0x0 interrupt.o
- .bss           0x00000000        0x0 interrupt.o
- .text          0x00000000        0x0 main.o
- .data          0x00000000        0x0 main.o
- .bss           0x00000000        0x0 main.o
- .text.seesaw   0x00000000       0x42 main.o
- .bss.u8_dir.1861
-                0x00000000        0x1 main.o
- .text          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .data          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .bss           0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc.mul
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc.div
-                0x00000000       0x18 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc   0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc.prologue
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc.builtins
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc.fmul
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc.fixed
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .data          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .bss           0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc.mul
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc   0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc.prologue
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc.builtins
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc.fmul
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc.fixed
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .data          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .bss           0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .text.libgcc.mul
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .text.libgcc   0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .text.libgcc.prologue
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .text.libgcc.builtins
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .text.libgcc.fmul
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .text.libgcc.fixed
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
  .text          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .data          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
@@ -157,38 +23,6 @@ Discarded input sections
                 0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.fixed
                 0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
- .text          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
- .data          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
- .bss           0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
- .text.libgcc.mul
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
- .text.libgcc.div
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
- .text.libgcc.prologue
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
- .text.libgcc.builtins
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
- .text.libgcc.fmul
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
- .text.libgcc.fixed
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
- .text          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .data          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .bss           0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc.mul
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc.div
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc.prologue
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc.builtins
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc.fmul
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc.fixed
-                0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
 
 Memory Configuration
 
@@ -206,12 +40,6 @@ Linker script and memory map
 
 Address of section .data set to 0x800100
 LOAD F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
-LOAD at_lcd.o
-LOAD at_string.o
-LOAD At_trig8.o
-LOAD initialisation.o
-LOAD interrupt.o
-LOAD main.o
 START GROUP
 LOAD f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
 END GROUP
@@ -321,7 +149,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xcc2
+.text           0x00000000       0x98
  *(.vectors)
  .vectors       0x00000000       0x7c F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
                 0x00000000                __vector_default
@@ -362,10 +190,6 @@ END GROUP
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00000088       0x16 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
-                0x00000088                __do_copy_data
- .init4         0x0000009e       0x10 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
-                0x0000009e                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -376,99 +200,48 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x000000ae        0x8 F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
+ .init9         0x00000088        0x8 F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  *(.init9)
  *(.text)
- .text          0x000000b6        0x4 F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
-                0x000000b6                __vector_22
-                0x000000b6                __vector_28
-                0x000000b6                __vector_1
-                0x000000b6                __vector_24
-                0x000000b6                __vector_12
-                0x000000b6                __bad_interrupt
-                0x000000b6                __vector_6
-                0x000000b6                __vector_3
-                0x000000b6                __vector_23
-                0x000000b6                __vector_30
-                0x000000b6                __vector_25
-                0x000000b6                __vector_11
-                0x000000b6                __vector_17
-                0x000000b6                __vector_19
-                0x000000b6                __vector_7
-                0x000000b6                __vector_27
-                0x000000b6                __vector_5
-                0x000000b6                __vector_4
-                0x000000b6                __vector_9
-                0x000000b6                __vector_2
-                0x000000b6                __vector_21
-                0x000000b6                __vector_15
-                0x000000b6                __vector_29
-                0x000000b6                __vector_8
-                0x000000b6                __vector_26
-                0x000000b6                __vector_14
-                0x000000b6                __vector_10
-                0x000000b6                __vector_18
-                0x000000ba                . = ALIGN (0x2)
+ .text          0x00000090        0x4 F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
+                0x00000090                __vector_22
+                0x00000090                __vector_28
+                0x00000090                __vector_1
+                0x00000090                __vector_24
+                0x00000090                __vector_12
+                0x00000090                __bad_interrupt
+                0x00000090                __vector_6
+                0x00000090                __vector_3
+                0x00000090                __vector_23
+                0x00000090                __vector_30
+                0x00000090                __vector_25
+                0x00000090                __vector_11
+                0x00000090                __vector_13
+                0x00000090                __vector_17
+                0x00000090                __vector_19
+                0x00000090                __vector_7
+                0x00000090                __vector_27
+                0x00000090                __vector_5
+                0x00000090                __vector_4
+                0x00000090                __vector_9
+                0x00000090                __vector_2
+                0x00000090                __vector_21
+                0x00000090                __vector_15
+                0x00000090                __vector_29
+                0x00000090                __vector_8
+                0x00000090                __vector_26
+                0x00000090                __vector_14
+                0x00000090                __vector_10
+                0x00000090                __vector_16
+                0x00000090                __vector_18
+                0x00000090                __vector_20
+                0x00000094                . = ALIGN (0x2)
  *(.text.*)
- .text.lcd_send_cmd
-                0x000000ba       0x64 at_lcd.o
-                0x000000ba                lcd_send_cmd
- .text.lcd_init
-                0x0000011e       0x40 at_lcd.o
-                0x0000011e                lcd_init
- .text.lcd_update
-                0x0000015e      0x2b4 at_lcd.o
-                0x0000015e                lcd_update
- .text.lcd_print_char
-                0x00000412       0x56 at_lcd.o
-                0x00000412                lcd_print_char
- .text.lcd_print_str
-                0x00000468       0x5a at_lcd.o
-                0x00000468                lcd_print_str
- .text.lcd_print_u16
-                0x000004c2       0xba at_lcd.o
-                0x000004c2                lcd_print_u16
- .text.u16_to_str
-                0x0000057c       0xc6 at_string.o
-                0x0000057c                u16_to_str
- .text.usart0_init
-                0x00000642       0x1c initialisation.o
-                0x00000642                usart0_init
- .text.timer0_init
-                0x0000065e       0x12 initialisation.o
-                0x0000065e                timer0_init
- .text.timer1_init
-                0x00000670       0x32 initialisation.o
-                0x00000670                timer1_init
- .text.global_init
-                0x000006a2       0x50 initialisation.o
-                0x000006a2                global_init
- .text.__vector_16
-                0x000006f2       0x48 interrupt.o
-                0x000006f2                __vector_16
- .text.__vector_13
-                0x0000073a       0xa2 interrupt.o
-                0x0000073a                __vector_13
- .text.__vector_20
-                0x000007dc       0xcc interrupt.o
-                0x000007dc                __vector_20
- .text.servo_calc_delay
-                0x000008a8       0xea main.o
-                0x000008a8                servo_calc_delay
- .text.main     0x00000992      0x2dc main.o
-                0x00000992                main
- .text.libgcc.div
-                0x00000c6e       0x28 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x00000c6e                __udivmodhi4
- .text.libgcc.div
-                0x00000c96       0x28 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                0x00000c96                _div
-                0x00000c96                __divmodhi4
-                0x00000cbe                . = ALIGN (0x2)
+                0x00000094                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000cbe        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000cbe                _exit
-                0x00000cbe                exit
+ .fini9         0x00000094        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000094                _exit
+                0x00000094                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -487,69 +260,36 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000cbe        0x4 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000094        0x4 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000cc2                _etext = .
+                0x00000098                _etext = .
 
-.data           0x00800100       0x18 load address 0x00000cc2
-                0x00800100                PROVIDE (__data_start, .)
+.data           0x00800100        0x0 load address 0x00000098
+                [!provide]                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
- .data.servo_cnt
-                0x00800100        0x1 main.o
-                0x00800100                servo_cnt
  *(.gnu.linkonce.d*)
  *(.rodata)
- .rodata        0x00800101        0xa at_string.o
  *(.rodata*)
- .rodata.str1.1
-                0x0080010b        0xc main.o
  *(.gnu.linkonce.r*)
-                0x00800118                . = ALIGN (0x2)
- *fill*         0x00800117        0x1 
-                0x00800118                _edata = .
-                0x00800118                PROVIDE (__data_end, .)
+                0x00800100                . = ALIGN (0x2)
+                0x00800100                _edata = .
+                [!provide]                PROVIDE (__data_end, .)
 
-.bss            0x00800118       0x74
-                0x00800118                PROVIDE (__bss_start, .)
+.bss            0x00800100        0x0
+                [!provide]                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.data_buf.1832
-                0x00800118        0x1 at_lcd.o
- .bss.status.1831
-                0x00800119        0x2 at_lcd.o
- .bss.pre.1841  0x0080011b        0x1 interrupt.o
- .bss.servo_global_time
-                0x0080011c        0x2 main.o
-                0x0080011c                servo_global_time
- .bss.servo_lock
-                0x0080011e        0x1 main.o
-                0x0080011e                servo_lock
  *(COMMON)
- COMMON         0x0080011f       0x26 at_lcd.o
-                0x0080011f                lcd_updt
-                0x00800123                lcd_cfg_flags
-                0x00800124                lcd_error
-                0x00800125                lcd_show
- COMMON         0x00800145       0x47 main.o
-                0x00800145                uart_tx_buf
-                0x0080014a                f
-                0x0080014b                v1
-                0x00800153                servo_target_speed
-                0x0080015a                v0
-                0x0080016a                servo_off
-                0x00800171                servo_target_pos
-                0x00800178                servo_delay
-                0x00800186                uart_rx_buf
-                0x0080018c                PROVIDE (__bss_end, .)
-                0x00000cc2                __data_load_start = LOADADDR (.data)
-                0x00000cda                __data_load_end = (__data_load_start + SIZEOF (.data))
+                [!provide]                PROVIDE (__bss_end, .)
+                0x00000098                __data_load_start = LOADADDR (.data)
+                0x00000098                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080018c        0x0
+.noinit         0x00800100        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x0080018c                _end = .
+                0x00800100                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -589,14 +329,8 @@ END GROUP
 .stab.indexstr
  *(.stab.indexstr)
 
-.comment        0x00000000       0x30
+.comment
  *(.comment)
- .comment       0x00000000       0x30 at_lcd.o
-                                 0x31 (size before relaxing)
- .comment       0x00000030       0x31 at_string.o
- .comment       0x00000030       0x31 initialisation.o
- .comment       0x00000030       0x31 interrupt.o
- .comment       0x00000030       0x31 main.o
 
 .note.gnu.avr.deviceinfo
                 0x00000000       0x40
@@ -618,78 +352,33 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x138
+.debug_aranges
  *(.debug_aranges)
- .debug_aranges
-                0x00000000       0x68 at_lcd.o
- .debug_aranges
-                0x00000068       0x38 at_string.o
- .debug_aranges
-                0x000000a0       0x38 initialisation.o
- .debug_aranges
-                0x000000d8       0x30 interrupt.o
- .debug_aranges
-                0x00000108       0x30 main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1baf
+.debug_info     0x00000000      0x6cc
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x6cc F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
- .debug_info    0x000006cc      0x89a at_lcd.o
- .debug_info    0x00000f66      0x2c5 at_string.o
- .debug_info    0x0000122b      0x253 initialisation.o
- .debug_info    0x0000147e      0x24d interrupt.o
- .debug_info    0x000016cb      0x4e4 main.o
 
-.debug_abbrev   0x00000000      0xe62
+.debug_abbrev   0x00000000      0x66e
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x66e F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
- .debug_abbrev  0x0000066e      0x258 at_lcd.o
- .debug_abbrev  0x000008c6      0x133 at_string.o
- .debug_abbrev  0x000009f9      0x11f initialisation.o
- .debug_abbrev  0x00000b18      0x15f interrupt.o
- .debug_abbrev  0x00000c77      0x1eb main.o
 
-.debug_line     0x00000000     0x112d
+.debug_line     0x00000000      0x151
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x151 F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
- .debug_line    0x00000151      0x694 at_lcd.o
- .debug_line    0x000007e5      0x200 at_string.o
- .debug_line    0x000009e5      0x1eb initialisation.o
- .debug_line    0x00000bd0      0x1bd interrupt.o
- .debug_line    0x00000d8d      0x3a0 main.o
 
-.debug_frame    0x00000000      0x428
+.debug_frame
  *(.debug_frame)
- .debug_frame   0x00000000      0x1fc at_lcd.o
- .debug_frame   0x000001fc       0xac at_string.o
- .debug_frame   0x000002a8       0x54 initialisation.o
- .debug_frame   0x000002fc       0xdc interrupt.o
- .debug_frame   0x000003d8       0x50 main.o
 
-.debug_str      0x00000000      0x7f8
+.debug_str      0x00000000      0x255
  *(.debug_str)
  .debug_str     0x00000000      0x255 F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
- .debug_str     0x00000255      0x337 at_lcd.o
-                                0x395 (size before relaxing)
- .debug_str     0x0000058c       0x21 at_string.o
-                                0x202 (size before relaxing)
- .debug_str     0x000005ad       0xbe initialisation.o
-                                0x2ac (size before relaxing)
- .debug_str     0x0000066b       0xb3 interrupt.o
-                                0x28a (size before relaxing)
- .debug_str     0x0000071e       0xda main.o
-                                0x382 (size before relaxing)
 
-.debug_loc      0x00000000     0x18a2
+.debug_loc
  *(.debug_loc)
- .debug_loc     0x00000000      0xee1 at_lcd.o
- .debug_loc     0x00000ee1      0x4ea at_string.o
- .debug_loc     0x000013cb       0x90 initialisation.o
- .debug_loc     0x0000145b      0x203 interrupt.o
- .debug_loc     0x0000165e      0x244 main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -709,13 +398,8 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0xe8
+.debug_ranges
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x58 at_lcd.o
- .debug_ranges  0x00000058       0x28 at_string.o
- .debug_ranges  0x00000080       0x28 initialisation.o
- .debug_ranges  0x000000a8       0x20 interrupt.o
- .debug_ranges  0x000000c8       0x20 main.o
 
 .debug_macro
  *(.debug_macro)
