@@ -303,7 +303,7 @@ int main( void )
 	//Initialize devices
 	global_init();
 	//The proud name of this unit
-	lcd_print_str( LCD_POS(0,0), (U8 *)"Unit Zero");
+	lcd_print_str( LCD_POS(0,0), (U8 *)"RAMIE");
 	lcd_print_str( LCD_POS(1,0), (U8 *)"Time:");
 
 	///**********************************************************************
@@ -381,64 +381,43 @@ int main( void )
 			//Toggle LED
 			TOGGLE_BIT( PORTC, PC0 );
 			
-			seesaw();
+			//seesaw();
 			
-			
-			/*
-			//fetch global time
-			u16t = servo_global_time;
-			if ((u16t & 0x00ff) == 0x0000)
-			{
-				//Initialize servo position to zero (offset is accounted for during calculations, i must not add it here)
-				for (u8t = 0;u8t < N_SERVOS;u8t++)
-				{
-					servo_target_pos[u8t] 	= +20;	//Servo targt position (user)	
-				}
-			}
-			else if ((u16t & 0x00ff) == 0x0080)
-			{
-				//Initialize servo position to zero (offset is accounted for during calculations, i must not add it here)
-				for (u8t = 0;u8t < N_SERVOS;u8t++)
-				{
-					servo_target_pos[u8t] 	= -20;	//Servo targt position (user)	
-				}
-			}
-			*/
-			
-			///----------------------------------------------------------------------
-			/// UART RX
-			///----------------------------------------------------------------------
-			//	Handle RX from RS232
-			//	Loopback
+		} //END: Trajectory generation
+		
+		///----------------------------------------------------------------------
+		/// UART RX
+		///----------------------------------------------------------------------
+		//	Handle RX from RS232
+		//	Loopback
 
-			//if: uart rx buffer is not empty
-			if ( AT_BUF_NUMELEM( uart_rx_buf ) > 0)
-			{
-				///Get data
-				//Get the byte from the RX buffer (ISR put it there)
-				u8t = AT_BUF_PEEK( uart_rx_buf );
-				AT_BUF_KICK_SAFER( uart_rx_buf );
-				///Loopback
-				//Push into tx buffer
-				AT_BUF_PUSH( uart_tx_buf, u8t );
-			}
-			
-			///----------------------------------------------------------------------
-			/// UART TX
-			///----------------------------------------------------------------------
-
-			//if: the Uart0 HW buffer is empty and the UART tx buffer is not empty
-			if ( (UART0_TX_READY()) && (AT_BUF_NUMELEM( uart_tx_buf ) > 0) )
-			{
-				//Get the byte to be filtered out
-				u8t = AT_BUF_PEEK( uart_tx_buf );
-				AT_BUF_KICK( uart_tx_buf );
-				//Write on UART tx buffer.
-				UDR0 = u8t;
-
-				//lcd_print_char( LCD_POS( 1, 14), u8t );
-			}	//End If: uart tx
+		//if: uart rx buffer is not empty
+		if ( AT_BUF_NUMELEM( uart_rx_buf ) > 0)
+		{
+			///Get data
+			//Get the byte from the RX buffer (ISR put it there)
+			u8t = AT_BUF_PEEK( uart_rx_buf );
+			AT_BUF_KICK_SAFER( uart_rx_buf );
+			///Loopback
+			//Push into tx buffer
+			AT_BUF_PUSH( uart_tx_buf, u8t );
 		}
+			
+		///----------------------------------------------------------------------
+		/// UART TX
+		///----------------------------------------------------------------------
+
+		//if: the Uart0 HW buffer is empty and the UART tx buffer is not empty
+		if ( (UART0_TX_READY()) && (AT_BUF_NUMELEM( uart_tx_buf ) > 0) )
+		{
+			//Get the byte to be filtered out
+			u8t = AT_BUF_PEEK( uart_tx_buf );
+			AT_BUF_KICK( uart_tx_buf );
+			//Write on UART tx buffer.
+			UDR0 = u8t;
+
+			//lcd_print_char( LCD_POS( 1, 14), u8t );
+		}	//End If: uart tx
 	}	//end for: for EVER
 
 	return 0;

@@ -25,7 +25,7 @@
 	#include <util/delay.h>
 	//
 	//#include <avr/pgmspace.h>
-	//General porpouse macros
+	//General purpose macros
 	#include "at_utils.h"
 	//Port configuration macros specific to AtMega Microcontrollers
 	#include "at_mega_port.h"
@@ -67,7 +67,7 @@
 		///	SERVOS
 		///----------------------------------------------------------------------
  
- 	//Prscaler that generate servo_scan (50Hz) from lcd_update (10080.6Hz)
+ 	//Prescaler that generate servo_scan (50Hz) from lcd_update (10080.6Hz)
 	//	PRE_SERVO_TOP = ROUND(10080.6/50)
 	#define PRE_SERVO_TOP 		(202-1)
 	//
@@ -119,11 +119,11 @@
 		//	Hip: 	Leg Joing
 
 	//Length of the Spine in X [mm] from Rear Hip to Front Hip, length of the robot
-	#define SIZE_SX				170
+	//#define SIZE_SX				170
 	//Distance from Spine to Hip in Y, half of the shoulder to shoulder length
-	#define SIZE_HY				50
+	//#define SIZE_HY				50
 	//Distance from Hip to base of the Boot in Z, length of a Leg
-	#define SIZE_LZ				130
+	//#define SIZE_LZ				130
 
 		//-----------------------------------------------------------------------
 		//	TRAJECTORIES
@@ -165,7 +165,7 @@
 		//-----------------------------------------------------------------------
 		//	SERVOS MACROS
 		//-----------------------------------------------------------------------
-		//	Those macros are wrappers to access servos variabiles
+		//	Those macros are wrappers to access servos variables
 
 		//access servo pos as matrix
 	#define SERVO_POS( col, index )	\
@@ -186,7 +186,7 @@
 	//Global flags raised by ISR functions
 	typedef struct _Isr_flags Isr_flags;
 
-	typedef enum _Trajectories Trajectories;
+	//typedef enum _Trajectories Trajectories;
 
 	/****************************************************************************
 	**	STRUCTURE
@@ -206,7 +206,7 @@
 	**	PROTOTYPE: INITIALISATION
 	****************************************************************************/
 
-	//port configuration and call the pheriperals initialisation
+	//port configuration and call the peripherals initialization
 	extern void global_init( void );
 	
 	//UART communication
@@ -245,9 +245,9 @@
 
 	//Those are the flags updated by ISRs
 	extern volatile Isr_flags f;	
-	//Status variabile for the servos, keep track of which servo to do next
+	//Status variable for the servos, keep track of which servo to do next
 	extern volatile  U8 servo_cnt;
-	//each servo has 1 bit, it's rised when the interpolator is done
+	//each servo has 1 bit, it's raised when the interpolator is done
 	extern volatile U8 servo_idle;
 
 		///----------------------------------------------------------------------

@@ -94,6 +94,9 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
+ .text.seesaw   0x00000000       0x42 main.o
+ .bss.u8_dir.1861
+                0x00000000        0x1 main.o
  .text          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
  .data          0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
  .bss           0x00000000        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
@@ -318,7 +321,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xd06
+.text           0x00000000      0xcc2
  *(.vectors)
  .vectors       0x00000000       0x7c F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
                 0x00000000                __vector_default
@@ -438,36 +441,34 @@ END GROUP
                 0x00000670       0x32 initialisation.o
                 0x00000670                timer1_init
  .text.global_init
-                0x000006a2       0x52 initialisation.o
+                0x000006a2       0x50 initialisation.o
                 0x000006a2                global_init
  .text.__vector_16
-                0x000006f4       0x48 interrupt.o
-                0x000006f4                __vector_16
+                0x000006f2       0x48 interrupt.o
+                0x000006f2                __vector_16
  .text.__vector_13
-                0x0000073c       0xa2 interrupt.o
-                0x0000073c                __vector_13
+                0x0000073a       0xa2 interrupt.o
+                0x0000073a                __vector_13
  .text.__vector_20
-                0x000007de       0xcc interrupt.o
-                0x000007de                __vector_20
- .text.seesaw   0x000008aa       0x42 main.o
-                0x000008aa                seesaw
+                0x000007dc       0xcc interrupt.o
+                0x000007dc                __vector_20
  .text.servo_calc_delay
-                0x000008ec       0xea main.o
-                0x000008ec                servo_calc_delay
- .text.main     0x000009d6      0x2dc main.o
-                0x000009d6                main
+                0x000008a8       0xea main.o
+                0x000008a8                servo_calc_delay
+ .text.main     0x00000992      0x2dc main.o
+                0x00000992                main
  .text.libgcc.div
-                0x00000cb2       0x28 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x00000cb2                __udivmodhi4
+                0x00000c6e       0x28 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000c6e                __udivmodhi4
  .text.libgcc.div
-                0x00000cda       0x28 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                0x00000cda                _div
-                0x00000cda                __divmodhi4
-                0x00000d02                . = ALIGN (0x2)
+                0x00000c96       0x28 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+                0x00000c96                _div
+                0x00000c96                __divmodhi4
+                0x00000cbe                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000d02        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000d02                _exit
-                0x00000d02                exit
+ .fini9         0x00000cbe        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000cbe                _exit
+                0x00000cbe                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -486,11 +487,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000d02        0x4 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000cbe        0x4 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000d06                _etext = .
+                0x00000cc2                _etext = .
 
-.data           0x00800100       0x1c load address 0x00000d06
+.data           0x00800100       0x18 load address 0x00000cc2
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -502,55 +503,53 @@ END GROUP
  .rodata        0x00800101        0xa at_string.o
  *(.rodata*)
  .rodata.str1.1
-                0x0080010b       0x10 main.o
+                0x0080010b        0xc main.o
  *(.gnu.linkonce.r*)
-                0x0080011c                . = ALIGN (0x2)
- *fill*         0x0080011b        0x1 
-                0x0080011c                _edata = .
-                0x0080011c                PROVIDE (__data_end, .)
+                0x00800118                . = ALIGN (0x2)
+ *fill*         0x00800117        0x1 
+                0x00800118                _edata = .
+                0x00800118                PROVIDE (__data_end, .)
 
-.bss            0x0080011c       0x75
-                0x0080011c                PROVIDE (__bss_start, .)
+.bss            0x00800118       0x74
+                0x00800118                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.data_buf.1832
-                0x0080011c        0x1 at_lcd.o
+                0x00800118        0x1 at_lcd.o
  .bss.status.1831
-                0x0080011d        0x2 at_lcd.o
- .bss.pre.1843  0x0080011f        0x1 interrupt.o
- .bss.u8_dir.1863
-                0x00800120        0x1 main.o
+                0x00800119        0x2 at_lcd.o
+ .bss.pre.1841  0x0080011b        0x1 interrupt.o
  .bss.servo_global_time
-                0x00800121        0x2 main.o
-                0x00800121                servo_global_time
+                0x0080011c        0x2 main.o
+                0x0080011c                servo_global_time
  .bss.servo_lock
-                0x00800123        0x1 main.o
-                0x00800123                servo_lock
+                0x0080011e        0x1 main.o
+                0x0080011e                servo_lock
  *(COMMON)
- COMMON         0x00800124       0x26 at_lcd.o
-                0x00800124                lcd_updt
-                0x00800128                lcd_cfg_flags
-                0x00800129                lcd_error
-                0x0080012a                lcd_show
- COMMON         0x0080014a       0x47 main.o
-                0x0080014a                uart_tx_buf
-                0x0080014f                f
-                0x00800150                v1
-                0x00800158                servo_target_speed
-                0x0080015f                v0
-                0x0080016f                servo_off
-                0x00800176                servo_target_pos
-                0x0080017d                servo_delay
-                0x0080018b                uart_rx_buf
-                0x00800191                PROVIDE (__bss_end, .)
-                0x00000d06                __data_load_start = LOADADDR (.data)
-                0x00000d22                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080011f       0x26 at_lcd.o
+                0x0080011f                lcd_updt
+                0x00800123                lcd_cfg_flags
+                0x00800124                lcd_error
+                0x00800125                lcd_show
+ COMMON         0x00800145       0x47 main.o
+                0x00800145                uart_tx_buf
+                0x0080014a                f
+                0x0080014b                v1
+                0x00800153                servo_target_speed
+                0x0080015a                v0
+                0x0080016a                servo_off
+                0x00800171                servo_target_pos
+                0x00800178                servo_delay
+                0x00800186                uart_rx_buf
+                0x0080018c                PROVIDE (__bss_end, .)
+                0x00000cc2                __data_load_start = LOADADDR (.data)
+                0x00000cda                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800191        0x0
+.noinit         0x0080018c        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800191                _end = .
+                0x0080018c                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -635,32 +634,32 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1bbc
+.debug_info     0x00000000     0x1baf
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x6cc F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  .debug_info    0x000006cc      0x89a at_lcd.o
  .debug_info    0x00000f66      0x2c5 at_string.o
  .debug_info    0x0000122b      0x253 initialisation.o
  .debug_info    0x0000147e      0x24d interrupt.o
- .debug_info    0x000016cb      0x4f1 main.o
+ .debug_info    0x000016cb      0x4e4 main.o
 
-.debug_abbrev   0x00000000      0xe57
+.debug_abbrev   0x00000000      0xe62
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x66e F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  .debug_abbrev  0x0000066e      0x258 at_lcd.o
  .debug_abbrev  0x000008c6      0x133 at_string.o
  .debug_abbrev  0x000009f9      0x11f initialisation.o
  .debug_abbrev  0x00000b18      0x15f interrupt.o
- .debug_abbrev  0x00000c77      0x1e0 main.o
+ .debug_abbrev  0x00000c77      0x1eb main.o
 
-.debug_line     0x00000000     0x1133
+.debug_line     0x00000000     0x112d
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x151 F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  .debug_line    0x00000151      0x694 at_lcd.o
  .debug_line    0x000007e5      0x200 at_string.o
  .debug_line    0x000009e5      0x1eb initialisation.o
  .debug_line    0x00000bd0      0x1bd interrupt.o
- .debug_line    0x00000d8d      0x3a6 main.o
+ .debug_line    0x00000d8d      0x3a0 main.o
 
 .debug_frame    0x00000000      0x428
  *(.debug_frame)

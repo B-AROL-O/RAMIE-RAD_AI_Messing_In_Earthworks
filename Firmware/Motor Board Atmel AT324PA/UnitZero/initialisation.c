@@ -57,15 +57,15 @@ void global_init( void )
 	//PC7			: LCD_D7
 	PORT_C_CONFIG('H','H','L','L','L','L','L','L');
 
-	//PD0			: RPI_TXO AT_RXI
-	//PD1			: RPI_RXI AT_TXO
-	//PD2			: dummy zero volt
+	//PD0			: UC_RXI SBC_TXO 
+	//PD1			: UC_TXO SBC_RXI
+	//PD2			: 
 	//PD3			:
 	//PD4			:
 	//PD5			:
 	//PD6			:
 	//PD7			:
-	PORT_D_CONFIG('R','H','L','R','R','R','R','R');
+	PORT_D_CONFIG('R','H','R','R','R','R','R','R');
 
 	///**********************************************************************
 	///	DEVICE INITIALISATION:
@@ -88,7 +88,7 @@ void global_init( void )
 	CLEAR_BIT( PORTC, 1 );
 	//Turn ON Delay
 	//This is meant to give the LCD Display time to safely power Up
-	//Ifit's too short, The LCD will bug out when doing OFF -> ON -> COMMANDS
+	//If it's too short, The LCD will bug out when doing OFF -> ON -> COMMANDS
 	_delay_ms( LCD_INIT_DELAY );
 	//Initialise the display and the driver: Send the sequences that configure the display
 	lcd_init();

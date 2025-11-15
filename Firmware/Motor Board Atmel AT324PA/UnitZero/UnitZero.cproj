@@ -160,6 +160,9 @@
     <Compile Include="at_utils.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="debug.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="global.h">
       <SubType>compile</SubType>
     </Compile>
@@ -177,6 +180,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="parser_handlers.cpp">
+      <SubType>compile</SubType>
+    </None>
     <None Include="uniparser.cpp">
       <SubType>compile</SubType>
     </None>
