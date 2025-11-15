@@ -39,6 +39,7 @@ Interfaces with a UART bidirectional link with the SBC, answer to a serial proto
 - [FW: Test Bench Serial Communication](/Firmware/Test%20Bench%20Parser) *(not qualifying for hackaton)*
 - [FW: Test Bench Motion Orchestrator](/Firmware/Test%20bench%20motion%20orchestration)
 
+![](/Electronics/Board%20motor%20screen/2025-11-15-T0928%20Motor%20Control.jpg)
 
 ### SBC Latte Panda Mu N100 16GB
 
@@ -46,11 +47,16 @@ I lost count of the SBCs I tested for my ultimate goal of making a general robot
 
 ### Mechanical Design
 
-I design in OpenSCAD as I like making code. I designed the 18650 Battery holder parametric design, and a platform for the Latte Panda Lite Board.
+I design in OpenSCAD as I like making geometries as code and I like doing everything parametric.
 
-- [MEC: 18650 Battery Holder]() *(not qualifying for hackaton)*
+I decided that the robots should be powered by 18650 batteries. Target configuration is 2S2P. For RAMIE I went with an inverted design that is soldered 4S1P to get 14.8V nominal voltage to be compatible with the input regulator for the Latte Panda Lite Board.
 
+- [MEC: 18650 Battery Holder](/Mechanical/Battery%20Holder%2018650%20OpenSCAD) *(not qualifying for hackaton)*
+- [MEC: Wheeled Platform](/Mechanical/Wheeled%20Platform%20OpenSCAD) *(not qualifying for hackaton)*
 
+The robot platform is the one I am designing for Latte Panda Lite Board powered AI robots, it was a good fit for this hackaton
+
+![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-11-08-T1437_Slicing.png)
 
 ## Contributors
 
