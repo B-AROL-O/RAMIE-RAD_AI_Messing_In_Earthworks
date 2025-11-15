@@ -49,18 +49,14 @@ I lost count of the SBCs I tested for my ultimate goal of making a general robot
 
 I design in OpenSCAD as I like making geometries as code and I like doing everything parametric.
 
-**18650 Battery Holder**
-
 I decided that the robots should be powered by 18650 batteries. Target configuration is 2S2P. For RAMIE I went with an inverted design that is soldered 4S1P to get 14.8V nominal voltage to be compatible with the input regulator for the Latte Panda Lite Board.
 
 - [MEC: 18650 Battery Holder](/Mechanical/Battery%20Holder%2018650%20OpenSCAD) *(not qualifying for hackaton)*
-
-**Robot Platform**
+- [MEC: Wheeled Platform](/Mechanical/Wheeled%20Platform%20OpenSCAD) *(not qualifying for hackaton)*
 
 The robot platform is the one I am designing for Latte Panda Lite Board powered AI robots, it was a good fit for this hackaton
 
-
-
+![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-11-08-T1437_Slicing.png)
 
 ## Contributors
 
