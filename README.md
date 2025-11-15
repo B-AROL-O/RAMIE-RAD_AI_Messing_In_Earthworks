@@ -1,6 +1,16 @@
-# RAMIE-RAD_AI_Messing_In_Earthworks
+# RAMIE
 
-A local Gradio MCP server controlling a robot platform
+- **Radical**
+- **AI**
+- **Messing**
+- **In**
+- **Earthworks**
+
+A local Gradio MCP AI powered wheeled robot, capable of listening, speaking and executing commands, in the vision of the B-AROL-O team
+
+*TRIVIA: The B-AROL-O team likes to use names of Italian wines as acronyms for robots. [RAMIE](https://nebbiaeluce.com/producer/ramie-perosa-argentina/) is a local red wine from my village*
+
+*TRIVIA: "Vino" is the Italian word for Wine. Intel OpenVINO AI runtime is the perfect runtime to run a robot named after an italian wine by italian developers*
 
 ## Scope
 
