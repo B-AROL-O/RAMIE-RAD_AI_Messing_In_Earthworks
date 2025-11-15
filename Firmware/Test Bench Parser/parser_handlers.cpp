@@ -62,7 +62,7 @@ extern void handle_revision(void);
 extern void handle_stop(void);
 extern void handle_set_velocity(int8_t right_speed, int8_t left_speed);
 
-extern void handle_set_velocity_timed(int8_t right_speed, int8_t left_speed, uint8_t time);
+extern void handle_set_velocity_timed(uint8_t time, int8_t right_speed, int8_t left_speed);
 
 /****************************************************************
 ** GLOBAL VARS PROTOTYPES
@@ -158,7 +158,7 @@ bool init_parser_commands( Orangebot::Uniparser &i_rcl_parser )
 
 	f_ret |= i_rcl_parser.add_cmd( "VR%sL%s", (void *)&handle_set_velocity );
 
-	f_ret |= i_rcl_parser.add_cmd( "VR%sL%sT%u", (void *)&handle_set_velocity_timed );
+	f_ret |= i_rcl_parser.add_cmd( "T%uVR%sL%s", (void *)&handle_set_velocity_timed );
 
 	//If: Uniparser V4 failed to register a command
 	if (f_ret == true)
@@ -269,7 +269,7 @@ void handle_set_velocity(int8_t i_s8_right_speed, int8_t i_s8_left_speed)
 //! @details Sets the speed of both motors for specified duration
 /***************************************************************************/
 
-void handle_set_velocity_timed(int8_t right_speed, int8_t left_speed, uint8_t time)
+void handle_set_velocity_timed(uint8_t time, int8_t right_speed, int8_t left_speed)
 {
 	DENTER_ARG("in: Right=%d, Left=%d, Time=%d\n", right_speed, left_speed, time);
 	printf("EXE | %s  -> Set velocity timed command\n", __FUNCTION__);

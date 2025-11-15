@@ -801,9 +801,11 @@ bool Uniparser::parse( uint8_t data )
 				uint8_t cmd_id = -this -> g_num_match -1;
 				//Update the parser index by skipping % and the argument descriptor
 				this -> g_cmd_index[ cmd_id ] += 2;
+
+				uint8_t u8_index = this -> g_cmd_index[ cmd_id ];
 				//Get the next cmd match
-				uint8_t u8_next_cmd_id = this -> g_cmd_txt[ cmd_id ][ this -> g_cmd_index[ cmd_id ] ];
-				DPRINT("%d | Expected CMD ID %d | Got CMD ID %c\n", __LINE__, this -> g_cmd_txt[ cmd_id ][ this -> g_cmd_index[ cmd_id ] ], data);
+				uint8_t u8_next_cmd_id = this -> g_cmd_txt[ cmd_id ][ u8_index ];
+				DPRINT("%d | Expected CMD ID %d | Got CMD ID %d\n", __LINE__, this -> g_cmd_txt[ cmd_id ][ u8_index ], data);
 				//check that the dictionary holds the same value as data
 				if (u8_next_cmd_id == data)
 				{

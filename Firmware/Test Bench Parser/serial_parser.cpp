@@ -219,7 +219,9 @@ bool test_bench( void )
 	parser_executor( my_parser, (uint8_t *)"VR+100L-50\0" );
 
 	// Test timed velocity command
-	parser_executor( my_parser, (uint8_t *)"VR+123L-123T234\0" );
+	parser_executor( my_parser, (uint8_t *)"T234VR+123L-123\0" );
+
+	parser_executor( my_parser, (uint8_t *)"P\0" );
 
 	//----------------------------------------------------------------
 	//	RETURN
