@@ -18,7 +18,7 @@ This felt like a good chance to gather all the disparate documentation and work 
 
 ## Documentation
 
-Designs marked with '*(not qualifying for hackaton)* ' are older recycled design that are here for documentation, instruction and completeness purposes and are not qualifying for the scope of the hackaton. 
+Designs marked with '*(not qualifying for hackaton)* ' are older recycled design that are here for documentation, instruction and completeness purposes and are not qualifying for the scope of the hackaton.  They are either taken as is, or lightly/heavily adapted to serve for the scope of the Hackaton.
 
 ### Board Motor Screen
 
@@ -27,6 +27,7 @@ Interfaces with a UART bidirectional link with the SBC, answer to a serial proto
 - [ELN: Board Motor Screen](/Electronics/Board%20motor%20screen) *(not qualifying for hackaton)*
 - [FW: Board Motor Screen](/Firmware/Motor%20Board%20Atmel%20AT324PA) *(not qualifying for hackaton)*
 - [FW: Test Bench Serial Communication](/Firmware/Test%20Bench%20Parser) *(not qualifying for hackaton)*
+- [FW: Test Bench Motion Orchestrator](/Firmware/Test%20bench%20motion%20orchestration)
 
 
 ### SBC Latte Panda Mu N100 16GB

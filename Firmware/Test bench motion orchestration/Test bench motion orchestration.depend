@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1763140051 source:d:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench motion orchestration\main.cpp
+	<iostream>
+	"St_wheel_speed_duration.h"
+	"cl_motion_queue.hpp"
+
+1763138182 d:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench motion orchestration\st_wheel_speed_duration.h
+	<cstdint>
+
+1763140389 d:\data\project\project orangebot\robot industrious resonance - ros2 lattepanda mu\github\firmware\test bench motion orchestration\cl_motion_queue.hpp
+	<cstdint>
+
