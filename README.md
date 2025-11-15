@@ -14,9 +14,29 @@ Work is divided in two parts:
 
 - Work that is not qualifying for the hackaton and was recycled from previous projects and is in this repository in order to make a complete set of instructions to replicate this project. This include the electronics, the mechanical part of the robot, learning the compute board, and learning that was done for ollama testing of the microphone
 
+This felt like a good chance to gather all the disparate documentation and work done over the years in one tidy set of insttructions that can be followed to make one complete platform end to end with the GRADIO/MCP/OLLAMA software being the keystone that glue it all together.
+
 ## Documentation
 
-[Motor Control Board](/Electronics/Board%20motor%20screen/README.md)
+Designs marked with '*(not qualifying for hackaton)* ' are older recycled design that are here for documentation, instruction and completeness purposes and are not qualifying for the scope of the hackaton. 
+
+### Board Motor Screen
+
+Interfaces with a UART bidirectional link with the SBC, answer to a serial protocol, controls two servos and a LCD screen. Choosen because I had a bounch assembled in a drawer and working firmware to start from.
+
+- [ELN: Board Motor Screen](/Electronics/Board%20motor%20screen) *(not qualifying for hackaton)*
+- [FW: Board Motor Screen](/Firmware/Motor%20Board%20Atmel%20AT324PA) *(not qualifying for hackaton)*
+
+### SBC Latte Panda Mu N100 16GB
+
+I lost count of the SBCs I tested for my ultimate goal of making a general robot that expresses a degree of general intelligence with local compute only. The N100 16GB could be it, it has the memory, bandwidth, compute and power envelope to run useful LLMs on the go.
+
+### Mechanical Design
+
+I design in OpenSCAD as I like making code. I designed the 18650 Battery holder parametric design, and a platform for the Latte Panda Lite Board.
+
+- [MEC: 18650 Battery Holder]() *(not qualifying for hackaton)*
+
 
 
 ## Contributors
