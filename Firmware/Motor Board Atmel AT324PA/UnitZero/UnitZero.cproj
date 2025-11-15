@@ -136,7 +136,7 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="at_lcd.c">
+    <Compile Include="at_lcd.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="at_lcd.h">
@@ -145,13 +145,13 @@
     <Compile Include="at_mega_port.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="at_string.c">
+    <Compile Include="at_string.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="at_string.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="At_trig8.c">
+    <Compile Include="At_trig8.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="At_trig8.h">
@@ -160,16 +160,19 @@
     <Compile Include="at_utils.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="debug.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="global.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="initialisation.c">
+    <Compile Include="initialisation.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="interrupt.c">
+    <Compile Include="interrupt.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="main.c">
+    <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="uniparser.h">
@@ -177,6 +180,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="parser_handlers.cpp">
+      <SubType>compile</SubType>
+    </None>
     <None Include="uniparser.cpp">
       <SubType>compile</SubType>
     </None>

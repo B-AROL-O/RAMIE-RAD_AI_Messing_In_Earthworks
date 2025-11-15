@@ -3,41 +3,18 @@
 **	INCLUDES
 ****************************************************************/
 
-#include <stdint.h>
+//#include <cstdint>
 
-#include <cstdio>
+//#include <cstdio>
 
+#include "global.h"
+
+//Only used for implementing DPRINT
 #include "debug.h"
 
 //Universal Parser V6
 #include "uniparser.h"
 
-/*
-//type definition using the bit width and sign
-
-//RNG
-#include <stdlib.h>
-//define the ISR routune, ISR vector, and the sei() cli() function
-#include <avr/interrupt.h>
-//name all the register and bit
-#include <avr/io.h>
-//General purpose macros
-#include "at_utils.h"
-//AT4809 PORT macros definitions
-#include "at4809_port.h"
-//
-#include "global.h"
-//hard coded delay
-#include <util/delay.h>
-
-//Driver for the UART communication. Provides init, ISR and buffers
-#include "uart.h"
-//Embedded string (TODO embedded_string.cpp is a better implementation, and I have an even better implementation in the longan nano screen driver)
-#include "string_uc.h"
-
-//Driver for the 16b multi channel timeout ISR servo driver
-#include "servo.h"
-*/
 /****************************************************************
 ** DEFINITIONS
 ****************************************************************/
@@ -68,6 +45,9 @@ extern void handle_set_velocity_timed(uint8_t time, int8_t right_speed, int8_t l
 ** GLOBAL VARS PROTOTYPES
 ****************************************************************/
 
+//Count successful commands
+uint8_t g_u8_command_counter = 0;
+
 /****************************************************************
 ** GLOBAL VARS
 ****************************************************************/
@@ -76,34 +56,6 @@ extern void handle_set_velocity_timed(uint8_t time, int8_t right_speed, int8_t l
 	///	PARSER
 	///--------------------------------------------------------------------------
 
-//UART Command IDs (0 and 255 are forbidden)
-#define UART_CMD_PING           1
-#define UART_CMD_SIGN           2
-#define UART_CMD_REVISION       3
-#define UART_CMD_STOP           4
-#define UART_CMD_SET_VELOCITY   5
-#define UART_CMD_SET_VELOCITY_TIMED 6
-
-//Command dictionary. Command IDs 0 and 255 are forbidden
-/*
-uint8_t uart_cmd[] =
-{
-	//Ping: No action. Effect is to reset the connection timeout
-	UART_CMD_PING		, 'P', '\0',
-	//Sign: Ask for board signature
-	UART_CMD_SIGN		, 'F', '\0',
-    //Sign: Ask for firmware revision
-	UART_CMD_REVISION	, 'R', 'E', 'V', '\0',
-    //STOP: set speed 0 to the motors
-	UART_CMD_STOP		, 'S', 'T', 'O', 'P', '\0',
-	//VELOCITY: R right engine L left engine (last forever until overwritten)
-	UART_CMD_SET_VELOCITY     , 'V', 'R', '%', 's', 'L', '%', 's', '\0',
-    //VELOCITY TIMED: R right engine L left engine T time of the motion
-    UART_CMD_SET_VELOCITY_TIMED , 'V', 'R', '%', 's', 'L', '%', 's', 'T', '%', 'u', '\0',
-	//Dictionary terminator
-	'\0'
-};
-*/
 
 //Board Signature
 const char *g_ps8_board_sign = "Industrious_Resonance";
@@ -183,7 +135,11 @@ bool init_parser_commands( Orangebot::Uniparser &i_rcl_parser )
 void handle_ping(void)
 {
 	DENTER();
-	printf("EXE | %s  -> Ping received\n", __FUNCTION__);
+	
+	g_u8_command_counter++;
+	
+	DPRINT("EXE | %s  -> Ping received\n", __FUNCTION__);
+	
 	DRETURN();
 	return;
 }
@@ -198,8 +154,19 @@ void handle_ping(void)
 void handle_sign(void)
 {
 	DENTER();
-	printf("EXE | %s  -> Board signature requested\n", __FUNCTION__);
-	printf("Board Signature: %s\n", g_ps8_board_sign);
+	
+	g_u8_command_counter++;
+	
+	DPRINT("EXE | %s  -> Board signature requested\n", __FUNCTION__);
+	DPRINT("Board Signature: %s\n", g_ps8_board_sign);
+	
+	uint8_t u8_index = 0;
+	while (g_ps8_board_sign[u8_index] != '\0')
+	{
+		AT_BUF_PUSH( uart_tx_buf, g_ps8_board_sign[u8_index] );
+	}
+	AT_BUF_PUSH( uart_tx_buf, '\0' );
+	
 	DRETURN();
 	return;
 }
@@ -215,9 +182,13 @@ void handle_sign(void)
 void handle_revision(void)
 {
 	DENTER();
-	printf("EXE | %s  -> Firmware revision requested\n", __FUNCTION__);
-	printf("Firmware Revision: %s\n", g_ps8_board_revision);
+	
+	g_u8_command_counter++;
+	
+	DPRINT("EXE | %s  -> Firmware revision requested\n", __FUNCTION__);
+	DPRINT("Firmware Revision: %s\n", g_ps8_board_revision);
 	DRETURN();
+	
 	return;
 }
 
@@ -232,8 +203,10 @@ void handle_revision(void)
 void handle_stop(void)
 {
 	DENTER();
-	printf("EXE | %s  -> Stop command received\n", __FUNCTION__);
-	printf("Setting motor speeds to 0\n");
+	
+	DPRINT("EXE | %s  -> Stop command received\n", __FUNCTION__);
+	DPRINT("Setting motor speeds to 0\n");
+	
 	DRETURN();
 	return;
 }
@@ -251,9 +224,19 @@ void handle_stop(void)
 void handle_set_velocity(int8_t i_s8_right_speed, int8_t i_s8_left_speed)
 {
 	DENTER_ARG("in: Right=%d, Left=%d\n", i_s8_right_speed, i_s8_left_speed);
-	printf("EXE | %s  -> Set velocity command\n", __FUNCTION__);
-	printf("Right motor speed: %d\n", i_s8_right_speed);
-	printf("Left motor speed: %d\n", i_s8_left_speed);
+	
+	g_u8_command_counter++;
+	
+	DPRINT("EXE | %s  -> Set velocity command\n", __FUNCTION__);
+	DPRINT("Right motor speed: %d\n", i_s8_right_speed);
+	DPRINT("Left motor speed: %d\n", i_s8_left_speed);
+	
+	//Ask the servo driver to set the speed
+	//Since it's a continuous rotation servo, position is speed, and speed is acceleration.
+	//Don't worry about it
+	servo_target_pos[SERVO_WHEEL_RIGHT] = i_s8_right_speed;
+	servo_target_pos[SERVO_WHEEL_LEFT] = i_s8_left_speed;
+	
 	DRETURN();
 	return;
 }
@@ -272,10 +255,10 @@ void handle_set_velocity(int8_t i_s8_right_speed, int8_t i_s8_left_speed)
 void handle_set_velocity_timed(uint8_t time, int8_t right_speed, int8_t left_speed)
 {
 	DENTER_ARG("in: Right=%d, Left=%d, Time=%d\n", right_speed, left_speed, time);
-	printf("EXE | %s  -> Set velocity timed command\n", __FUNCTION__);
-	printf("Right motor speed: %d\n", right_speed);
-	printf("Left motor speed: %d\n", left_speed);
-	printf("Duration: %d seconds\n", time);
+	DPRINT("EXE | %s  -> Set velocity timed command\n", __FUNCTION__);
+	DPRINT("Right motor speed: %d\n", right_speed);
+	DPRINT("Left motor speed: %d\n", left_speed);
+	DPRINT("Duration: %d seconds\n", time);
 	DRETURN();
 	return;
 }

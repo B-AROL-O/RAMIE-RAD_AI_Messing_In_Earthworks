@@ -60,10 +60,8 @@
 **	INCLUDES
 ****************************************************************************/
 
-//#include <iostream>
-#include <cstdio>
 #include <stdint.h>
-#define ENABLE_DEBUG
+//#define ENABLE_DEBUG
 #include "debug.h"
 //Class Header
 #include "uniparser.h"
@@ -801,13 +799,8 @@ bool Uniparser::parse( uint8_t data )
 				uint8_t cmd_id = -this -> g_num_match -1;
 				//Update the parser index by skipping % and the argument descriptor
 				this -> g_cmd_index[ cmd_id ] += 2;
-
-				uint8_t u8_index = this -> g_cmd_index[ cmd_id ];
-				//Get the next cmd match
-				uint8_t u8_next_cmd_id = this -> g_cmd_txt[ cmd_id ][ u8_index ];
-				DPRINT("%d | Expected CMD ID %d | Got CMD ID %d\n", __LINE__, this -> g_cmd_txt[ cmd_id ][ u8_index ], data);
 				//check that the dictionary holds the same value as data
-				if (u8_next_cmd_id == data)
+				if (this -> g_cmd_txt[ cmd_id ][ this -> g_cmd_index[ cmd_id ] ] == data)
 				{
 					//Advance to the next dictionary entry for this command
 					this -> g_cmd_index[ cmd_id ]++;
@@ -815,7 +808,7 @@ bool Uniparser::parse( uint8_t data )
 				//No match
 				else
 				{
-					DPRINT("%d | Pruning away last match\n", __LINE__ );
+					DPRINT("%d | Pruning away last match\n", __LINE__);
 					//I can recover from this by resetting the FSM
 					f_rst_fsm = true;
 				}
@@ -1972,6 +1965,11 @@ bool Uniparser::accumulate_arg( uint8_t data )
 		{
 			//Fetch old argument
 			uint8_t old = this -> get_arg<uint8_t>( arg_index );
+			//Check runtime overflow
+			if (old > 25)
+			{
+				return true;
+			}
 			//Shift by one digit left
 			old *= 10;
 			//If number is positive
@@ -2001,6 +1999,11 @@ bool Uniparser::accumulate_arg( uint8_t data )
 		{
 			//Fetch old argument
 			int8_t old = this -> get_arg<int8_t>( arg_index );
+			//Check runtime overflow
+			if ((old > 12) || (old < -12))
+			{
+				return true;
+			}
 			//Shift by one digit left
 			old *= 10;
 			//If number is positive
@@ -2030,6 +2033,11 @@ bool Uniparser::accumulate_arg( uint8_t data )
 		{
 			//Fetch old argument
 			uint16_t old = this -> get_arg<uint16_t>( arg_index );
+			//Check runtime overflow
+			if (old > 6553)
+			{
+				return true;
+			}
 			//Shift by one digit left
 			old *= 10;
 			//If number is positive
@@ -2060,6 +2068,11 @@ bool Uniparser::accumulate_arg( uint8_t data )
 		{
 			//Fetch old argument
 			int16_t old = this -> get_arg<int16_t>( arg_index );
+			//Check runtime overflow
+			if ((old > 3276) || (old < -3276))
+			{
+				return true;
+			}
 			//Shift by one digit left
 			old *= 10;
 			//If number is positive
@@ -2090,6 +2103,11 @@ bool Uniparser::accumulate_arg( uint8_t data )
 		{
 			//Fetch old argument
 			uint32_t old = this -> get_arg<uint32_t>( arg_index );
+			//Check runtime overflow
+			if (old > 429496729)
+			{
+				return true;
+			}
 			//Shift by one digit left
 			old *= 10;
 			//If number is positive
@@ -2120,6 +2138,11 @@ bool Uniparser::accumulate_arg( uint8_t data )
 		{
 			//Fetch old argument
 			int32_t old = this -> get_arg<int32_t>( arg_index );
+			//Check runtime overflow
+			if ((old > 214748364) || (old < -214748364))
+			{
+				return true;
+			}
 			//Shift by one digit left
 			old *= 10;
 			//If number is positive

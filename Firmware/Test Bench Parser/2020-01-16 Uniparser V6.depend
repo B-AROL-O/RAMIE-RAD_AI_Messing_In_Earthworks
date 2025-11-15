@@ -89,3 +89,40 @@
 	"debug.h"
 	"uniparser.h"
 
+1763203323 source:f:\data\project\project orangebot\ramie-rad_ai_messing_in_earthworks\firmware\test bench parser\debug.cpp
+	<cstdio>
+	"debug.h"
+
+1763203323 f:\data\project\project orangebot\ramie-rad_ai_messing_in_earthworks\firmware\test bench parser\debug.h
+
+1763203323 source:f:\data\project\project orangebot\ramie-rad_ai_messing_in_earthworks\firmware\test bench parser\parser_handlers.cpp
+	<stdint.h>
+	<cstdio>
+	"debug.h"
+	"uniparser.h"
+	<stdlib.h>
+	<avr/interrupt.h>
+	<avr/io.h>
+	"at_utils.h"
+	"at4809_port.h"
+	"global.h"
+	<util/delay.h>
+	"uart.h"
+	"string_uc.h"
+	"servo.h"
+
+1763203323 f:\data\project\project orangebot\ramie-rad_ai_messing_in_earthworks\firmware\test bench parser\uniparser.h
+
+1763214774 source:f:\data\project\project orangebot\ramie-rad_ai_messing_in_earthworks\firmware\test bench parser\serial_parser.cpp
+	<stdint.h>
+	<iostream>
+	<string>
+	"debug.h"
+	"uniparser.h"
+
+1763214292 source:f:\data\project\project orangebot\ramie-rad_ai_messing_in_earthworks\firmware\test bench parser\uniparser.cpp
+	<cstdio>
+	<stdint.h>
+	"debug.h"
+	"uniparser.h"
+

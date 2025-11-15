@@ -36,13 +36,7 @@ SUBDIRS :=
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
-C_SRCS +=  \
-../at_lcd.c \
-../at_string.c \
-../At_trig8.c \
-../initialisation.c \
-../interrupt.c \
-../main.c
+C_SRCS += 
 
 
 PREPROCESSING_SRCS += 
@@ -51,37 +45,13 @@ PREPROCESSING_SRCS +=
 ASM_SRCS += 
 
 
-OBJS +=  \
-at_lcd.o \
-at_string.o \
-At_trig8.o \
-initialisation.o \
-interrupt.o \
-main.o
+OBJS += 
 
-OBJS_AS_ARGS +=  \
-at_lcd.o \
-at_string.o \
-At_trig8.o \
-initialisation.o \
-interrupt.o \
-main.o
+OBJS_AS_ARGS += 
 
-C_DEPS +=  \
-at_lcd.d \
-at_string.d \
-At_trig8.d \
-initialisation.d \
-interrupt.d \
-main.d
+C_DEPS += 
 
-C_DEPS_AS_ARGS +=  \
-at_lcd.d \
-at_string.d \
-At_trig8.d \
-initialisation.d \
-interrupt.d \
-main.d
+C_DEPS_AS_ARGS += 
 
 OUTPUT_FILE_PATH +=UnitZero.elf
 
@@ -97,48 +67,6 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
-./at_lcd.o: .././at_lcd.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)F:\Programs\Microchip\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"F:\Programs\Microchip\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega324pa -B "F:\Programs\Microchip\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega324pa" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-./at_string.o: .././at_string.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)F:\Programs\Microchip\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"F:\Programs\Microchip\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega324pa -B "F:\Programs\Microchip\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega324pa" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-./At_trig8.o: .././At_trig8.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)F:\Programs\Microchip\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"F:\Programs\Microchip\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega324pa -B "F:\Programs\Microchip\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega324pa" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-./initialisation.o: .././initialisation.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)F:\Programs\Microchip\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"F:\Programs\Microchip\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega324pa -B "F:\Programs\Microchip\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega324pa" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-./interrupt.o: .././interrupt.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)F:\Programs\Microchip\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"F:\Programs\Microchip\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega324pa -B "F:\Programs\Microchip\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega324pa" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-./main.o: .././main.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)F:\Programs\Microchip\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"F:\Programs\Microchip\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega324pa -B "F:\Programs\Microchip\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega324pa" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
 
 
 
