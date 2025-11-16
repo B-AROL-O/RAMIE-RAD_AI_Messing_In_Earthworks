@@ -139,3 +139,137 @@ Response from COM5: b'RAMIE\x00FF'
 Responsive ports:
 COM5
 ```
+
+## DEMO 3 - SERIAL SEESAW SPEED
+
+The code sends every 250ms 
+increase speed on R by increment of 10 up to 50
+Then decrement in speed -10 down to -50
+then increment of +10 up to 0
+then do the same on L speed
+repeat
+
+Stop when a keybord stroke is pressed
+
+DEPENDENCY
+
+```
+uv pip install keyboard
+```
+
+borked, removed keyboard for now
+
+execute script
+
+```CMD
+python demo_3_serial_direct_speed.py
+
+```
+
+FEEDBACK FROM EXECUTION
+
+```
+Failed to open COM1: Cannot configure port, something went wrong. Original message: OSError(22, 'The parameter is incorrect.', None, 87)
+Testing port: COM5
+Response from COM5: b'RAMIE\x00\x1a'
+
+Responsive ports:
+COM5
+Connected to COM5. Press any key to stop...
+Sent: b'VR1L0\x00'
+Sent: b'VR2L0\x00'
+Sent: b'VR3L0\x00'
+Sent: b'VR4L0\x00'
+Sent: b'VR5L0\x00'
+Sent: b'VR6L0\x00'
+Sent: b'VR7L0\x00'
+Sent: b'VR8L0\x00'
+Sent: b'VR9L0\x00'
+Sent: b'VR10L0\x00'
+Sent: b'VR10L0\x00'
+Sent: b'VR9L0\x00'
+Sent: b'VR8L0\x00'
+Sent: b'VR7L0\x00'
+Sent: b'VR6L0\x00'
+Sent: b'VR5L0\x00'
+Sent: b'VR4L0\x00'
+Sent: b'VR3L0\x00'
+Sent: b'VR2L0\x00'
+Sent: b'VR1L0\x00'
+Sent: b'VR0L0\x00'
+Sent: b'VR-1L0\x00'
+Sent: b'VR-2L0\x00'
+Sent: b'VR-3L0\x00'
+Sent: b'VR-4L0\x00'
+Sent: b'VR-5L0\x00'
+Sent: b'VR-6L0\x00'
+Sent: b'VR-7L0\x00'
+Sent: b'VR-8L0\x00'
+Sent: b'VR-9L0\x00'
+Sent: b'VR-10L0\x00'
+Sent: b'VR-10L0\x00'
+Sent: b'VR-9L0\x00'
+Sent: b'VR-8L0\x00'
+Sent: b'VR-7L0\x00'
+Sent: b'VR-6L0\x00'
+Sent: b'VR-5L0\x00'
+Sent: b'VR-4L0\x00'
+Sent: b'VR-3L0\x00'
+Sent: b'VR-2L0\x00'
+Sent: b'VR-1L0\x00'
+Sent: b'VR0L0\x00'
+Sent: b'VR0L0\x00'
+Sent: b'VR0L1\x00'
+Sent: b'VR0L2\x00'
+Sent: b'VR0L3\x00'
+Sent: b'VR0L4\x00'
+Sent: b'VR0L5\x00'
+Sent: b'VR0L6\x00'
+Sent: b'VR0L7\x00'
+Sent: b'VR0L8\x00'
+Sent: b'VR0L9\x00'
+Sent: b'VR0L10\x00'
+Sent: b'VR0L10\x00'
+Sent: b'VR0L9\x00'
+Sent: b'VR0L8\x00'
+Sent: b'VR0L7\x00'
+Sent: b'VR0L6\x00'
+Sent: b'VR0L5\x00'
+Sent: b'VR0L4\x00'
+Sent: b'VR0L3\x00'
+Sent: b'VR0L2\x00'
+Sent: b'VR0L1\x00'
+Sent: b'VR0L0\x00'
+Sent: b'VR0L-1\x00'
+Sent: b'VR0L-2\x00'
+Sent: b'VR0L-3\x00'
+Sent: b'VR0L-4\x00'
+Sent: b'VR0L-5\x00'
+Sent: b'VR0L-6\x00'
+Sent: b'VR0L-7\x00'
+Sent: b'VR0L-8\x00'
+Sent: b'VR0L-9\x00'
+Sent: b'VR0L-10\x00'
+Sent: b'VR0L-10\x00'
+Sent: b'VR0L-9\x00'
+Sent: b'VR0L-8\x00'
+Sent: b'VR0L-7\x00'
+Sent: b'VR0L-6\x00'
+Sent: b'VR0L-5\x00'
+Sent: b'VR0L-4\x00'
+Sent: b'VR0L-3\x00'
+Sent: b'VR0L-2\x00'
+Sent: b'VR0L-1\x00'
+Sent: b'VR0L0\x00'
+Sent: b'VR0L0\x00'
+Sent: b'VR1L0\x00'
+Sent: b'VR2L0\x00'
+Sent: b'VR3L0\x00'
+Sent: b'VR4L0\x00'
+Sent: b'VR5L0\x00'
+Sent: b'VR6L0\x00'
+Sent: b'VR7L0\x00'
+Sent: b'VR8L0\x00'
+Sent: b'VR9L0\x00'
+Sent: b'VR10L0\x00'
+Sent: b'VR10L0\x00'
