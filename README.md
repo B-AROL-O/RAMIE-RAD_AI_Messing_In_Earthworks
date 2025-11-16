@@ -30,21 +30,6 @@ This felt like a good chance to gather all the disparate documentation and work 
 
 Designs marked with '*(not qualifying for hackaton)* ' are older recycled design that are here for documentation, instruction and completeness purposes and are not qualifying for the scope of the hackaton.  They are either taken as is, or lightly/heavily adapted to serve for the scope of the Hackaton.
 
-### Board Motor Screen
-
-Interfaces with a UART bidirectional link with the SBC, answer to a serial protocol, controls two servos and a LCD screen. Choosen because I had a bounch assembled in a drawer and working firmware to start from.
-
-- [ELN: Board Motor Screen](/Electronics/Board%20motor%20screen) *(not qualifying for hackaton)*
-- [FW: Board Motor Screen](/Firmware/Motor%20Board%20Atmel%20AT324PA) *(not qualifying for hackaton)*
-- [FW: Test Bench Serial Communication](/Firmware/Test%20Bench%20Parser) *(not qualifying for hackaton)*
-- [FW: Test Bench Motion Orchestrator](/Firmware/Test%20bench%20motion%20orchestration)
-
-![](/Electronics/Board%20motor%20screen/2025-11-15-T0928%20Motor%20Control.jpg)
-
-### SBC Latte Panda Mu N100 16GB
-
-I lost count of the SBCs I tested for my ultimate goal of making a general robot that expresses a degree of general intelligence with local compute only. The N100 16GB could be it, it has the memory, bandwidth, compute and power envelope to run useful LLMs on the go.
-
 ### Mechanical Design
 
 I design in OpenSCAD as I like making geometries as code and I like doing everything parametric.
@@ -57,6 +42,24 @@ I decided that the robots should be powered by 18650 batteries. Target configura
 The robot platform is the one I am designing for Latte Panda Lite Board powered AI robots, it was a good fit for this hackaton
 
 ![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-11-08-T1437_Slicing.png)
+
+
+### Board Motor Screen
+
+Interfaces with a UART bidirectional link with the SBC, answer to a serial protocol, controls two servos and a LCD screen. Choosen because I had a bounch assembled in a drawer and working firmware to start from.
+
+- [ELN: Board Motor Screen](/Electronics/Board%20motor%20screen) *(not qualifying for hackaton)*
+- [FW: Board Motor Screen](/Firmware/Motor%20Board%20Atmel%20AT324PA) *(not qualifying for hackaton)*
+- [FW: Test Bench Serial Communication](/Firmware/Test%20Bench%20Parser) *(not qualifying for hackaton)*
+- [FW: Test Bench Motion Orchestrator](/Firmware/Test%20bench%20motion%20orchestration)
+- [SW: Python demos to test communication between computer and board](/Software/Demo%201%20-%20Serial%20Communication)
+
+![](/Electronics/Board%20motor%20screen/2025-11-15-T0928%20Motor%20Control.jpg)
+
+### SBC Latte Panda Mu N100 16GB
+
+I lost count of the SBCs I tested for my ultimate goal of making a general robot that expresses a degree of general intelligence with local compute only. The N100 16GB could be it, it has the memory, bandwidth, compute and power envelope to run useful LLMs on the go.
+
 
 ## Contributors
 
