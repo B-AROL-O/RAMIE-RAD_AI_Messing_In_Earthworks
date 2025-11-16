@@ -115,7 +115,7 @@ bool init_parser_commands( Orangebot::Uniparser &i_rcl_parser )
 
 	f_ret |= i_rcl_parser.add_cmd( "VR%sL%s", (void *)&handle_set_velocity );
 
-	f_ret |= i_rcl_parser.add_cmd( "T%uVR%sL%s", (void *)&handle_set_velocity_timed );
+	f_ret |= i_rcl_parser.add_cmd( "VT%uR%sL%s", (void *)&handle_set_velocity_timed );
 
 	//If: Uniparser V4 failed to register a command
 	if (f_ret == true)
