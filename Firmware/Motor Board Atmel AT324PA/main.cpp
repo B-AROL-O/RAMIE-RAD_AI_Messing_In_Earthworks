@@ -435,7 +435,10 @@ int main( void )
 		{
 			f.servo_traj = 0;
 			
-			lcd_print_u16( LCD_POS(0,11), g_u8_command_counter );
+			//lcd_print_u16( LCD_POS(0,11), g_u8_command_counter );
+			
+			uint8_t u8_queue = g_cl_motion_queue.get_num_element();
+			lcd_print_u16( LCD_POS(0,11), u8_queue );
 			
 			//Signal to user the speed mode
 			if (g_e_servo_mode == E_servo_mode::SERVO_SPEED_MODE)

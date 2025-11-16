@@ -79,6 +79,12 @@ class Cl_motion_queue
             return false; //OK
         }
 
+		//Return the number of motions queued
+		inline uint8_t get_num_element()
+		{
+			return ( (this->g_u8_top >= this->g_u8_bottom) ? (this->g_u8_top-this->g_u8_bottom) : (this->cu8_queue_size-this->g_u8_bottom+this->g_u8_top) );
+		}
+
         /*--------------------------------------------------------------
          *  Execution helpers
          *--------------------------------------------------------------*/
