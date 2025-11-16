@@ -43,7 +43,7 @@ The robot platform is the one I am designing for Latte Panda Lite Board powered 
 
 ![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-11-08-T1437_Slicing.png)
 
-
+ 
 ### Board Motor Screen
 
 Interfaces with a UART bidirectional link with the SBC, answer to a serial protocol, controls two servos and a LCD screen. Choosen because I had a bounch assembled in a drawer and working firmware to start from.

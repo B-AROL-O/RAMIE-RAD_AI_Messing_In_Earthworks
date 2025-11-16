@@ -414,7 +414,7 @@ int main( void )
 					servo_target_pos[SERVO_WHEEL_RIGHT] = 0;
 					servo_target_pos[SERVO_WHEEL_LEFT] = 0;
 					//Go back to direct speed mode
-					g_e_servo_mode = E_servo_mode::SERVO_SPEED_MODE;
+					//g_e_servo_mode = E_servo_mode::SERVO_SPEED_MODE;
 				}
 				else
 				{
@@ -710,6 +710,8 @@ bool add_timed_speed( uint8_t i_u8_time, int8_t i_s8_speed_right, int8_t i_s8_sp
 	st_timed_speed.s8_speed_left = i_s8_speed_left;
 	
 	bool x_fail = g_cl_motion_queue.push(st_timed_speed);
+	
+	g_cl_motion_queue.set_run(true);
 	
 	return x_fail; //Propagate FAIL
 }
