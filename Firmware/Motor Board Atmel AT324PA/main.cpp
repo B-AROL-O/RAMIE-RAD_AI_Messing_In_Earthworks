@@ -198,6 +198,8 @@
 
 extern U8 seesaw();
 
+extern uint8_t demo_timed_velocity();
+
 extern bool init_parser_commands( Orangebot::Uniparser &i_rcl_parser );
 
 /****************************************************************************
@@ -271,9 +273,6 @@ S8 servo_off[ N_SERVOS ];
 U16 servo_global_time 	= 0;
 //Current motion plan
 //Trajectories trajectory = MOVE_IDLE;
-
-
-
 
 /****************************************************************************
 **	MAIN
@@ -403,6 +402,8 @@ int main( void )
 			
 			//seesaw();
 			
+			demo_timed_velocity();
+			
 		} //END: Trajectory generation
 		
 		///----------------------------------------------------------------------
@@ -478,6 +479,45 @@ U8 seesaw()
 	servo_target_pos[1] = servo_target_pos[0];
 	
 	return 0;
+}
+
+
+//Feed timed velocity instructions directly into the RX queue to test the decoding
+uint8_t demo_timed_velocity()
+{
+	static uint8_t u8_cnt = 0;
+	uint8_t u8_index = 0;
+	
+	if (u8_cnt == 0)
+	{
+		
+		//const char *ps8_cmd = "VT5R+10L-10\0";
+		const char *ps8_cmd = "VR+10L-10\0";
+		
+		while (ps8_cmd[u8_index] != '\0')
+		{
+			AT_BUF_PUSH_SAFER( uart_rx_buf, ps8_cmd[u8_index++] );
+		}
+		AT_BUF_PUSH_SAFER( uart_rx_buf, '\0' );
+		u8_cnt++;
+	}
+	else if (u8_cnt == 1)
+	{
+		const char *ps8_cmd = "VR-10L+10\0";
+		
+		while (ps8_cmd[u8_index] != '\0')
+		{
+			AT_BUF_PUSH_SAFER( uart_rx_buf, ps8_cmd[u8_index++] );
+		}
+		AT_BUF_PUSH_SAFER( uart_rx_buf, '\0' );
+		u8_cnt=0;
+	}
+	else
+	{
+		u8_cnt=0;
+	}
+	
+	return 0; //OK
 }
 
 /****************************************************************************
@@ -577,6 +617,7 @@ U16 servo_calc_delay( U8 index )
 *****************************************************************************
 **
 ****************************************************************************/
+
 
 bool uart_send_string( const char * i_pu8_string )
 {
