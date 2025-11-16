@@ -173,7 +173,14 @@
 
 #include "global.h"
 
+//Parse commands and calls callback functions automagically
 #include "uniparser.h"
+
+//Movement
+#include "st_wheel_speed_duration.h"
+
+//Sequence movements with duration
+#include "cl_motion_queue.hpp"
 
 /****************************************************************************
 **	DEFINE
@@ -198,7 +205,13 @@
 
 extern U8 seesaw();
 
+extern uint8_t demo_velocity();
+
+extern uint8_t demo_timed_velocity();
+
 extern bool init_parser_commands( Orangebot::Uniparser &i_rcl_parser );
+
+
 
 /****************************************************************************
 **	PROTOTYPE: GLOBAL VARIABILE
@@ -247,6 +260,8 @@ U8 v1[ UART_TX_BUF_SIZE ];
 //Create a new parser
 Orangebot::Uniparser g_cl_parser;
 	
+Cl_motion_queue g_cl_motion_queue;
+	
 	//-----------------------------------------------------------------------
 	//	SERVOS VARS
 	//-----------------------------------------------------------------------
@@ -274,6 +289,8 @@ U16 servo_global_time 	= 0;
 
 
 
+//Operation mode of the servomotors
+E_servo_mode g_e_servo_mode = SERVO_SPEED_MODE;
 
 /****************************************************************************
 **	MAIN
@@ -326,6 +343,7 @@ int main( void )
 	
 	//The proud name of this unit
 	lcd_print_str( LCD_POS(0,0), (U8 *)"RAMIE");
+	lcd_print_str( LCD_POS(0,8), (U8 *)"CMD:");
 	lcd_print_str( LCD_POS(1,0), (U8 *)"Time:");
 
 	///**********************************************************************
@@ -383,6 +401,29 @@ int main( void )
 				f.servo_traj = 1;
 			}
 			
+			//In timed servo mode
+			if (g_e_servo_mode == E_servo_mode::SERVO_TIMED_SPEED_MODE)
+			{
+				St_wheel_speed_duration st_timed_speed;
+				//Ask the orchestrator for a motion
+				bool x_fail = g_cl_motion_queue.execute_time_step( st_timed_speed );
+				//If no motion in the queue
+				if (x_fail == true)
+				{
+					//Stop the motors
+					servo_target_pos[SERVO_WHEEL_RIGHT] = 0;
+					servo_target_pos[SERVO_WHEEL_LEFT] = 0;
+					//Go back to direct speed mode
+					//g_e_servo_mode = E_servo_mode::SERVO_SPEED_MODE;
+				}
+				else
+				{
+					
+					servo_target_pos[SERVO_WHEEL_RIGHT] = st_timed_speed.s8_speed_right;
+					servo_target_pos[SERVO_WHEEL_LEFT] = st_timed_speed.s8_speed_left;
+				}
+				
+			}
 			
 		}	//End If: motor scan flag
 
@@ -394,14 +435,31 @@ int main( void )
 		{
 			f.servo_traj = 0;
 			
+			//lcd_print_u16( LCD_POS(0,11), g_u8_command_counter );
+			
+			uint8_t u8_queue = g_cl_motion_queue.get_num_element();
+			lcd_print_u16( LCD_POS(0,11), u8_queue );
+			
+			//Signal to user the speed mode
+			if (g_e_servo_mode == E_servo_mode::SERVO_SPEED_MODE)
+			{
+				lcd_print_str( LCD_POS(1,14), (U8 *)"DS" );
+			}
+			else if (g_e_servo_mode == E_servo_mode::SERVO_TIMED_SPEED_MODE)
+			{
+				lcd_print_str( LCD_POS(1,14), (U8 *)"TS" );
+			}
+			
 			//Debug send via UART
-			AT_BUF_PUSH( uart_tx_buf, 'A'+g_u8_command_counter );
+			//AT_BUF_PUSH( uart_tx_buf, 'A'+g_u8_command_counter );
 			//TOGGLE_BIT( PORTD, PD1 );
 			
 			//Toggle LED
 			TOGGLE_BIT( PORTC, PC0 );
 			
 			//seesaw();
+			
+			//demo_timed_velocity();
 			
 		} //END: Trajectory generation
 		
@@ -478,6 +536,45 @@ U8 seesaw()
 	servo_target_pos[1] = servo_target_pos[0];
 	
 	return 0;
+}
+
+
+//Feed timed velocity instructions directly into the RX queue to test the decoding
+uint8_t demo_velocity()
+{
+	static uint8_t u8_cnt = 0;
+	uint8_t u8_index = 0;
+	
+	if (u8_cnt == 0)
+	{
+		
+		//const char *ps8_cmd = "VT5R+10L-10\0";
+		const char *ps8_cmd = "VR+10L-10\0";
+		
+		while (ps8_cmd[u8_index] != '\0')
+		{
+			AT_BUF_PUSH_SAFER( uart_rx_buf, ps8_cmd[u8_index++] );
+		}
+		AT_BUF_PUSH_SAFER( uart_rx_buf, '\0' );
+		u8_cnt++;
+	}
+	else if (u8_cnt == 1)
+	{
+		const char *ps8_cmd = "VR-10L+10\0";
+		
+		while (ps8_cmd[u8_index] != '\0')
+		{
+			AT_BUF_PUSH_SAFER( uart_rx_buf, ps8_cmd[u8_index++] );
+		}
+		AT_BUF_PUSH_SAFER( uart_rx_buf, '\0' );
+		u8_cnt=0;
+	}
+	else
+	{
+		u8_cnt=0;
+	}
+	
+	return 0; //OK
 }
 
 /****************************************************************************
@@ -578,6 +675,7 @@ U16 servo_calc_delay( U8 index )
 **
 ****************************************************************************/
 
+
 bool uart_send_string( const char * i_pu8_string )
 {
 	
@@ -595,4 +693,25 @@ bool uart_send_string( const char * i_pu8_string )
 	AT_BUF_PUSH( uart_tx_buf, '\0' );
 	
 	return false; //OK
+}
+
+/****************************************************************************
+**	add_timed_speed
+*****************************************************************************
+**
+****************************************************************************/
+
+//visible to the parser handler, used to connect parser and motion orchestration
+bool add_timed_speed( uint8_t i_u8_time, int8_t i_s8_speed_right, int8_t i_s8_speed_left )
+{
+	St_wheel_speed_duration st_timed_speed;
+	st_timed_speed.u8_duration = i_u8_time;
+	st_timed_speed.s8_speed_right = i_s8_speed_right;
+	st_timed_speed.s8_speed_left = i_s8_speed_left;
+	
+	bool x_fail = g_cl_motion_queue.push(st_timed_speed);
+	
+	g_cl_motion_queue.set_run(true);
+	
+	return x_fail; //Propagate FAIL
 }
