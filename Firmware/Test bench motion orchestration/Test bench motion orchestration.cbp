@@ -38,6 +38,8 @@
 		<Unit filename="st_wheel_speed_duration.h" />
 		<Unit filename="xxx.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />

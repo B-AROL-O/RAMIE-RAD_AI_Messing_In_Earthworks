@@ -614,7 +614,7 @@ END GROUP
  *(.fini0)
                 0x0000289e                _etext = .
 
-.data           0x00800100       0x46 load address 0x0000289e
+.data           0x00800100       0x4e load address 0x0000289e
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -635,80 +635,80 @@ END GROUP
  .rodata.str1.1
                 0x00800115        0xc main.o
  .rodata.str1.1
-                0x00800121       0x24 parser_handlers.o
+                0x00800121       0x2c parser_handlers.o
                                  0x34 (size before relaxing)
  *(.gnu.linkonce.r*)
-                0x00800146                . = ALIGN (0x2)
- *fill*         0x00800145        0x1 
-                0x00800146                _edata = .
-                0x00800146                PROVIDE (__data_end, .)
+                0x0080014e                . = ALIGN (0x2)
+ *fill*         0x0080014d        0x1 
+                0x0080014e                _edata = .
+                0x0080014e                PROVIDE (__data_end, .)
 
-.bss            0x00800146       0xf2
-                0x00800146                PROVIDE (__bss_start, .)
+.bss            0x0080014e       0xf2
+                0x0080014e                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss._ZZ10lcd_updatevE8data_buf
-                0x00800146        0x1 at_lcd.o
+                0x0080014e        0x1 at_lcd.o
  .bss._ZZ10lcd_updatevE6status
-                0x00800147        0x2 at_lcd.o
+                0x0080014f        0x2 at_lcd.o
  .bss.lcd_error
-                0x00800149        0x1 at_lcd.o
-                0x00800149                lcd_error
+                0x00800151        0x1 at_lcd.o
+                0x00800151                lcd_error
  .bss.lcd_cfg_flags
-                0x0080014a        0x1 at_lcd.o
-                0x0080014a                lcd_cfg_flags
- .bss.lcd_updt  0x0080014b        0x4 at_lcd.o
-                0x0080014b                lcd_updt
- .bss.lcd_show  0x0080014f       0x20 at_lcd.o
-                0x0080014f                lcd_show
+                0x00800152        0x1 at_lcd.o
+                0x00800152                lcd_cfg_flags
+ .bss.lcd_updt  0x00800153        0x4 at_lcd.o
+                0x00800153                lcd_updt
+ .bss.lcd_show  0x00800157       0x20 at_lcd.o
+                0x00800157                lcd_show
  .bss._ZZ11__vector_16E3pre
-                0x0080016f        0x1 interrupt.o
+                0x00800177        0x1 interrupt.o
  .bss.servo_global_time
-                0x00800170        0x2 main.o
-                0x00800170                servo_global_time
+                0x00800178        0x2 main.o
+                0x00800178                servo_global_time
  .bss.servo_off
-                0x00800172        0x7 main.o
-                0x00800172                servo_off
+                0x0080017a        0x7 main.o
+                0x0080017a                servo_off
  .bss.servo_target_speed
-                0x00800179        0x7 main.o
-                0x00800179                servo_target_speed
+                0x00800181        0x7 main.o
+                0x00800181                servo_target_speed
  .bss.servo_target_pos
-                0x00800180        0x7 main.o
-                0x00800180                servo_target_pos
+                0x00800188        0x7 main.o
+                0x00800188                servo_target_pos
  .bss.servo_delay
-                0x00800187        0xe main.o
-                0x00800187                servo_delay
+                0x0080018f        0xe main.o
+                0x0080018f                servo_delay
  .bss.servo_lock
-                0x00800195        0x1 main.o
-                0x00800195                servo_lock
+                0x0080019d        0x1 main.o
+                0x0080019d                servo_lock
  .bss.g_cl_parser
-                0x00800196       0x75 main.o
-                0x00800196                g_cl_parser
- .bss.v1        0x0080020b       0x10 main.o
-                0x0080020b                v1
- .bss.v0        0x0080021b       0x10 main.o
-                0x0080021b                v0
+                0x0080019e       0x75 main.o
+                0x0080019e                g_cl_parser
+ .bss.v1        0x00800213       0x10 main.o
+                0x00800213                v1
+ .bss.v0        0x00800223       0x10 main.o
+                0x00800223                v0
  .bss.uart_tx_buf
-                0x0080022b        0x5 main.o
-                0x0080022b                uart_tx_buf
+                0x00800233        0x5 main.o
+                0x00800233                uart_tx_buf
  .bss.uart_rx_buf
-                0x00800230        0x6 main.o
-                0x00800230                uart_rx_buf
- .bss.f         0x00800236        0x1 main.o
-                0x00800236                f
+                0x00800238        0x6 main.o
+                0x00800238                uart_rx_buf
+ .bss.f         0x0080023e        0x1 main.o
+                0x0080023e                f
  .bss.g_u8_command_counter
-                0x00800237        0x1 parser_handlers.o
-                0x00800237                g_u8_command_counter
+                0x0080023f        0x1 parser_handlers.o
+                0x0080023f                g_u8_command_counter
  *(COMMON)
-                0x00800238                PROVIDE (__bss_end, .)
+                0x00800240                PROVIDE (__bss_end, .)
                 0x0000289e                __data_load_start = LOADADDR (.data)
-                0x000028e4                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000028ec                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800238        0x0
+.noinit         0x00800240        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800238                _end = .
+                0x00800240                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0

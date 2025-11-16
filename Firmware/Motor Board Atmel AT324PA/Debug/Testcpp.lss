@@ -3,31 +3,31 @@ Testcpp.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000046  00800100  0000289e  00002932  2**0
+  0 .data         0000004e  00800100  0000289e  00002932  2**0
                   CONTENTS, ALLOC, LOAD, DATA
   1 .text         0000289e  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          000000f2  00800146  00800146  00002978  2**0
+  2 .bss          000000f2  0080014e  0080014e  00002980  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00002978  2**0
+  3 .comment      00000030  00000000  00000000  00002980  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000029a8  2**2
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000029b0  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000218  00000000  00000000  000029e8  2**0
+  5 .debug_aranges 00000218  00000000  00000000  000029f0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00005d7a  00000000  00000000  00002c00  2**0
+  6 .debug_info   00005d7a  00000000  00000000  00002c08  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000015b4  00000000  00000000  0000897a  2**0
+  7 .debug_abbrev 000015b4  00000000  00000000  00008982  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00002c8b  00000000  00000000  00009f2e  2**0
+  8 .debug_line   00002c8b  00000000  00000000  00009f36  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  0000058c  00000000  00000000  0000cbbc  2**2
+  9 .debug_frame  0000058c  00000000  00000000  0000cbc4  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00001489  00000000  00000000  0000d148  2**0
+ 10 .debug_str    00001489  00000000  00000000  0000d150  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    0000b1a8  00000000  00000000  0000e5d1  2**0
+ 11 .debug_loc    0000b1a8  00000000  00000000  0000e5d9  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000d88  00000000  00000000  00019779  2**0
+ 12 .debug_ranges 00000d88  00000000  00000000  00019781  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -88,13 +88,13 @@ Disassembly of section .text:
       96:	02 c0       	rjmp	.+4      	; 0x9c <__do_copy_data+0x10>
       98:	05 90       	lpm	r0, Z+
       9a:	0d 92       	st	X+, r0
-      9c:	a6 34       	cpi	r26, 0x46	; 70
+      9c:	ae 34       	cpi	r26, 0x4E	; 78
       9e:	b1 07       	cpc	r27, r17
       a0:	d9 f7       	brne	.-10     	; 0x98 <__do_copy_data+0xc>
 
 000000a2 <__do_clear_bss>:
       a2:	22 e0       	ldi	r18, 0x02	; 2
-      a4:	a6 e4       	ldi	r26, 0x46	; 70
+      a4:	ae e4       	ldi	r26, 0x4E	; 78
       a6:	b1 e0       	ldi	r27, 0x01	; 1
       a8:	01 c0       	rjmp	.+2      	; 0xac <.do_clear_bss_start>
 
@@ -102,7 +102,7 @@ Disassembly of section .text:
       aa:	1d 92       	st	X+, r1
 
 000000ac <.do_clear_bss_start>:
-      ac:	a8 33       	cpi	r26, 0x38	; 56
+      ac:	a0 34       	cpi	r26, 0x40	; 64
       ae:	b2 07       	cpc	r27, r18
       b0:	e1 f7       	brne	.-8      	; 0xaa <.do_clear_bss_loop>
 
@@ -211,7 +211,7 @@ Disassembly of section .text:
      174:	40 f4       	brcc	.+16     	; 0x186 <_Z8lcd_initv+0x2e>
      176:	e8 2f       	mov	r30, r24
      178:	f0 e0       	ldi	r31, 0x00	; 0
-     17a:	e1 5b       	subi	r30, 0xB1	; 177
+     17a:	e9 5a       	subi	r30, 0xA9	; 169
      17c:	fe 4f       	sbci	r31, 0xFE	; 254
      17e:	90 e2       	ldi	r25, 0x20	; 32
      180:	90 83       	st	Z, r25
@@ -222,17 +222,17 @@ Disassembly of section .text:
      18a:	38 f4       	brcc	.+14     	; 0x19a <_Z8lcd_initv+0x42>
      18c:	e8 2f       	mov	r30, r24
      18e:	f0 e0       	ldi	r31, 0x00	; 0
-     190:	e5 5b       	subi	r30, 0xB5	; 181
+     190:	ed 5a       	subi	r30, 0xAD	; 173
      192:	fe 4f       	sbci	r31, 0xFE	; 254
      194:	10 82       	st	Z, r1
      196:	8f 5f       	subi	r24, 0xFF	; 255
      198:	f7 cf       	rjmp	.-18     	; 0x188 <_Z8lcd_initv+0x30>
-     19a:	10 92 4a 01 	sts	0x014A, r1	; 0x80014a <lcd_cfg_flags>
-     19e:	10 92 49 01 	sts	0x0149, r1	; 0x800149 <lcd_error>
+     19a:	10 92 52 01 	sts	0x0152, r1	; 0x800152 <lcd_cfg_flags>
+     19e:	10 92 51 01 	sts	0x0151, r1	; 0x800151 <lcd_error>
      1a2:	08 95       	ret
 
 000001a4 <_Z10lcd_updatev>:
-     1a4:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <_ZZ10lcd_updatevE6status>
+     1a4:	80 91 4f 01 	lds	r24, 0x014F	; 0x80014f <_ZZ10lcd_updatevE6status>
      1a8:	98 2f       	mov	r25, r24
      1aa:	92 95       	swap	r25
      1ac:	96 95       	lsr	r25
@@ -264,7 +264,7 @@ Disassembly of section .text:
      1e0:	35 95       	asr	r19
      1e2:	27 95       	ror	r18
      1e4:	f9 01       	movw	r30, r18
-     1e6:	e5 5b       	subi	r30, 0xB5	; 181
+     1e6:	ed 5a       	subi	r30, 0xAD	; 173
      1e8:	fe 4f       	sbci	r31, 0xFE	; 254
      1ea:	40 81       	ld	r20, Z
      1ec:	64 23       	and	r22, r20
@@ -286,7 +286,7 @@ Disassembly of section .text:
      20c:	99 0f       	add	r25, r25
      20e:	b9 f7       	brne	.-18     	; 0x1fe <_Z10lcd_updatev+0x5a>
      210:	23 e6       	ldi	r18, 0x63	; 99
-     212:	20 93 49 01 	sts	0x0149, r18	; 0x800149 <lcd_error>
+     212:	20 93 51 01 	sts	0x0151, r18	; 0x800151 <lcd_error>
      216:	f3 cf       	rjmp	.-26     	; 0x1fe <_Z10lcd_updatev+0x5a>
      218:	89 2f       	mov	r24, r25
      21a:	52 2f       	mov	r21, r18
@@ -298,7 +298,7 @@ Disassembly of section .text:
      226:	25 2f       	mov	r18, r21
      228:	30 e0       	ldi	r19, 0x00	; 0
      22a:	f9 01       	movw	r30, r18
-     22c:	e5 5b       	subi	r30, 0xB5	; 181
+     22c:	ed 5a       	subi	r30, 0xAD	; 173
      22e:	fe 4f       	sbci	r31, 0xFE	; 254
      230:	40 81       	ld	r20, Z
      232:	41 11       	cpse	r20, r1
@@ -327,7 +327,7 @@ Disassembly of section .text:
      260:	08 95       	ret
      262:	e5 2f       	mov	r30, r21
      264:	f0 e0       	ldi	r31, 0x00	; 0
-     266:	e5 5b       	subi	r30, 0xB5	; 181
+     266:	ed 5a       	subi	r30, 0xAD	; 173
      268:	fe 4f       	sbci	r31, 0xFE	; 254
      26a:	30 81       	ld	r19, Z
      26c:	91 e0       	ldi	r25, 0x01	; 1
@@ -343,32 +343,32 @@ Disassembly of section .text:
      280:	91 11       	cpse	r25, r1
      282:	f7 cf       	rjmp	.-18     	; 0x272 <_Z10lcd_updatev+0xce>
      284:	23 e6       	ldi	r18, 0x63	; 99
-     286:	20 93 49 01 	sts	0x0149, r18	; 0x800149 <lcd_error>
+     286:	20 93 51 01 	sts	0x0151, r18	; 0x800151 <lcd_error>
      28a:	f3 cf       	rjmp	.-26     	; 0x272 <_Z10lcd_updatev+0xce>
      28c:	98 2f       	mov	r25, r24
      28e:	9f 70       	andi	r25, 0x0F	; 15
      290:	b1 f0       	breq	.+44     	; 0x2be <_Z10lcd_updatev+0x11a>
-     292:	90 91 48 01 	lds	r25, 0x0148	; 0x800148 <_ZZ10lcd_updatevE6status+0x1>
+     292:	90 91 50 01 	lds	r25, 0x0150	; 0x800150 <_ZZ10lcd_updatevE6status+0x1>
      296:	96 95       	lsr	r25
      298:	9f 71       	andi	r25, 0x1F	; 31
      29a:	89 13       	cpse	r24, r25
      29c:	10 c0       	rjmp	.+32     	; 0x2be <_Z10lcd_updatev+0x11a>
-     29e:	e7 e4       	ldi	r30, 0x47	; 71
+     29e:	ef e4       	ldi	r30, 0x4F	; 79
      2a0:	f1 e0       	ldi	r31, 0x01	; 1
      2a2:	90 81       	ld	r25, Z
      2a4:	9f 77       	andi	r25, 0x7F	; 127
      2a6:	90 83       	st	Z, r25
      2a8:	e8 2f       	mov	r30, r24
      2aa:	f0 e0       	ldi	r31, 0x00	; 0
-     2ac:	e1 5b       	subi	r30, 0xB1	; 177
+     2ac:	e9 5a       	subi	r30, 0xA9	; 169
      2ae:	fe 4f       	sbci	r31, 0xFE	; 254
      2b0:	20 81       	ld	r18, Z
-     2b2:	20 93 46 01 	sts	0x0146, r18	; 0x800146 <__data_end>
+     2b2:	20 93 4e 01 	sts	0x014E, r18	; 0x80014e <__data_end>
      2b6:	98 b1       	in	r25, 0x08	; 8
      2b8:	98 60       	ori	r25, 0x08	; 8
      2ba:	98 b9       	out	0x08, r25	; 8
      2bc:	15 c0       	rjmp	.+42     	; 0x2e8 <_Z10lcd_updatev+0x144>
-     2be:	e7 e4       	ldi	r30, 0x47	; 71
+     2be:	ef e4       	ldi	r30, 0x4F	; 79
      2c0:	f1 e0       	ldi	r31, 0x01	; 1
      2c2:	90 81       	ld	r25, Z
      2c4:	90 68       	ori	r25, 0x80	; 128
@@ -384,11 +384,11 @@ Disassembly of section .text:
      2d8:	98 2f       	mov	r25, r24
      2da:	9f 70       	andi	r25, 0x0F	; 15
      2dc:	29 2b       	or	r18, r25
-     2de:	20 93 46 01 	sts	0x0146, r18	; 0x800146 <__data_end>
+     2de:	20 93 4e 01 	sts	0x014E, r18	; 0x80014e <__data_end>
      2e2:	98 b1       	in	r25, 0x08	; 8
      2e4:	97 7f       	andi	r25, 0xF7	; 247
      2e6:	98 b9       	out	0x08, r25	; 8
-     2e8:	e8 e4       	ldi	r30, 0x48	; 72
+     2e8:	e0 e5       	ldi	r30, 0x50	; 80
      2ea:	f1 e0       	ldi	r31, 0x01	; 1
      2ec:	90 81       	ld	r25, Z
      2ee:	91 60       	ori	r25, 0x01	; 1
@@ -417,11 +417,11 @@ Disassembly of section .text:
      31c:	98 b1       	in	r25, 0x08	; 8
      31e:	9b 7f       	andi	r25, 0xFB	; 251
      320:	98 b9       	out	0x08, r25	; 8
-     322:	90 91 47 01 	lds	r25, 0x0147	; 0x800147 <_ZZ10lcd_updatevE6status>
+     322:	90 91 4f 01 	lds	r25, 0x014F	; 0x80014f <_ZZ10lcd_updatevE6status>
      326:	99 23       	and	r25, r25
      328:	0c f4       	brge	.+2      	; 0x32c <_Z10lcd_updatev+0x188>
      32a:	a2 c0       	rjmp	.+324    	; 0x470 <__EEPROM_REGION_LENGTH__+0x70>
-     32c:	90 91 48 01 	lds	r25, 0x0148	; 0x800148 <_ZZ10lcd_updatevE6status+0x1>
+     32c:	90 91 50 01 	lds	r25, 0x0150	; 0x800150 <_ZZ10lcd_updatevE6status+0x1>
      330:	90 ff       	sbrs	r25, 0
      332:	a0 c0       	rjmp	.+320    	; 0x474 <__EEPROM_REGION_LENGTH__+0x74>
      334:	93 e0       	ldi	r25, 0x03	; 3
@@ -429,18 +429,18 @@ Disassembly of section .text:
      338:	93 30       	cpi	r25, 0x03	; 3
      33a:	09 f0       	breq	.+2      	; 0x33e <_Z10lcd_updatev+0x19a>
      33c:	95 c0       	rjmp	.+298    	; 0x468 <__EEPROM_REGION_LENGTH__+0x68>
-     33e:	20 91 47 01 	lds	r18, 0x0147	; 0x800147 <_ZZ10lcd_updatevE6status>
+     33e:	20 91 4f 01 	lds	r18, 0x014F	; 0x80014f <_ZZ10lcd_updatevE6status>
      342:	20 78       	andi	r18, 0x80	; 128
      344:	d9 f0       	breq	.+54     	; 0x37c <_Z10lcd_updatev+0x1d8>
-     346:	30 91 48 01 	lds	r19, 0x0148	; 0x800148 <_ZZ10lcd_updatevE6status+0x1>
+     346:	30 91 50 01 	lds	r19, 0x0150	; 0x800150 <_ZZ10lcd_updatevE6status+0x1>
      34a:	30 ff       	sbrs	r19, 0
      34c:	17 c0       	rjmp	.+46     	; 0x37c <_Z10lcd_updatev+0x1d8>
-     34e:	e8 e4       	ldi	r30, 0x48	; 72
+     34e:	e0 e5       	ldi	r30, 0x50	; 80
      350:	f1 e0       	ldi	r31, 0x01	; 1
      352:	23 2f       	mov	r18, r19
      354:	2e 7f       	andi	r18, 0xFE	; 254
      356:	20 83       	st	Z, r18
-     358:	30 91 46 01 	lds	r19, 0x0146	; 0x800146 <__data_end>
+     358:	30 91 4e 01 	lds	r19, 0x014E	; 0x80014e <__data_end>
      35c:	48 b1       	in	r20, 0x08	; 8
      35e:	64 2f       	mov	r22, r20
      360:	6f 70       	andi	r22, 0x0F	; 15
@@ -459,28 +459,28 @@ Disassembly of section .text:
      37a:	7d c0       	rjmp	.+250    	; 0x476 <__EEPROM_REGION_LENGTH__+0x76>
      37c:	22 23       	and	r18, r18
      37e:	21 f1       	breq	.+72     	; 0x3c8 <_Z10lcd_updatev+0x224>
-     380:	90 91 48 01 	lds	r25, 0x0148	; 0x800148 <_ZZ10lcd_updatevE6status+0x1>
+     380:	90 91 50 01 	lds	r25, 0x0150	; 0x800150 <_ZZ10lcd_updatevE6status+0x1>
      384:	90 fd       	sbrc	r25, 0
      386:	20 c0       	rjmp	.+64     	; 0x3c8 <_Z10lcd_updatev+0x224>
      388:	98 b1       	in	r25, 0x08	; 8
      38a:	98 60       	ori	r25, 0x08	; 8
      38c:	98 b9       	out	0x08, r25	; 8
-     38e:	e7 e4       	ldi	r30, 0x47	; 71
+     38e:	ef e4       	ldi	r30, 0x4F	; 79
      390:	f1 e0       	ldi	r31, 0x01	; 1
      392:	90 81       	ld	r25, Z
      394:	9f 77       	andi	r25, 0x7F	; 127
      396:	90 83       	st	Z, r25
-     398:	e8 e4       	ldi	r30, 0x48	; 72
+     398:	e0 e5       	ldi	r30, 0x50	; 80
      39a:	f1 e0       	ldi	r31, 0x01	; 1
      39c:	90 81       	ld	r25, Z
      39e:	91 60       	ori	r25, 0x01	; 1
      3a0:	90 83       	st	Z, r25
      3a2:	ea 2f       	mov	r30, r26
      3a4:	f0 e0       	ldi	r31, 0x00	; 0
-     3a6:	e1 5b       	subi	r30, 0xB1	; 177
+     3a6:	e9 5a       	subi	r30, 0xA9	; 169
      3a8:	fe 4f       	sbci	r31, 0xFE	; 254
      3aa:	20 81       	ld	r18, Z
-     3ac:	20 93 46 01 	sts	0x0146, r18	; 0x800146 <__data_end>
+     3ac:	20 93 4e 01 	sts	0x014E, r18	; 0x80014e <__data_end>
      3b0:	98 b1       	in	r25, 0x08	; 8
      3b2:	22 95       	swap	r18
      3b4:	2f 70       	andi	r18, 0x0F	; 15
@@ -495,14 +495,14 @@ Disassembly of section .text:
      3c6:	57 c0       	rjmp	.+174    	; 0x476 <__EEPROM_REGION_LENGTH__+0x76>
      3c8:	21 11       	cpse	r18, r1
      3ca:	49 c0       	rjmp	.+146    	; 0x45e <__EEPROM_REGION_LENGTH__+0x5e>
-     3cc:	90 91 48 01 	lds	r25, 0x0148	; 0x800148 <_ZZ10lcd_updatevE6status+0x1>
+     3cc:	90 91 50 01 	lds	r25, 0x0150	; 0x800150 <_ZZ10lcd_updatevE6status+0x1>
      3d0:	90 ff       	sbrs	r25, 0
      3d2:	45 c0       	rjmp	.+138    	; 0x45e <__EEPROM_REGION_LENGTH__+0x5e>
-     3d4:	e8 e4       	ldi	r30, 0x48	; 72
+     3d4:	e0 e5       	ldi	r30, 0x50	; 80
      3d6:	f1 e0       	ldi	r31, 0x01	; 1
      3d8:	9e 7f       	andi	r25, 0xFE	; 254
      3da:	90 83       	st	Z, r25
-     3dc:	40 91 46 01 	lds	r20, 0x0146	; 0x800146 <__data_end>
+     3dc:	40 91 4e 01 	lds	r20, 0x014E	; 0x80014e <__data_end>
      3e0:	98 b1       	in	r25, 0x08	; 8
      3e2:	9f 70       	andi	r25, 0x0F	; 15
      3e4:	50 e1       	ldi	r21, 0x10	; 16
@@ -513,7 +513,7 @@ Disassembly of section .text:
      3ee:	28 b9       	out	0x08, r18	; 8
      3f0:	ea 2f       	mov	r30, r26
      3f2:	f0 e0       	ldi	r31, 0x00	; 0
-     3f4:	e1 5b       	subi	r30, 0xB1	; 177
+     3f4:	e9 5a       	subi	r30, 0xA9	; 169
      3f6:	fe 4f       	sbci	r31, 0xFE	; 254
      3f8:	90 81       	ld	r25, Z
      3fa:	49 13       	cpse	r20, r25
@@ -536,13 +536,13 @@ Disassembly of section .text:
      41c:	33 1f       	adc	r19, r19
      41e:	9a 95       	dec	r25
      420:	e2 f7       	brpl	.-8      	; 0x41a <__EEPROM_REGION_LENGTH__+0x1a>
-     422:	e5 5b       	subi	r30, 0xB5	; 181
+     422:	ed 5a       	subi	r30, 0xAD	; 173
      424:	fe 4f       	sbci	r31, 0xFE	; 254
      426:	20 95       	com	r18
      428:	90 81       	ld	r25, Z
      42a:	92 23       	and	r25, r18
      42c:	90 83       	st	Z, r25
-     42e:	90 91 48 01 	lds	r25, 0x0148	; 0x800148 <_ZZ10lcd_updatevE6status+0x1>
+     42e:	90 91 50 01 	lds	r25, 0x0150	; 0x800150 <_ZZ10lcd_updatevE6status+0x1>
      432:	96 95       	lsr	r25
      434:	9f 71       	andi	r25, 0x1F	; 31
      436:	29 2f       	mov	r18, r25
@@ -555,7 +555,7 @@ Disassembly of section .text:
      444:	9f 5f       	subi	r25, 0xFF	; 255
      446:	01 c0       	rjmp	.+2      	; 0x44a <__EEPROM_REGION_LENGTH__+0x4a>
      448:	90 e0       	ldi	r25, 0x00	; 0
-     44a:	e8 e4       	ldi	r30, 0x48	; 72
+     44a:	e0 e5       	ldi	r30, 0x50	; 80
      44c:	f1 e0       	ldi	r31, 0x01	; 1
      44e:	9f 71       	andi	r25, 0x1F	; 31
      450:	99 0f       	add	r25, r25
@@ -566,16 +566,16 @@ Disassembly of section .text:
      45a:	91 e0       	ldi	r25, 0x01	; 1
      45c:	0c c0       	rjmp	.+24     	; 0x476 <__EEPROM_REGION_LENGTH__+0x76>
      45e:	93 e6       	ldi	r25, 0x63	; 99
-     460:	90 93 49 01 	sts	0x0149, r25	; 0x800149 <lcd_error>
+     460:	90 93 51 01 	sts	0x0151, r25	; 0x800151 <lcd_error>
      464:	91 e0       	ldi	r25, 0x01	; 1
      466:	07 c0       	rjmp	.+14     	; 0x476 <__EEPROM_REGION_LENGTH__+0x76>
      468:	23 e6       	ldi	r18, 0x63	; 99
-     46a:	20 93 49 01 	sts	0x0149, r18	; 0x800149 <lcd_error>
+     46a:	20 93 51 01 	sts	0x0151, r18	; 0x800151 <lcd_error>
      46e:	03 c0       	rjmp	.+6      	; 0x476 <__EEPROM_REGION_LENGTH__+0x76>
      470:	93 e0       	ldi	r25, 0x03	; 3
      472:	01 c0       	rjmp	.+2      	; 0x476 <__EEPROM_REGION_LENGTH__+0x76>
      474:	90 e0       	ldi	r25, 0x00	; 0
-     476:	e7 e4       	ldi	r30, 0x47	; 71
+     476:	ef e4       	ldi	r30, 0x4F	; 79
      478:	f1 e0       	ldi	r31, 0x01	; 1
      47a:	29 2f       	mov	r18, r25
      47c:	22 95       	swap	r18
@@ -594,18 +594,18 @@ Disassembly of section .text:
      492:	81 32       	cpi	r24, 0x21	; 33
      494:	20 f0       	brcs	.+8      	; 0x49e <_Z14lcd_print_charhh+0xc>
      496:	8a e0       	ldi	r24, 0x0A	; 10
-     498:	80 93 49 01 	sts	0x0149, r24	; 0x800149 <lcd_error>
+     498:	80 93 51 01 	sts	0x0151, r24	; 0x800151 <lcd_error>
      49c:	08 95       	ret
      49e:	28 2f       	mov	r18, r24
      4a0:	30 e0       	ldi	r19, 0x00	; 0
      4a2:	f9 01       	movw	r30, r18
-     4a4:	e1 5b       	subi	r30, 0xB1	; 177
+     4a4:	e9 5a       	subi	r30, 0xA9	; 169
      4a6:	fe 4f       	sbci	r31, 0xFE	; 254
      4a8:	90 81       	ld	r25, Z
      4aa:	96 17       	cp	r25, r22
      4ac:	e1 f0       	breq	.+56     	; 0x4e6 <_Z14lcd_print_charhh+0x54>
      4ae:	f9 01       	movw	r30, r18
-     4b0:	e1 5b       	subi	r30, 0xB1	; 177
+     4b0:	e9 5a       	subi	r30, 0xA9	; 169
      4b2:	fe 4f       	sbci	r31, 0xFE	; 254
      4b4:	60 83       	st	Z, r22
      4b6:	e8 2f       	mov	r30, r24
@@ -627,7 +627,7 @@ Disassembly of section .text:
      4d6:	8a 95       	dec	r24
      4d8:	e2 f7       	brpl	.-8      	; 0x4d2 <_Z14lcd_print_charhh+0x40>
      4da:	ca 01       	movw	r24, r20
-     4dc:	e5 5b       	subi	r30, 0xB5	; 181
+     4dc:	ed 5a       	subi	r30, 0xAD	; 173
      4de:	fe 4f       	sbci	r31, 0xFE	; 254
      4e0:	90 81       	ld	r25, Z
      4e2:	89 2b       	or	r24, r25
@@ -707,7 +707,7 @@ void lcd_print_u16( U8 pos, U16 num )
 	{
 		//If: left alignment
 		if (IS_BIT_ONE( lcd_cfg_flags, LCD_ADJ_FLAG ))
-     556:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <lcd_cfg_flags>
+     556:	80 91 52 01 	lds	r24, 0x0152	; 0x800152 <lcd_cfg_flags>
      55a:	80 ff       	sbrs	r24, 0
      55c:	0a c0       	rjmp	.+20     	; 0x572 <_Z13lcd_print_u16hj+0x46>
 		{
@@ -1179,19 +1179,19 @@ ISR( TIMER0_COMPA_vect )
 
 	//Update LCD display (10KHz)
 	f.lcd_update = 1;
-     73e:	80 91 36 02 	lds	r24, 0x0236	; 0x800236 <f>
+     73e:	80 91 3e 02 	lds	r24, 0x023E	; 0x80023e <f>
      742:	81 60       	ori	r24, 0x01	; 1
-     744:	80 93 36 02 	sts	0x0236, r24	; 0x800236 <f>
+     744:	80 93 3e 02 	sts	0x023E, r24	; 0x80023e <f>
 	//if: counter has reset (50Hz)
 	if (pre == 0)
-     748:	80 91 6f 01 	lds	r24, 0x016F	; 0x80016f <_ZZ11__vector_16E3pre>
+     748:	80 91 77 01 	lds	r24, 0x0177	; 0x800177 <_ZZ11__vector_16E3pre>
      74c:	81 11       	cpse	r24, r1
      74e:	05 c0       	rjmp	.+10     	; 0x75a <__vector_16+0x2a>
 	{
 		f.servo_scan = 1;
-     750:	90 91 36 02 	lds	r25, 0x0236	; 0x800236 <f>
+     750:	90 91 3e 02 	lds	r25, 0x023E	; 0x80023e <f>
      754:	92 60       	ori	r25, 0x02	; 2
-     756:	90 93 36 02 	sts	0x0236, r25	; 0x800236 <f>
+     756:	90 93 3e 02 	sts	0x023E, r25	; 0x80023e <f>
 		//Start a conversion
 		//SET_BIT( ADCSRA, ADSC );
 	}
@@ -1202,7 +1202,7 @@ ISR( TIMER0_COMPA_vect )
      75e:	8f 5f       	subi	r24, 0xFF	; 255
      760:	01 c0       	rjmp	.+2      	; 0x764 <__vector_16+0x34>
      762:	80 e0       	ldi	r24, 0x00	; 0
-     764:	80 93 6f 01 	sts	0x016F, r24	; 0x80016f <_ZZ11__vector_16E3pre>
+     764:	80 93 77 01 	sts	0x0177, r24	; 0x800177 <_ZZ11__vector_16E3pre>
 	
 	///----------------------------------------------------------------------
 	///	RETURN
@@ -1372,15 +1372,15 @@ ISR( USART0_RX_vect )
 
 	//Push byte into RX buffer for processing
 	AT_BUF_PUSH_SAFER( uart_rx_buf, rxd );
-     838:	80 91 35 02 	lds	r24, 0x0235	; 0x800235 <uart_rx_buf+0x5>
+     838:	80 91 3d 02 	lds	r24, 0x023D	; 0x80023d <uart_rx_buf+0x5>
      83c:	80 fd       	sbrc	r24, 0
      83e:	44 c0       	rjmp	.+136    	; 0x8c8 <__vector_20+0xb0>
-     840:	e5 e3       	ldi	r30, 0x35	; 53
+     840:	ed e3       	ldi	r30, 0x3D	; 61
      842:	f2 e0       	ldi	r31, 0x02	; 2
      844:	80 81       	ld	r24, Z
      846:	81 60       	ori	r24, 0x01	; 1
      848:	80 83       	st	Z, r24
-     84a:	e0 e3       	ldi	r30, 0x30	; 48
+     84a:	e8 e3       	ldi	r30, 0x38	; 56
      84c:	f2 e0       	ldi	r31, 0x02	; 2
      84e:	92 81       	ldd	r25, Z+2	; 0x02
      850:	81 81       	ldd	r24, Z+1	; 0x01
@@ -1392,7 +1392,7 @@ ISR( USART0_RX_vect )
      85c:	82 1b       	sub	r24, r18
      85e:	91 09       	sbc	r25, r1
      860:	0a c0       	rjmp	.+20     	; 0x876 <__vector_20+0x5e>
-     862:	e0 e3       	ldi	r30, 0x30	; 48
+     862:	e8 e3       	ldi	r30, 0x38	; 56
      864:	f2 e0       	ldi	r31, 0x02	; 2
      866:	20 81       	ld	r18, Z
      868:	82 81       	ldd	r24, Z+2	; 0x02
@@ -1402,14 +1402,14 @@ ISR( USART0_RX_vect )
      870:	21 81       	ldd	r18, Z+1	; 0x01
      872:	82 1b       	sub	r24, r18
      874:	91 09       	sbc	r25, r1
-     876:	20 91 30 02 	lds	r18, 0x0230	; 0x800230 <uart_rx_buf>
+     876:	20 91 38 02 	lds	r18, 0x0238	; 0x800238 <uart_rx_buf>
      87a:	30 e0       	ldi	r19, 0x00	; 0
      87c:	21 50       	subi	r18, 0x01	; 1
      87e:	31 09       	sbc	r19, r1
      880:	82 17       	cp	r24, r18
      882:	93 07       	cpc	r25, r19
      884:	e4 f4       	brge	.+56     	; 0x8be <__vector_20+0xa6>
-     886:	e0 e3       	ldi	r30, 0x30	; 48
+     886:	e8 e3       	ldi	r30, 0x38	; 56
      888:	f2 e0       	ldi	r31, 0x02	; 2
      88a:	a3 81       	ldd	r26, Z+3	; 0x03
      88c:	b4 81       	ldd	r27, Z+4	; 0x04
@@ -1429,14 +1429,14 @@ ISR( USART0_RX_vect )
      8a8:	8f 5f       	subi	r24, 0xFF	; 255
      8aa:	82 83       	std	Z+2, r24	; 0x02
      8ac:	02 c0       	rjmp	.+4      	; 0x8b2 <__vector_20+0x9a>
-     8ae:	10 92 32 02 	sts	0x0232, r1	; 0x800232 <uart_rx_buf+0x2>
-     8b2:	e5 e3       	ldi	r30, 0x35	; 53
+     8ae:	10 92 3a 02 	sts	0x023A, r1	; 0x80023a <uart_rx_buf+0x2>
+     8b2:	ed e3       	ldi	r30, 0x3D	; 61
      8b4:	f2 e0       	ldi	r31, 0x02	; 2
      8b6:	80 81       	ld	r24, Z
      8b8:	8e 7f       	andi	r24, 0xFE	; 254
      8ba:	80 83       	st	Z, r24
      8bc:	05 c0       	rjmp	.+10     	; 0x8c8 <__vector_20+0xb0>
-     8be:	e5 e3       	ldi	r30, 0x35	; 53
+     8be:	ed e3       	ldi	r30, 0x3D	; 61
      8c0:	f2 e0       	ldi	r31, 0x02	; 2
      8c2:	80 81       	ld	r24, Z
      8c4:	8e 7f       	andi	r24, 0xFE	; 254
@@ -1480,7 +1480,7 @@ ISR( USART0_RX_vect )
      8f4:	6f 3f       	cpi	r22, 0xFF	; 255
      8f6:	7f 4f       	sbci	r23, 0xFF	; 255
      8f8:	21 f4       	brne	.+8      	; 0x902 <__stack+0x3>
-     8fa:	86 e9       	ldi	r24, 0x96	; 150
+     8fa:	8e e9       	ldi	r24, 0x9E	; 158
      8fc:	91 e0       	ldi	r25, 0x01	; 1
      8fe:	0e 94 f6 13 	call	0x27ec	; 0x27ec <_ZN9Orangebot9UniparserC1Ev>
      902:	cd 2b       	or	r28, r29
@@ -1488,7 +1488,7 @@ ISR( USART0_RX_vect )
      906:	0f 3f       	cpi	r16, 0xFF	; 255
      908:	1f 4f       	sbci	r17, 0xFF	; 255
      90a:	21 f4       	brne	.+8      	; 0x914 <__stack+0x15>
-     90c:	86 e9       	ldi	r24, 0x96	; 150
+     90c:	8e e9       	ldi	r24, 0x9E	; 158
      90e:	91 e0       	ldi	r25, 0x01	; 1
      910:	0e 94 4c 07 	call	0xe98	; 0xe98 <_ZN9Orangebot9UniparserD1Ev>
      914:	df 91       	pop	r29
@@ -1517,11 +1517,11 @@ U16 servo_calc_delay( U8 index )
      926:	28 2f       	mov	r18, r24
      928:	30 e0       	ldi	r19, 0x00	; 0
      92a:	f9 01       	movw	r30, r18
-     92c:	ee 58       	subi	r30, 0x8E	; 142
+     92c:	e6 58       	subi	r30, 0x86	; 134
      92e:	fe 4f       	sbci	r31, 0xFE	; 254
      930:	90 81       	ld	r25, Z
      932:	f9 01       	movw	r30, r18
-     934:	e0 58       	subi	r30, 0x80	; 128
+     934:	e8 57       	subi	r30, 0x78	; 120
      936:	fe 4f       	sbci	r31, 0xFE	; 254
      938:	40 81       	ld	r20, Z
      93a:	04 2e       	mov	r0, r20
@@ -1566,7 +1566,7 @@ U16 servo_calc_delay( U8 index )
 	//calculate maximum allowed motion. I need to convert from [unit/second] -> [unit/20mS]
 	slew_rate = K1*servo_target_speed[ index ] /50;
      97a:	d9 01       	movw	r26, r18
-     97c:	a7 58       	subi	r26, 0x87	; 135
+     97c:	af 57       	subi	r26, 0x7F	; 127
      97e:	be 4f       	sbci	r27, 0xFE	; 254
      980:	8c 91       	ld	r24, X
      982:	4e e8       	ldi	r20, 0x8E	; 142
@@ -1593,7 +1593,7 @@ U16 servo_calc_delay( U8 index )
      99e:	d9 01       	movw	r26, r18
      9a0:	aa 0f       	add	r26, r26
      9a2:	bb 1f       	adc	r27, r27
-     9a4:	a9 57       	subi	r26, 0x79	; 121
+     9a4:	a1 57       	subi	r26, 0x71	; 113
      9a6:	be 4f       	sbci	r27, 0xFE	; 254
      9a8:	8d 91       	ld	r24, X+
      9aa:	9c 91       	ld	r25, X
@@ -1607,9 +1607,9 @@ U16 servo_calc_delay( U8 index )
 		//I'm NOT locked: the servo is moving at max speed
 		CLEAR_BIT( servo_lock, index );
      9b6:	e0 95       	com	r30
-     9b8:	40 91 95 01 	lds	r20, 0x0195	; 0x800195 <servo_lock>
+     9b8:	40 91 9d 01 	lds	r20, 0x019D	; 0x80019d <servo_lock>
      9bc:	e4 23       	and	r30, r20
-     9be:	e0 93 95 01 	sts	0x0195, r30	; 0x800195 <servo_lock>
+     9be:	e0 93 9d 01 	sts	0x019D, r30	; 0x80019d <servo_lock>
 		ret = servo_delay[ index ] +slew_rate;
      9c2:	8c 01       	movw	r16, r24
      9c4:	06 0f       	add	r16, r22
@@ -1628,9 +1628,9 @@ U16 servo_calc_delay( U8 index )
 		//I'm NOT locked: the servo is moving at max speed
 		CLEAR_BIT( servo_lock, index );
      9d8:	e0 95       	com	r30
-     9da:	40 91 95 01 	lds	r20, 0x0195	; 0x800195 <servo_lock>
+     9da:	40 91 9d 01 	lds	r20, 0x019D	; 0x80019d <servo_lock>
      9de:	e4 23       	and	r30, r20
-     9e0:	e0 93 95 01 	sts	0x0195, r30	; 0x800195 <servo_lock>
+     9e0:	e0 93 9d 01 	sts	0x019D, r30	; 0x80019d <servo_lock>
 		ret = servo_delay[ index ] -slew_rate;
      9e4:	8c 01       	movw	r16, r24
      9e6:	06 1b       	sub	r16, r22
@@ -1641,9 +1641,9 @@ U16 servo_calc_delay( U8 index )
 	{
 		//I'm locked: The motor is not moving at max speed
 		SET_BIT( servo_lock, index );
-     9ec:	80 91 95 01 	lds	r24, 0x0195	; 0x800195 <servo_lock>
+     9ec:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <servo_lock>
      9f0:	e8 2b       	or	r30, r24
-     9f2:	e0 93 95 01 	sts	0x0195, r30	; 0x800195 <servo_lock>
+     9f2:	e0 93 9d 01 	sts	0x019D, r30	; 0x80019d <servo_lock>
 		ret = delay;
 	}
 	//Write back result and return the delay
@@ -1651,7 +1651,7 @@ U16 servo_calc_delay( U8 index )
      9f6:	22 0f       	add	r18, r18
      9f8:	33 1f       	adc	r19, r19
      9fa:	f9 01       	movw	r30, r18
-     9fc:	e9 57       	subi	r30, 0x79	; 121
+     9fc:	e1 57       	subi	r30, 0x71	; 113
      9fe:	fe 4f       	sbci	r31, 0xFE	; 254
      a00:	11 83       	std	Z+1, r17	; 0x01
      a02:	00 83       	st	Z, r16
@@ -1675,9 +1675,9 @@ U16 servo_calc_delay( U8 index )
 	//I init the rx and tx buffers
 	//attach vector to buffer
 	AT_BUF_ATTACH( uart_rx_buf, v0, UART_RX_BUF_SIZE);
-     a10:	e0 e3       	ldi	r30, 0x30	; 48
+     a10:	e8 e3       	ldi	r30, 0x38	; 56
      a12:	f2 e0       	ldi	r31, 0x02	; 2
-     a14:	8b e1       	ldi	r24, 0x1B	; 27
+     a14:	83 e2       	ldi	r24, 0x23	; 35
      a16:	92 e0       	ldi	r25, 0x02	; 2
      a18:	94 83       	std	Z+4, r25	; 0x04
      a1a:	83 83       	std	Z+3, r24	; 0x03
@@ -1685,9 +1685,9 @@ U16 servo_calc_delay( U8 index )
      a1e:	80 83       	st	Z, r24
 	//attach vector to buffer
 	AT_BUF_ATTACH( uart_tx_buf, v1, UART_TX_BUF_SIZE);
-     a20:	eb e2       	ldi	r30, 0x2B	; 43
+     a20:	e3 e3       	ldi	r30, 0x33	; 51
      a22:	f2 e0       	ldi	r31, 0x02	; 2
-     a24:	2b e0       	ldi	r18, 0x0B	; 11
+     a24:	23 e1       	ldi	r18, 0x13	; 19
      a26:	32 e0       	ldi	r19, 0x02	; 2
      a28:	34 83       	std	Z+4, r19	; 0x04
      a2a:	23 83       	std	Z+3, r18	; 0x03
@@ -1704,14 +1704,14 @@ U16 servo_calc_delay( U8 index )
      a34:	82 2f       	mov	r24, r18
      a36:	90 e0       	ldi	r25, 0x00	; 0
      a38:	fc 01       	movw	r30, r24
-     a3a:	ee 58       	subi	r30, 0x8E	; 142
+     a3a:	e6 58       	subi	r30, 0x86	; 134
      a3c:	fe 4f       	sbci	r31, 0xFE	; 254
      a3e:	10 82       	st	Z, r1
 		servo_delay[u8t] 		= K0;	//Servo true position
      a40:	fc 01       	movw	r30, r24
      a42:	ee 0f       	add	r30, r30
      a44:	ff 1f       	adc	r31, r31
-     a46:	e9 57       	subi	r30, 0x79	; 121
+     a46:	e1 57       	subi	r30, 0x71	; 113
      a48:	fe 4f       	sbci	r31, 0xFE	; 254
      a4a:	40 e3       	ldi	r20, 0x30	; 48
      a4c:	55 e7       	ldi	r21, 0x75	; 117
@@ -1719,12 +1719,12 @@ U16 servo_calc_delay( U8 index )
      a50:	40 83       	st	Z, r20
 		servo_target_pos[u8t] 	= +0;	//Servo target position (user)
      a52:	fc 01       	movw	r30, r24
-     a54:	e0 58       	subi	r30, 0x80	; 128
+     a54:	e8 57       	subi	r30, 0x78	; 120
      a56:	fe 4f       	sbci	r31, 0xFE	; 254
      a58:	10 82       	st	Z, r1
 		servo_target_speed[u8t]	= MOVE_SPEED;	//Servo target speed (default)
      a5a:	fc 01       	movw	r30, r24
-     a5c:	e7 58       	subi	r30, 0x87	; 135
+     a5c:	ef 57       	subi	r30, 0x7F	; 127
      a5e:	fe 4f       	sbci	r31, 0xFE	; 254
      a60:	30 e5       	ldi	r19, 0x50	; 80
      a62:	30 83       	st	Z, r19
@@ -1745,7 +1745,7 @@ U16 servo_calc_delay( U8 index )
      a68:	0e 94 6e 03 	call	0x6dc	; 0x6dc <_Z11global_initv>
 	//Register the commands for the parser
 	init_parser_commands( g_cl_parser );
-     a6c:	86 e9       	ldi	r24, 0x96	; 150
+     a6c:	8e e9       	ldi	r24, 0x9E	; 158
      a6e:	91 e0       	ldi	r25, 0x01	; 1
      a70:	0e 94 15 07 	call	0xe2a	; 0xe2a <_Z20init_parser_commandsRN9Orangebot9UniparserE>
 	
@@ -1773,14 +1773,14 @@ U16 servo_calc_delay( U8 index )
 
 		//If: update the LCD display (10KHz)
 		if (f.lcd_update == 1)
-     a8a:	80 91 36 02 	lds	r24, 0x0236	; 0x800236 <f>
+     a8a:	80 91 3e 02 	lds	r24, 0x023E	; 0x80023e <f>
      a8e:	80 ff       	sbrs	r24, 0
      a90:	07 c0       	rjmp	.+14     	; 0xaa0 <main+0x90>
 		{
 			f.lcd_update = 0;
-     a92:	80 91 36 02 	lds	r24, 0x0236	; 0x800236 <f>
+     a92:	80 91 3e 02 	lds	r24, 0x023E	; 0x80023e <f>
      a96:	8e 7f       	andi	r24, 0xFE	; 254
-     a98:	80 93 36 02 	sts	0x0236, r24	; 0x800236 <f>
+     a98:	80 93 3e 02 	sts	0x023E, r24	; 0x80023e <f>
 			//Update display
 			lcd_update();
      a9c:	0e 94 d2 00 	call	0x1a4	; 0x1a4 <_Z10lcd_updatev>
@@ -1790,15 +1790,15 @@ U16 servo_calc_delay( U8 index )
 
 		//If: Start Servo Scan (50Hz)
 		if (f.servo_scan == 1)
-     aa0:	80 91 36 02 	lds	r24, 0x0236	; 0x800236 <f>
+     aa0:	80 91 3e 02 	lds	r24, 0x023E	; 0x80023e <f>
      aa4:	81 ff       	sbrs	r24, 1
      aa6:	2f c0       	rjmp	.+94     	; 0xb06 <main+0xf6>
 		{
 			//clear flag
 			f.servo_scan = 0;
-     aa8:	80 91 36 02 	lds	r24, 0x0236	; 0x800236 <f>
+     aa8:	80 91 3e 02 	lds	r24, 0x023E	; 0x80023e <f>
      aac:	8d 7f       	andi	r24, 0xFD	; 253
-     aae:	80 93 36 02 	sts	0x0236, r24	; 0x800236 <f>
+     aae:	80 93 3e 02 	sts	0x023E, r24	; 0x80023e <f>
 				//Startup the servo scan
 			//clear status var
 			servo_cnt 	= 0;
@@ -1825,12 +1825,12 @@ U16 servo_calc_delay( U8 index )
      ad2:	82 b9       	out	0x02, r24	; 2
 				//Advance global time by one tick
 			servo_global_time++;
-     ad4:	60 91 70 01 	lds	r22, 0x0170	; 0x800170 <servo_global_time>
-     ad8:	70 91 71 01 	lds	r23, 0x0171	; 0x800171 <servo_global_time+0x1>
+     ad4:	60 91 78 01 	lds	r22, 0x0178	; 0x800178 <servo_global_time>
+     ad8:	70 91 79 01 	lds	r23, 0x0179	; 0x800179 <servo_global_time+0x1>
      adc:	6f 5f       	subi	r22, 0xFF	; 255
      ade:	7f 4f       	sbci	r23, 0xFF	; 255
-     ae0:	70 93 71 01 	sts	0x0171, r23	; 0x800171 <servo_global_time+0x1>
-     ae4:	60 93 70 01 	sts	0x0170, r22	; 0x800170 <servo_global_time>
+     ae0:	70 93 79 01 	sts	0x0179, r23	; 0x800179 <servo_global_time+0x1>
+     ae4:	60 93 78 01 	sts	0x0178, r22	; 0x800178 <servo_global_time>
 			lcd_print_u16( LCD_POS(1,6), servo_global_time );
      ae8:	86 e1       	ldi	r24, 0x16	; 22
      aea:	0e 94 96 02 	call	0x52c	; 0x52c <_Z13lcd_print_u16hj>
@@ -1846,34 +1846,34 @@ U16 servo_calc_delay( U8 index )
      afa:	05 c0       	rjmp	.+10     	; 0xb06 <main+0xf6>
 			{
 				f.servo_traj = 1;
-     afc:	80 91 36 02 	lds	r24, 0x0236	; 0x800236 <f>
+     afc:	80 91 3e 02 	lds	r24, 0x023E	; 0x80023e <f>
      b00:	84 60       	ori	r24, 0x04	; 4
-     b02:	80 93 36 02 	sts	0x0236, r24	; 0x800236 <f>
+     b02:	80 93 3e 02 	sts	0x023E, r24	; 0x80023e <f>
 
 		//-----------------------------------------------------------------------
 		//	TRAJECTORY GENERATION
 		//-----------------------------------------------------------------------
 
 		if (f.servo_traj == 1)
-     b06:	80 91 36 02 	lds	r24, 0x0236	; 0x800236 <f>
+     b06:	80 91 3e 02 	lds	r24, 0x023E	; 0x80023e <f>
      b0a:	82 ff       	sbrs	r24, 2
      b0c:	23 c0       	rjmp	.+70     	; 0xb54 <main+0x144>
 		{
 			f.servo_traj = 0;
-     b0e:	80 91 36 02 	lds	r24, 0x0236	; 0x800236 <f>
+     b0e:	80 91 3e 02 	lds	r24, 0x023E	; 0x80023e <f>
      b12:	8b 7f       	andi	r24, 0xFB	; 251
-     b14:	80 93 36 02 	sts	0x0236, r24	; 0x800236 <f>
+     b14:	80 93 3e 02 	sts	0x023E, r24	; 0x80023e <f>
 			
 			//Debug send via UART
 			AT_BUF_PUSH( uart_tx_buf, 'A'+g_u8_command_counter );
-     b18:	eb e2       	ldi	r30, 0x2B	; 43
+     b18:	e3 e3       	ldi	r30, 0x33	; 51
      b1a:	f2 e0       	ldi	r31, 0x02	; 2
      b1c:	a3 81       	ldd	r26, Z+3	; 0x03
      b1e:	b4 81       	ldd	r27, Z+4	; 0x04
      b20:	82 81       	ldd	r24, Z+2	; 0x02
      b22:	a8 0f       	add	r26, r24
      b24:	b1 1d       	adc	r27, r1
-     b26:	80 91 37 02 	lds	r24, 0x0237	; 0x800237 <g_u8_command_counter>
+     b26:	80 91 3f 02 	lds	r24, 0x023F	; 0x80023f <g_u8_command_counter>
      b2a:	8f 5b       	subi	r24, 0xBF	; 191
      b2c:	8c 93       	st	X, r24
      b2e:	22 81       	ldd	r18, Z+2	; 0x02
@@ -1886,9 +1886,9 @@ U16 servo_calc_delay( U8 index )
      b3c:	59 07       	cpc	r21, r25
      b3e:	24 f4       	brge	.+8      	; 0xb48 <main+0x138>
      b40:	2f 5f       	subi	r18, 0xFF	; 255
-     b42:	20 93 2d 02 	sts	0x022D, r18	; 0x80022d <uart_tx_buf+0x2>
+     b42:	20 93 35 02 	sts	0x0235, r18	; 0x800235 <uart_tx_buf+0x2>
      b46:	02 c0       	rjmp	.+4      	; 0xb4c <main+0x13c>
-     b48:	10 92 2d 02 	sts	0x022D, r1	; 0x80022d <uart_tx_buf+0x2>
+     b48:	10 92 35 02 	sts	0x0235, r1	; 0x800235 <uart_tx_buf+0x2>
 			//TOGGLE_BIT( PORTD, PD1 );
 			
 			//Toggle LED
@@ -1903,7 +1903,7 @@ U16 servo_calc_delay( U8 index )
 
 		//if: uart rx buffer is not empty
 		if ( AT_BUF_NUMELEM( uart_rx_buf ) > 0)
-     b54:	e0 e3       	ldi	r30, 0x30	; 48
+     b54:	e8 e3       	ldi	r30, 0x38	; 56
      b56:	f2 e0       	ldi	r31, 0x02	; 2
      b58:	92 81       	ldd	r25, Z+2	; 0x02
      b5a:	81 81       	ldd	r24, Z+1	; 0x01
@@ -1920,7 +1920,7 @@ U16 servo_calc_delay( U8 index )
      b70:	8c f0       	brlt	.+34     	; 0xb94 <main+0x184>
      b72:	20 e0       	ldi	r18, 0x00	; 0
      b74:	0f c0       	rjmp	.+30     	; 0xb94 <main+0x184>
-     b76:	e0 e3       	ldi	r30, 0x30	; 48
+     b76:	e8 e3       	ldi	r30, 0x38	; 56
      b78:	f2 e0       	ldi	r31, 0x02	; 2
      b7a:	20 81       	ld	r18, Z
      b7c:	82 81       	ldd	r24, Z+2	; 0x02
@@ -1942,7 +1942,7 @@ U16 servo_calc_delay( U8 index )
 			///Get data
 			//Get the byte from the RX buffer (ISR put it there)
 			u8t = AT_BUF_PEEK( uart_rx_buf );
-     b9a:	a0 e3       	ldi	r26, 0x30	; 48
+     b9a:	a8 e3       	ldi	r26, 0x38	; 56
      b9c:	b2 e0       	ldi	r27, 0x02	; 2
      b9e:	13 96       	adiw	r26, 0x03	; 3
      ba0:	ed 91       	ld	r30, X+
@@ -1955,10 +1955,10 @@ U16 servo_calc_delay( U8 index )
      bae:	f1 1d       	adc	r31, r1
      bb0:	60 81       	ld	r22, Z
 			AT_BUF_KICK_SAFER( uart_rx_buf );
-     bb2:	80 91 35 02 	lds	r24, 0x0235	; 0x800235 <uart_rx_buf+0x5>
+     bb2:	80 91 3d 02 	lds	r24, 0x023D	; 0x80023d <uart_rx_buf+0x5>
      bb6:	81 fd       	sbrc	r24, 1
      bb8:	41 c0       	rjmp	.+130    	; 0xc3c <main+0x22c>
-     bba:	e5 e3       	ldi	r30, 0x35	; 53
+     bba:	ed e3       	ldi	r30, 0x3D	; 61
      bbc:	f2 e0       	ldi	r31, 0x02	; 2
      bbe:	80 81       	ld	r24, Z
      bc0:	82 60       	ori	r24, 0x02	; 2
@@ -1979,7 +1979,7 @@ U16 servo_calc_delay( U8 index )
      bde:	8c f0       	brlt	.+34     	; 0xc02 <main+0x1f2>
      be0:	20 e0       	ldi	r18, 0x00	; 0
      be2:	0f c0       	rjmp	.+30     	; 0xc02 <main+0x1f2>
-     be4:	e0 e3       	ldi	r30, 0x30	; 48
+     be4:	e8 e3       	ldi	r30, 0x38	; 56
      be6:	f2 e0       	ldi	r31, 0x02	; 2
      be8:	20 81       	ld	r18, Z
      bea:	82 81       	ldd	r24, Z+2	; 0x02
@@ -1996,7 +1996,7 @@ U16 servo_calc_delay( U8 index )
      c00:	20 e0       	ldi	r18, 0x00	; 0
      c02:	22 23       	and	r18, r18
      c04:	b1 f0       	breq	.+44     	; 0xc32 <main+0x222>
-     c06:	e0 e3       	ldi	r30, 0x30	; 48
+     c06:	e8 e3       	ldi	r30, 0x38	; 56
      c08:	f2 e0       	ldi	r31, 0x02	; 2
      c0a:	21 81       	ldd	r18, Z+1	; 0x01
      c0c:	30 e0       	ldi	r19, 0x00	; 0
@@ -2010,14 +2010,14 @@ U16 servo_calc_delay( U8 index )
      c1c:	8f 5f       	subi	r24, 0xFF	; 255
      c1e:	81 83       	std	Z+1, r24	; 0x01
      c20:	02 c0       	rjmp	.+4      	; 0xc26 <main+0x216>
-     c22:	10 92 31 02 	sts	0x0231, r1	; 0x800231 <uart_rx_buf+0x1>
-     c26:	e5 e3       	ldi	r30, 0x35	; 53
+     c22:	10 92 39 02 	sts	0x0239, r1	; 0x800239 <uart_rx_buf+0x1>
+     c26:	ed e3       	ldi	r30, 0x3D	; 61
      c28:	f2 e0       	ldi	r31, 0x02	; 2
      c2a:	80 81       	ld	r24, Z
      c2c:	8d 7f       	andi	r24, 0xFD	; 253
      c2e:	80 83       	st	Z, r24
      c30:	05 c0       	rjmp	.+10     	; 0xc3c <main+0x22c>
-     c32:	e5 e3       	ldi	r30, 0x35	; 53
+     c32:	ed e3       	ldi	r30, 0x3D	; 61
      c34:	f2 e0       	ldi	r31, 0x02	; 2
      c36:	80 81       	ld	r24, Z
      c38:	8d 7f       	andi	r24, 0xFD	; 253
@@ -2028,7 +2028,7 @@ U16 servo_calc_delay( U8 index )
 			//Feed the byte to the parser for decoding
 			//It will take care to call the callback functions
 			g_cl_parser.parse( u8t );
-     c3c:	86 e9       	ldi	r24, 0x96	; 150
+     c3c:	8e e9       	ldi	r24, 0x9E	; 158
      c3e:	91 e0       	ldi	r25, 0x01	; 1
      c40:	0e 94 e6 11 	call	0x23cc	; 0x23cc <_ZN9Orangebot9Uniparser5parseEh>
 		///----------------------------------------------------------------------
@@ -2040,7 +2040,7 @@ U16 servo_calc_delay( U8 index )
      c44:	80 91 c0 00 	lds	r24, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
      c48:	85 ff       	sbrs	r24, 5
      c4a:	1a c0       	rjmp	.+52     	; 0xc80 <main+0x270>
-     c4c:	eb e2       	ldi	r30, 0x2B	; 43
+     c4c:	e3 e3       	ldi	r30, 0x33	; 51
      c4e:	f2 e0       	ldi	r31, 0x02	; 2
      c50:	82 81       	ldd	r24, Z+2	; 0x02
      c52:	21 81       	ldd	r18, Z+1	; 0x01
@@ -2054,7 +2054,7 @@ U16 servo_calc_delay( U8 index )
      c62:	84 f0       	brlt	.+32     	; 0xc84 <main+0x274>
      c64:	80 e0       	ldi	r24, 0x00	; 0
      c66:	11 c0       	rjmp	.+34     	; 0xc8a <main+0x27a>
-     c68:	30 91 2b 02 	lds	r19, 0x022B	; 0x80022b <uart_tx_buf>
+     c68:	30 91 33 02 	lds	r19, 0x0233	; 0x800233 <uart_tx_buf>
      c6c:	90 e0       	ldi	r25, 0x00	; 0
      c6e:	83 0f       	add	r24, r19
      c70:	91 1d       	adc	r25, r1
@@ -2076,7 +2076,7 @@ U16 servo_calc_delay( U8 index )
 		{
 			//Get the byte to be filtered out
 			u8t = AT_BUF_PEEK( uart_tx_buf );
-     c90:	eb e2       	ldi	r30, 0x2B	; 43
+     c90:	e3 e3       	ldi	r30, 0x33	; 51
      c92:	f2 e0       	ldi	r31, 0x02	; 2
      c94:	a3 81       	ldd	r26, Z+3	; 0x03
      c96:	b4 81       	ldd	r27, Z+4	; 0x04
@@ -2094,9 +2094,9 @@ U16 servo_calc_delay( U8 index )
      cac:	59 07       	cpc	r21, r25
      cae:	24 f4       	brge	.+8      	; 0xcb8 <main+0x2a8>
      cb0:	2f 5f       	subi	r18, 0xFF	; 255
-     cb2:	20 93 2c 02 	sts	0x022C, r18	; 0x80022c <uart_tx_buf+0x1>
+     cb2:	20 93 34 02 	sts	0x0234, r18	; 0x800234 <uart_tx_buf+0x1>
      cb6:	02 c0       	rjmp	.+4      	; 0xcbc <main+0x2ac>
-     cb8:	10 92 2c 02 	sts	0x022C, r1	; 0x80022c <uart_tx_buf+0x1>
+     cb8:	10 92 34 02 	sts	0x0234, r1	; 0x800234 <uart_tx_buf+0x1>
 			//Write on UART tx buffer.
 			UDR0 = u8t;
      cbc:	30 93 c6 00 	sts	0x00C6, r19	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
@@ -2114,7 +2114,7 @@ bool uart_send_string( const char * i_pu8_string )
 	uint8_t u8_index = 0;
      cc4:	80 e0       	ldi	r24, 0x00	; 0
 	while ((AT_BUF_NUMELEM(uart_tx_buf) < UART_TX_BUF_SIZE) && (i_pu8_string[u8_index] != '\0'))
-     cc6:	eb e2       	ldi	r30, 0x2B	; 43
+     cc6:	e3 e3       	ldi	r30, 0x33	; 51
      cc8:	f2 e0       	ldi	r31, 0x02	; 2
      cca:	92 81       	ldd	r25, Z+2	; 0x02
      ccc:	21 81       	ldd	r18, Z+1	; 0x01
@@ -2128,7 +2128,7 @@ bool uart_send_string( const char * i_pu8_string )
      cdc:	51 05       	cpc	r21, r1
      cde:	64 f0       	brlt	.+24     	; 0xcf8 <_Z16uart_send_stringPKc+0x36>
      ce0:	2a c0       	rjmp	.+84     	; 0xd36 <_Z16uart_send_stringPKc+0x74>
-     ce2:	30 91 2b 02 	lds	r19, 0x022B	; 0x80022b <uart_tx_buf>
+     ce2:	30 91 33 02 	lds	r19, 0x0233	; 0x800233 <uart_tx_buf>
      ce6:	49 2f       	mov	r20, r25
      ce8:	50 e0       	ldi	r21, 0x00	; 0
      cea:	43 0f       	add	r20, r19
@@ -2146,7 +2146,7 @@ bool uart_send_string( const char * i_pu8_string )
      d02:	c9 f0       	breq	.+50     	; 0xd36 <_Z16uart_send_stringPKc+0x74>
 	{
 		AT_BUF_PUSH( uart_tx_buf, i_pu8_string[u8_index++] );
-     d04:	eb e2       	ldi	r30, 0x2B	; 43
+     d04:	e3 e3       	ldi	r30, 0x33	; 51
      d06:	f2 e0       	ldi	r31, 0x02	; 2
      d08:	a3 81       	ldd	r26, Z+3	; 0x03
      d0a:	b4 81       	ldd	r27, Z+4	; 0x04
@@ -2165,9 +2165,9 @@ bool uart_send_string( const char * i_pu8_string )
      d24:	53 07       	cpc	r21, r19
      d26:	24 f4       	brge	.+8      	; 0xd30 <_Z16uart_send_stringPKc+0x6e>
      d28:	9f 5f       	subi	r25, 0xFF	; 255
-     d2a:	90 93 2d 02 	sts	0x022D, r25	; 0x80022d <uart_tx_buf+0x2>
+     d2a:	90 93 35 02 	sts	0x0235, r25	; 0x800235 <uart_tx_buf+0x2>
      d2e:	cb cf       	rjmp	.-106    	; 0xcc6 <_Z16uart_send_stringPKc+0x4>
-     d30:	10 92 2d 02 	sts	0x022D, r1	; 0x80022d <uart_tx_buf+0x2>
+     d30:	10 92 35 02 	sts	0x0235, r1	; 0x800235 <uart_tx_buf+0x2>
      d34:	c8 cf       	rjmp	.-112    	; 0xcc6 <_Z16uart_send_stringPKc+0x4>
 	}
 	
@@ -2185,7 +2185,7 @@ bool uart_send_string( const char * i_pu8_string )
      d4a:	84 f4       	brge	.+32     	; 0xd6c <_Z16uart_send_stringPKc+0xaa>
      d4c:	80 e0       	ldi	r24, 0x00	; 0
      d4e:	0e c0       	rjmp	.+28     	; 0xd6c <_Z16uart_send_stringPKc+0xaa>
-     d50:	80 91 2b 02 	lds	r24, 0x022B	; 0x80022b <uart_tx_buf>
+     d50:	80 91 33 02 	lds	r24, 0x0233	; 0x800233 <uart_tx_buf>
      d54:	49 2f       	mov	r20, r25
      d56:	50 e0       	ldi	r21, 0x00	; 0
      d58:	48 0f       	add	r20, r24
@@ -2205,7 +2205,7 @@ bool uart_send_string( const char * i_pu8_string )
 	}
 	
 	AT_BUF_PUSH( uart_tx_buf, '\0' );
-     d70:	eb e2       	ldi	r30, 0x2B	; 43
+     d70:	e3 e3       	ldi	r30, 0x33	; 51
      d72:	f2 e0       	ldi	r31, 0x02	; 2
      d74:	a3 81       	ldd	r26, Z+3	; 0x03
      d76:	b4 81       	ldd	r27, Z+4	; 0x04
@@ -2223,9 +2223,9 @@ bool uart_send_string( const char * i_pu8_string )
      d8e:	53 07       	cpc	r21, r19
      d90:	24 f4       	brge	.+8      	; 0xd9a <_Z16uart_send_stringPKc+0xd8>
      d92:	9f 5f       	subi	r25, 0xFF	; 255
-     d94:	90 93 2d 02 	sts	0x022D, r25	; 0x80022d <uart_tx_buf+0x2>
+     d94:	90 93 35 02 	sts	0x0235, r25	; 0x800235 <uart_tx_buf+0x2>
      d98:	08 95       	ret
-     d9a:	10 92 2d 02 	sts	0x022D, r1	; 0x80022d <uart_tx_buf+0x2>
+     d9a:	10 92 35 02 	sts	0x0235, r1	; 0x800235 <uart_tx_buf+0x2>
 	
 	return false; //OK
      d9e:	08 95       	ret
@@ -2253,9 +2253,9 @@ void handle_ping(void)
 	DENTER();
 	
 	g_u8_command_counter++;
-     dbc:	80 91 37 02 	lds	r24, 0x0237	; 0x800237 <g_u8_command_counter>
+     dbc:	80 91 3f 02 	lds	r24, 0x023F	; 0x80023f <g_u8_command_counter>
      dc0:	8f 5f       	subi	r24, 0xFF	; 255
-     dc2:	80 93 37 02 	sts	0x0237, r24	; 0x800237 <g_u8_command_counter>
+     dc2:	80 93 3f 02 	sts	0x023F, r24	; 0x80023f <g_u8_command_counter>
      dc6:	08 95       	ret
 
 00000dc8 <_Z19handle_set_velocityaa>:
@@ -2265,16 +2265,16 @@ void handle_set_velocity(int8_t i_s8_right_speed, int8_t i_s8_left_speed)
 	DENTER_ARG("in: Right=%d, Left=%d\n", i_s8_right_speed, i_s8_left_speed);
 	
 	g_u8_command_counter++;
-     dc8:	90 91 37 02 	lds	r25, 0x0237	; 0x800237 <g_u8_command_counter>
+     dc8:	90 91 3f 02 	lds	r25, 0x023F	; 0x80023f <g_u8_command_counter>
      dcc:	9f 5f       	subi	r25, 0xFF	; 255
-     dce:	90 93 37 02 	sts	0x0237, r25	; 0x800237 <g_u8_command_counter>
+     dce:	90 93 3f 02 	sts	0x023F, r25	; 0x80023f <g_u8_command_counter>
 	DPRINT("Left motor speed: %d\n", i_s8_left_speed);
 	
 	//Ask the servo driver to set the speed
 	//Since it's a continuous rotation servo, position is speed, and speed is acceleration.
 	//Don't worry about it
 	servo_target_pos[SERVO_WHEEL_RIGHT] = i_s8_right_speed;
-     dd2:	e0 e8       	ldi	r30, 0x80	; 128
+     dd2:	e8 e8       	ldi	r30, 0x88	; 136
      dd4:	f1 e0       	ldi	r31, 0x01	; 1
      dd6:	80 83       	st	Z, r24
 	servo_target_pos[SERVO_WHEEL_LEFT] = i_s8_left_speed;
@@ -2297,9 +2297,9 @@ void handle_sign(void)
 	DENTER();
 	
 	g_u8_command_counter++;
-     dde:	80 91 37 02 	lds	r24, 0x0237	; 0x800237 <g_u8_command_counter>
+     dde:	80 91 3f 02 	lds	r24, 0x023F	; 0x80023f <g_u8_command_counter>
      de2:	8f 5f       	subi	r24, 0xFF	; 255
-     de4:	80 93 37 02 	sts	0x0237, r24	; 0x800237 <g_u8_command_counter>
+     de4:	80 93 3f 02 	sts	0x023F, r24	; 0x80023f <g_u8_command_counter>
 	
 	DPRINT("EXE | %s  -> Board signature requested\n", __FUNCTION__);
 	DPRINT("Board Signature: %s\n", g_ps8_board_sign);
@@ -2317,9 +2317,9 @@ void handle_revision(void)
 	DENTER();
 	
 	g_u8_command_counter++;
-     df6:	80 91 37 02 	lds	r24, 0x0237	; 0x800237 <g_u8_command_counter>
+     df6:	80 91 3f 02 	lds	r24, 0x023F	; 0x80023f <g_u8_command_counter>
      dfa:	8f 5f       	subi	r24, 0xFF	; 255
-     dfc:	80 93 37 02 	sts	0x0237, r24	; 0x800237 <g_u8_command_counter>
+     dfc:	80 93 3f 02 	sts	0x023F, r24	; 0x80023f <g_u8_command_counter>
 	
 	DPRINT("EXE | %s  -> Firmware revision requested\n", __FUNCTION__);
 	DPRINT("Firmware Revision: %s\n", g_ps8_board_revision);
@@ -2337,15 +2337,15 @@ void handle_stop(void)
 	DENTER();
 	
 	g_u8_command_counter++;
-     e0e:	80 91 37 02 	lds	r24, 0x0237	; 0x800237 <g_u8_command_counter>
+     e0e:	80 91 3f 02 	lds	r24, 0x023F	; 0x80023f <g_u8_command_counter>
      e12:	8f 5f       	subi	r24, 0xFF	; 255
-     e14:	80 93 37 02 	sts	0x0237, r24	; 0x800237 <g_u8_command_counter>
+     e14:	80 93 3f 02 	sts	0x023F, r24	; 0x80023f <g_u8_command_counter>
 	
 	DPRINT("EXE | %s  -> Stop command received\n", __FUNCTION__);
 	DPRINT("Setting motor speeds to 0\n");
 	
 	servo_target_pos[SERVO_WHEEL_RIGHT] = 0;
-     e18:	e0 e8       	ldi	r30, 0x80	; 128
+     e18:	e8 e8       	ldi	r30, 0x88	; 136
      e1a:	f1 e0       	ldi	r31, 0x01	; 1
      e1c:	10 82       	st	Z, r1
 	servo_target_pos[SERVO_WHEEL_LEFT] = 0;
@@ -2411,16 +2411,16 @@ bool init_parser_commands( Orangebot::Uniparser &i_rcl_parser )
 	f_ret |= i_rcl_parser.add_cmd( "VR%sL%s", (void *)&handle_set_velocity );
      e70:	44 ee       	ldi	r20, 0xE4	; 228
      e72:	56 e0       	ldi	r21, 0x06	; 6
-     e74:	62 e3       	ldi	r22, 0x32	; 50
+     e74:	6f e2       	ldi	r22, 0x2F	; 47
      e76:	71 e0       	ldi	r23, 0x01	; 1
      e78:	c8 01       	movw	r24, r16
      e7a:	0e 94 9b 09 	call	0x1336	; 0x1336 <_ZN9Orangebot9Uniparser7add_cmdEPKcPv>
      e7e:	c8 2b       	or	r28, r24
 
-	f_ret |= i_rcl_parser.add_cmd( "T%uVR%sL%s", (void *)&handle_set_velocity_timed );
+	f_ret |= i_rcl_parser.add_cmd( "VT%uR%sL%s", (void *)&handle_set_velocity_timed );
      e80:	4e ee       	ldi	r20, 0xEE	; 238
      e82:	56 e0       	ldi	r21, 0x06	; 6
-     e84:	6f e2       	ldi	r22, 0x2F	; 47
+     e84:	67 e3       	ldi	r22, 0x37	; 55
      e86:	71 e0       	ldi	r23, 0x01	; 1
      e88:	c8 01       	movw	r24, r16
      e8a:	0e 94 9b 09 	call	0x1336	; 0x1336 <_ZN9Orangebot9Uniparser7add_cmdEPKcPv>
