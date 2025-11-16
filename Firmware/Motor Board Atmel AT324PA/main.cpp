@@ -173,7 +173,14 @@
 
 #include "global.h"
 
+//Parse commands and calls callback functions automagically
 #include "uniparser.h"
+
+//Movement
+#include "st_wheel_speed_duration.h"
+
+//Sequence movements with duration
+#include "cl_motion_queue.hpp"
 
 /****************************************************************************
 **	DEFINE
@@ -197,6 +204,8 @@
 ****************************************************************************/
 
 extern U8 seesaw();
+
+extern uint8_t demo_velocity();
 
 extern uint8_t demo_timed_velocity();
 
@@ -249,6 +258,8 @@ U8 v1[ UART_TX_BUF_SIZE ];
 //Create a new parser
 Orangebot::Uniparser g_cl_parser;
 	
+Cl_motion_queue g_cl_motion_queue;
+	
 	//-----------------------------------------------------------------------
 	//	SERVOS VARS
 	//-----------------------------------------------------------------------
@@ -273,6 +284,16 @@ S8 servo_off[ N_SERVOS ];
 U16 servo_global_time 	= 0;
 //Current motion plan
 //Trajectories trajectory = MOVE_IDLE;
+
+//Enumerates modes of operation of the servo motors
+enum E_servo_mode
+{
+	SERVO_SPEED_MODE,
+	SERVO_TIMED_SPEED_MODE	
+};
+
+//Operation mode of the servomotors
+E_servo_mode e_servo_mode = SERVO_SPEED_MODE;
 
 /****************************************************************************
 **	MAIN
@@ -325,6 +346,7 @@ int main( void )
 	
 	//The proud name of this unit
 	lcd_print_str( LCD_POS(0,0), (U8 *)"RAMIE");
+	lcd_print_str( LCD_POS(0,8), (U8 *)"CMD:");
 	lcd_print_str( LCD_POS(1,0), (U8 *)"Time:");
 
 	///**********************************************************************
@@ -393,8 +415,10 @@ int main( void )
 		{
 			f.servo_traj = 0;
 			
+			lcd_print_u16( LCD_POS(0,11), g_u8_command_counter );
+			
 			//Debug send via UART
-			AT_BUF_PUSH( uart_tx_buf, 'A'+g_u8_command_counter );
+			//AT_BUF_PUSH( uart_tx_buf, 'A'+g_u8_command_counter );
 			//TOGGLE_BIT( PORTD, PD1 );
 			
 			//Toggle LED
@@ -402,7 +426,7 @@ int main( void )
 			
 			//seesaw();
 			
-			demo_timed_velocity();
+			//demo_timed_velocity();
 			
 		} //END: Trajectory generation
 		
@@ -483,7 +507,7 @@ U8 seesaw()
 
 
 //Feed timed velocity instructions directly into the RX queue to test the decoding
-uint8_t demo_timed_velocity()
+uint8_t demo_velocity()
 {
 	static uint8_t u8_cnt = 0;
 	uint8_t u8_index = 0;

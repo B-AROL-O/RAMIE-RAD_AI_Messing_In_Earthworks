@@ -14,7 +14,8 @@ main.d main.o: .././main.cpp .././global.h \
  f:\programs\microchip\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  f:\programs\microchip\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  f:\programs\microchip\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- .././at_utils.h .././at_mega_port.h .././at_lcd.h .././uniparser.h
+ .././at_utils.h .././at_mega_port.h .././at_lcd.h .././uniparser.h \
+ .././st_wheel_speed_duration.h .././cl_motion_queue.hpp
 
 .././global.h:
 
@@ -55,3 +56,7 @@ f:\programs\microchip\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 .././at_lcd.h:
 
 .././uniparser.h:
+
+.././st_wheel_speed_duration.h:
+
+.././cl_motion_queue.hpp:
