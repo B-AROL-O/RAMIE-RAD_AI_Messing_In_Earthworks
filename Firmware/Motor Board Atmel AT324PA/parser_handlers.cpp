@@ -264,7 +264,7 @@ void handle_set_velocity(int8_t i_s8_right_speed, int8_t i_s8_left_speed)
 //! @details Sets the speed of both motors for specified duration
 /***************************************************************************/
 
-void handle_set_velocity_timed(uint8_t time, int8_t right_speed, int8_t left_speed)
+void handle_set_velocity_timed(uint8_t i_u8_time, int8_t i_s8_speed_right, int8_t i_s8_speed_left)
 {
 	DENTER_ARG("in: Right=%d, Left=%d, Time=%d\n", right_speed, left_speed, time);
 	
@@ -273,9 +273,14 @@ void handle_set_velocity_timed(uint8_t time, int8_t right_speed, int8_t left_spe
 	DPRINT("Left motor speed: %d\n", left_speed);
 	DPRINT("Duration: %d seconds\n", time);
 	
-	//Engage orchestrated speed mode
-	g_e_servo_mode = E_servo_mode::SERVO_TIMED_SPEED_MODE;
+	g_u8_command_counter++;
 	
+	bool x_fail = add_timed_speed( i_u8_time, i_s8_speed_right, i_s8_speed_left );
+	if ((x_fail == false) && (g_e_servo_mode == E_servo_mode::SERVO_SPEED_MODE))
+	{
+		//Engage orchestrated speed mode
+		g_e_servo_mode = E_servo_mode::SERVO_TIMED_SPEED_MODE;
+	}
 	
 	DRETURN();
 	return;

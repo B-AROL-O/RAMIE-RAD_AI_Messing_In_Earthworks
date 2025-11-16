@@ -211,8 +211,7 @@ extern uint8_t demo_timed_velocity();
 
 extern bool init_parser_commands( Orangebot::Uniparser &i_rcl_parser );
 
-//visible to the parser handler, used to connect parser and motion orchestration
-extern bool add_timed_speed( uint8_t i_u8_time, int8_t i_s8_speed_right, int8_t i_s8_speed_left );
+
 
 /****************************************************************************
 **	PROTOTYPE: GLOBAL VARIABILE
@@ -414,6 +413,8 @@ int main( void )
 					//Stop the motors
 					servo_target_pos[SERVO_WHEEL_RIGHT] = 0;
 					servo_target_pos[SERVO_WHEEL_LEFT] = 0;
+					//Go back to direct speed mode
+					g_e_servo_mode = E_servo_mode::SERVO_SPEED_MODE;
 				}
 				else
 				{
@@ -689,4 +690,23 @@ bool uart_send_string( const char * i_pu8_string )
 	AT_BUF_PUSH( uart_tx_buf, '\0' );
 	
 	return false; //OK
+}
+
+/****************************************************************************
+**	add_timed_speed
+*****************************************************************************
+**
+****************************************************************************/
+
+//visible to the parser handler, used to connect parser and motion orchestration
+bool add_timed_speed( uint8_t i_u8_time, int8_t i_s8_speed_right, int8_t i_s8_speed_left )
+{
+	St_wheel_speed_duration st_timed_speed;
+	st_timed_speed.u8_duration = i_u8_time;
+	st_timed_speed.s8_speed_right = i_s8_speed_right;
+	st_timed_speed.s8_speed_left = i_s8_speed_left;
+	
+	bool x_fail = g_cl_motion_queue.push(st_timed_speed);
+	
+	return x_fail; //Propagate FAIL
 }

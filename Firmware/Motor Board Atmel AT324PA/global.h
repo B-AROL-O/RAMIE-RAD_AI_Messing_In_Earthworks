@@ -248,7 +248,10 @@
 	extern U8 servo_motion_planner( U8 index );
 
 	//Execute a precalculated point. Allow for parameters
-	extern U8 servo_trajectory_point( U8 index, S8 arg, S8 arg_aux );
+	//extern U8 servo_trajectory_point( U8 index, S8 arg, S8 arg_aux );
+	
+	//visible to the parser handler, used to connect parser and motion orchestration
+	extern bool add_timed_speed( uint8_t i_u8_time, int8_t i_s8_speed_right, int8_t i_s8_speed_left );
 
 	/****************************************************************************
 	**	PROTOTYPE: GLOBAL VARIABILE

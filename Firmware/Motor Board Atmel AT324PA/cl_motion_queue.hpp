@@ -128,7 +128,7 @@ class Cl_motion_queue
                 this->pop();
             }
 
-            return false;
+            return false; //OK
         }
 
         inline bool empty(void) const
