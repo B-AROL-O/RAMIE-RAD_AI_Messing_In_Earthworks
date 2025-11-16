@@ -75,7 +75,7 @@ Discarded input sections
                 0x00000000       0x60 At_trig8.o
  .debug_ranges  0x00000000       0x50 At_trig8.o
  .debug_line    0x00000000      0x596 At_trig8.o
- .debug_str     0x00000000      0x309 At_trig8.o
+ .debug_str     0x00000000      0x30c At_trig8.o
  .comment       0x00000000       0x31 At_trig8.o
  .debug_frame   0x00000000       0xd4 At_trig8.o
  .text          0x00000000        0x0 initialisation.o
@@ -94,8 +94,6 @@ Discarded input sections
  .text          0x00000000        0x0 parser_handlers.o
  .data          0x00000000        0x0 parser_handlers.o
  .bss           0x00000000        0x0 parser_handlers.o
- .data.g_ps8_board_revision
-                0x00000000        0x2 parser_handlers.o
  .text          0x00000000        0x0 uniparser.o
  .data          0x00000000        0x0 uniparser.o
  .bss           0x00000000        0x0 uniparser.o
@@ -376,7 +374,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x27fc
+.text           0x00000000     0x289e
  *(.vectors)
  .vectors       0x00000000       0x7c F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
                 0x00000000                __vector_default
@@ -516,87 +514,90 @@ END GROUP
  .text._Z16servo_calc_delayh
                 0x0000091e       0xf2 main.o
                 0x0000091e                _Z16servo_calc_delayh
- .text.main     0x00000a10      0x2b4 main.o
+ .text.main     0x00000a10      0x2b2 main.o
                 0x00000a10                main
+ .text._Z16uart_send_stringPKc
+                0x00000cc2       0xde main.o
+                0x00000cc2                _Z16uart_send_stringPKc
  .text._GLOBAL__sub_I_f
-                0x00000cc4        0xe main.o
+                0x00000da0        0xe main.o
  .text._GLOBAL__sub_D_f
-                0x00000cd2        0xe main.o
+                0x00000dae        0xe main.o
  .text._Z11handle_pingv
-                0x00000ce0        0xc parser_handlers.o
-                0x00000ce0                _Z11handle_pingv
- .text._Z11handle_signv
-                0x00000cec       0x78 parser_handlers.o
-                0x00000cec                _Z11handle_signv
- .text._Z15handle_revisionv
-                0x00000d64        0xc parser_handlers.o
-                0x00000d64                _Z15handle_revisionv
- .text._Z11handle_stopv
-                0x00000d70        0x2 parser_handlers.o
-                0x00000d70                _Z11handle_stopv
+                0x00000dbc        0xc parser_handlers.o
+                0x00000dbc                _Z11handle_pingv
  .text._Z19handle_set_velocityaa
-                0x00000d72       0x14 parser_handlers.o
-                0x00000d72                _Z19handle_set_velocityaa
+                0x00000dc8       0x14 parser_handlers.o
+                0x00000dc8                _Z19handle_set_velocityaa
  .text._Z25handle_set_velocity_timedhaa
-                0x00000d86        0x2 parser_handlers.o
-                0x00000d86                _Z25handle_set_velocity_timedhaa
+                0x00000ddc        0x2 parser_handlers.o
+                0x00000ddc                _Z25handle_set_velocity_timedhaa
+ .text._Z11handle_signv
+                0x00000dde       0x18 parser_handlers.o
+                0x00000dde                _Z11handle_signv
+ .text._Z15handle_revisionv
+                0x00000df6       0x18 parser_handlers.o
+                0x00000df6                _Z15handle_revisionv
+ .text._Z11handle_stopv
+                0x00000e0e       0x1c parser_handlers.o
+                0x00000e0e                _Z11handle_stopv
  .text._Z20init_parser_commandsRN9Orangebot9UniparserE
-                0x00000d88       0x6e parser_handlers.o
-                0x00000d88                _Z20init_parser_commandsRN9Orangebot9UniparserE
+                0x00000e2a       0x6e parser_handlers.o
+                0x00000e2a                _Z20init_parser_commandsRN9Orangebot9UniparserE
  .text._ZN9Orangebot9UniparserD2Ev
-                0x00000df6        0x2 uniparser.o
-                0x00000df6                _ZN9Orangebot9UniparserD1Ev
-                0x00000df6                _ZN9Orangebot9UniparserD2Ev
+                0x00000e98        0x2 uniparser.o
+                0x00000e98                _ZN9Orangebot9UniparserD1Ev
+                0x00000e98                _ZN9Orangebot9UniparserD2Ev
  .text._ZN9Orangebot9Uniparser14accumulate_argEh
-                0x00000df8      0x30a uniparser.o
-                0x00000df8                _ZN9Orangebot9Uniparser14accumulate_argEh
+                0x00000e9a      0x30a uniparser.o
+                0x00000e9a                _ZN9Orangebot9Uniparser14accumulate_argEh
  .text._ZN9Orangebot9Uniparser9close_argEv
-                0x00001102       0x7e uniparser.o
-                0x00001102                _ZN9Orangebot9Uniparser9close_argEv
+                0x000011a4       0x7e uniparser.o
+                0x000011a4                _ZN9Orangebot9Uniparser9close_argEv
  .text._ZN9Orangebot9Uniparser13error_handlerENS_10_Err_codesE
-                0x00001180        0xa uniparser.o
-                0x00001180                _ZN9Orangebot9Uniparser13error_handlerENS_10_Err_codesE
+                0x00001222        0xa uniparser.o
+                0x00001222                _ZN9Orangebot9Uniparser13error_handlerENS_10_Err_codesE
  .text._ZN9Orangebot9Uniparser7chk_cmdEPKh
-                0x0000118a      0x10a uniparser.o
-                0x0000118a                _ZN9Orangebot9Uniparser7chk_cmdEPKh
+                0x0000122c      0x10a uniparser.o
+                0x0000122c                _ZN9Orangebot9Uniparser7chk_cmdEPKh
  .text._ZN9Orangebot9Uniparser7add_cmdEPKcPv
-                0x00001294       0x76 uniparser.o
-                0x00001294                _ZN9Orangebot9Uniparser7add_cmdEPKcPv
+                0x00001336       0x76 uniparser.o
+                0x00001336                _ZN9Orangebot9Uniparser7add_cmdEPKcPv
  .text._ZN9Orangebot9Uniparser7add_argEh
-                0x0000130a       0xec uniparser.o
-                0x0000130a                _ZN9Orangebot9Uniparser7add_argEh
+                0x000013ac       0xec uniparser.o
+                0x000013ac                _ZN9Orangebot9Uniparser7add_argEh
  .text._ZN9Orangebot9Uniparser16execute_callbackEPv
-                0x000013f6      0xf34 uniparser.o
-                0x000013f6                _ZN9Orangebot9Uniparser16execute_callbackEPv
+                0x00001498      0xf34 uniparser.o
+                0x00001498                _ZN9Orangebot9Uniparser16execute_callbackEPv
  .text._ZN9Orangebot9Uniparser5parseEh
-                0x0000232a      0x420 uniparser.o
-                0x0000232a                _ZN9Orangebot9Uniparser5parseEh
+                0x000023cc      0x420 uniparser.o
+                0x000023cc                _ZN9Orangebot9Uniparser5parseEh
  .text._ZN9Orangebot9UniparserC2Ev
-                0x0000274a       0x3c uniparser.o
-                0x0000274a                _ZN9Orangebot9UniparserC2Ev
-                0x0000274a                _ZN9Orangebot9UniparserC1Ev
+                0x000027ec       0x3c uniparser.o
+                0x000027ec                _ZN9Orangebot9UniparserC2Ev
+                0x000027ec                _ZN9Orangebot9UniparserC1Ev
  .text.libgcc.div
-                0x00002786       0x28 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x00002786                __udivmodhi4
+                0x00002828       0x28 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00002828                __udivmodhi4
  .text.libgcc.div
-                0x000027ae       0x28 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                0x000027ae                _div
-                0x000027ae                __divmodhi4
- .text.libgcc   0x000027d6        0xc f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
-                0x000027d6                __tablejump2__
-                0x000027e2                . = ALIGN (0x2)
+                0x00002850       0x28 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+                0x00002850                _div
+                0x00002850                __divmodhi4
+ .text.libgcc   0x00002878        0xc f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                0x00002878                __tablejump2__
+                0x00002884                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000027e2        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x000027e2                _exit
-                0x000027e2                exit
+ .fini9         0x00002884        0x0 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00002884                _exit
+                0x00002884                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
  *(.fini7)
  *(.fini7)
  *(.fini6)
- .fini6         0x000027e2       0x16 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
-                0x000027e2                __do_global_dtors
+ .fini6         0x00002884       0x16 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+                0x00002884                __do_global_dtors
  *(.fini6)
  *(.fini5)
  *(.fini5)
@@ -609,100 +610,105 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000027f8        0x4 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x0000289a        0x4 f:/programs/microchip/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000027fc                _etext = .
+                0x0000289e                _etext = .
 
-.data           0x00800100       0x50 load address 0x000027fc
+.data           0x00800100       0x46 load address 0x0000289e
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
  .data.servo_cnt
                 0x00800100        0x1 main.o
                 0x00800100                servo_cnt
- .data.g_ps8_board_sign
+ .data.g_ps8_board_revision
                 0x00800101        0x2 parser_handlers.o
-                0x00800101                g_ps8_board_sign
+                0x00800101                g_ps8_board_revision
+ .data.g_ps8_board_sign
+                0x00800103        0x2 parser_handlers.o
+                0x00800103                g_ps8_board_sign
  *(.gnu.linkonce.d*)
  *(.rodata)
- .rodata        0x00800103        0xa at_string.o
+ .rodata        0x00800105        0xa at_string.o
+ .rodata        0x0080010f        0x6 parser_handlers.o
  *(.rodata*)
  .rodata.str1.1
-                0x0080010d        0xc main.o
+                0x00800115        0xc main.o
  .rodata.str1.1
-                0x00800119       0x37 parser_handlers.o
-                                 0x41 (size before relaxing)
+                0x00800121       0x24 parser_handlers.o
+                                 0x34 (size before relaxing)
  *(.gnu.linkonce.r*)
-                0x00800150                . = ALIGN (0x2)
-                0x00800150                _edata = .
-                0x00800150                PROVIDE (__data_end, .)
+                0x00800146                . = ALIGN (0x2)
+ *fill*         0x00800145        0x1 
+                0x00800146                _edata = .
+                0x00800146                PROVIDE (__data_end, .)
 
-.bss            0x00800150       0xea
-                0x00800150                PROVIDE (__bss_start, .)
+.bss            0x00800146       0xf2
+                0x00800146                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss._ZZ10lcd_updatevE8data_buf
-                0x00800150        0x1 at_lcd.o
+                0x00800146        0x1 at_lcd.o
  .bss._ZZ10lcd_updatevE6status
-                0x00800151        0x2 at_lcd.o
+                0x00800147        0x2 at_lcd.o
  .bss.lcd_error
-                0x00800153        0x1 at_lcd.o
-                0x00800153                lcd_error
+                0x00800149        0x1 at_lcd.o
+                0x00800149                lcd_error
  .bss.lcd_cfg_flags
-                0x00800154        0x1 at_lcd.o
-                0x00800154                lcd_cfg_flags
- .bss.lcd_updt  0x00800155        0x4 at_lcd.o
-                0x00800155                lcd_updt
- .bss.lcd_show  0x00800159       0x20 at_lcd.o
-                0x00800159                lcd_show
+                0x0080014a        0x1 at_lcd.o
+                0x0080014a                lcd_cfg_flags
+ .bss.lcd_updt  0x0080014b        0x4 at_lcd.o
+                0x0080014b                lcd_updt
+ .bss.lcd_show  0x0080014f       0x20 at_lcd.o
+                0x0080014f                lcd_show
  .bss._ZZ11__vector_16E3pre
-                0x00800179        0x1 interrupt.o
+                0x0080016f        0x1 interrupt.o
  .bss.servo_global_time
-                0x0080017a        0x2 main.o
-                0x0080017a                servo_global_time
+                0x00800170        0x2 main.o
+                0x00800170                servo_global_time
  .bss.servo_off
-                0x0080017c        0x7 main.o
-                0x0080017c                servo_off
+                0x00800172        0x7 main.o
+                0x00800172                servo_off
  .bss.servo_target_speed
-                0x00800183        0x7 main.o
-                0x00800183                servo_target_speed
+                0x00800179        0x7 main.o
+                0x00800179                servo_target_speed
  .bss.servo_target_pos
-                0x0080018a        0x7 main.o
-                0x0080018a                servo_target_pos
+                0x00800180        0x7 main.o
+                0x00800180                servo_target_pos
  .bss.servo_delay
-                0x00800191        0xe main.o
-                0x00800191                servo_delay
+                0x00800187        0xe main.o
+                0x00800187                servo_delay
  .bss.servo_lock
-                0x0080019f        0x1 main.o
-                0x0080019f                servo_lock
+                0x00800195        0x1 main.o
+                0x00800195                servo_lock
  .bss.g_cl_parser
-                0x008001a0       0x75 main.o
-                0x008001a0                g_cl_parser
- .bss.v1        0x00800215        0x8 main.o
-                0x00800215                v1
- .bss.v0        0x0080021d       0x10 main.o
-                0x0080021d                v0
+                0x00800196       0x75 main.o
+                0x00800196                g_cl_parser
+ .bss.v1        0x0080020b       0x10 main.o
+                0x0080020b                v1
+ .bss.v0        0x0080021b       0x10 main.o
+                0x0080021b                v0
  .bss.uart_tx_buf
-                0x0080022d        0x5 main.o
-                0x0080022d                uart_tx_buf
+                0x0080022b        0x5 main.o
+                0x0080022b                uart_tx_buf
  .bss.uart_rx_buf
-                0x00800232        0x6 main.o
-                0x00800232                uart_rx_buf
- .bss.f         0x00800238        0x1 main.o
-                0x00800238                f
+                0x00800230        0x6 main.o
+                0x00800230                uart_rx_buf
+ .bss.f         0x00800236        0x1 main.o
+                0x00800236                f
  .bss.g_u8_command_counter
-                0x00800239        0x1 parser_handlers.o
-                0x00800239                g_u8_command_counter
+                0x00800237        0x1 parser_handlers.o
+                0x00800237                g_u8_command_counter
  *(COMMON)
-                0x0080023a                PROVIDE (__bss_end, .)
-                0x000027fc                __data_load_start = LOADADDR (.data)
-                0x0000284c                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800238                PROVIDE (__bss_end, .)
+                0x0000289e                __data_load_start = LOADADDR (.data)
+                0x000028e4                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080023a        0x0
+.noinit         0x00800238        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x0080023a                _end = .
+                0x00800238                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -773,7 +779,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x210
+.debug_aranges  0x00000000      0x218
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x68 at_lcd.o
@@ -784,27 +790,27 @@ END GROUP
  .debug_aranges
                 0x000000d8       0x30 interrupt.o
  .debug_aranges
-                0x00000108       0x48 main.o
+                0x00000108       0x50 main.o
  .debug_aranges
-                0x00000150       0x50 parser_handlers.o
+                0x00000158       0x50 parser_handlers.o
  .debug_aranges
-                0x000001a0       0x70 uniparser.o
+                0x000001a8       0x70 uniparser.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x5d62
+.debug_info     0x00000000     0x5d7a
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x6cc F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  .debug_info    0x000006cc      0x8ce at_lcd.o
  .debug_info    0x00000f9a      0x2d1 at_string.o
  .debug_info    0x0000126b      0x26c initialisation.o
  .debug_info    0x000014d7      0x24e interrupt.o
- .debug_info    0x00001725      0xa58 main.o
- .debug_info    0x0000217d      0x7fa parser_handlers.o
- .debug_info    0x00002977     0x33eb uniparser.o
+ .debug_info    0x00001725      0xa9d main.o
+ .debug_info    0x000021c2      0x7cd parser_handlers.o
+ .debug_info    0x0000298f     0x33eb uniparser.o
 
-.debug_abbrev   0x00000000     0x15b3
+.debug_abbrev   0x00000000     0x15b4
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x66e F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  .debug_abbrev  0x0000066e      0x26a at_lcd.o
@@ -812,57 +818,57 @@ END GROUP
  .debug_abbrev  0x00000a0e      0x132 initialisation.o
  .debug_abbrev  0x00000b40      0x160 interrupt.o
  .debug_abbrev  0x00000ca0      0x30f main.o
- .debug_abbrev  0x00000faf      0x278 parser_handlers.o
- .debug_abbrev  0x00001227      0x38c uniparser.o
+ .debug_abbrev  0x00000faf      0x279 parser_handlers.o
+ .debug_abbrev  0x00001228      0x38c uniparser.o
 
-.debug_line     0x00000000     0x2c17
+.debug_line     0x00000000     0x2c8b
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x151 F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  .debug_line    0x00000151      0x6fa at_lcd.o
  .debug_line    0x0000084b      0x202 at_string.o
  .debug_line    0x00000a4d      0x1ed initialisation.o
  .debug_line    0x00000c3a      0x1bf interrupt.o
- .debug_line    0x00000df9      0x402 main.o
- .debug_line    0x000011fb      0x1bb parser_handlers.o
- .debug_line    0x000013b6     0x1861 uniparser.o
+ .debug_line    0x00000df9      0x4a3 main.o
+ .debug_line    0x0000129c      0x18e parser_handlers.o
+ .debug_line    0x0000142a     0x1861 uniparser.o
 
-.debug_frame    0x00000000      0x57c
+.debug_frame    0x00000000      0x58c
  *(.debug_frame)
  .debug_frame   0x00000000      0x148 at_lcd.o
  .debug_frame   0x00000148       0x88 at_string.o
  .debug_frame   0x000001d0       0x54 initialisation.o
  .debug_frame   0x00000224       0xdc interrupt.o
- .debug_frame   0x00000300       0x9c main.o
- .debug_frame   0x0000039c       0x94 parser_handlers.o
- .debug_frame   0x00000430      0x14c uniparser.o
+ .debug_frame   0x00000300       0xac main.o
+ .debug_frame   0x000003ac       0x94 parser_handlers.o
+ .debug_frame   0x00000440      0x14c uniparser.o
 
-.debug_str      0x00000000     0x1450
+.debug_str      0x00000000     0x1489
  *(.debug_str)
  .debug_str     0x00000000      0x255 F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
- .debug_str     0x00000255      0x467 at_lcd.o
-                                0x4c5 (size before relaxing)
- .debug_str     0x000006bc       0x1d at_string.o
-                                0x27a (size before relaxing)
- .debug_str     0x000006d9      0x104 initialisation.o
-                                0x328 (size before relaxing)
- .debug_str     0x000007dd       0xc6 interrupt.o
-                                0x2d4 (size before relaxing)
- .debug_str     0x000008a3      0x629 main.o
-                                0x9ac (size before relaxing)
- .debug_str     0x00000ecc      0x161 parser_handlers.o
-                                0x8bf (size before relaxing)
- .debug_str     0x0000102d      0x423 uniparser.o
-                                0xafd (size before relaxing)
+ .debug_str     0x00000255      0x46a at_lcd.o
+                                0x4c8 (size before relaxing)
+ .debug_str     0x000006bf       0x1d at_string.o
+                                0x27d (size before relaxing)
+ .debug_str     0x000006dc      0x104 initialisation.o
+                                0x32b (size before relaxing)
+ .debug_str     0x000007e0       0xc6 interrupt.o
+                                0x2d7 (size before relaxing)
+ .debug_str     0x000008a6      0x668 main.o
+                                0x9ee (size before relaxing)
+ .debug_str     0x00000f0e      0x158 parser_handlers.o
+                                0x8c0 (size before relaxing)
+ .debug_str     0x00001066      0x423 uniparser.o
+                                0xb00 (size before relaxing)
 
-.debug_loc      0x00000000     0xb12a
+.debug_loc      0x00000000     0xb1a8
  *(.debug_loc)
  .debug_loc     0x00000000      0xb05 at_lcd.o
  .debug_loc     0x00000b05      0x48f at_string.o
  .debug_loc     0x00000f94       0x90 initialisation.o
  .debug_loc     0x00001024      0x203 interrupt.o
- .debug_loc     0x00001227      0x281 main.o
- .debug_loc     0x000014a8       0xb7 parser_handlers.o
- .debug_loc     0x0000155f     0x9bcb uniparser.o
+ .debug_loc     0x00001227      0x2ff main.o
+ .debug_loc     0x00001526       0xb7 parser_handlers.o
+ .debug_loc     0x000015dd     0x9bcb uniparser.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -882,15 +888,15 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0xd80
+.debug_ranges   0x00000000      0xd88
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x58 at_lcd.o
  .debug_ranges  0x00000058       0x28 at_string.o
  .debug_ranges  0x00000080       0x28 initialisation.o
  .debug_ranges  0x000000a8       0x20 interrupt.o
- .debug_ranges  0x000000c8       0x38 main.o
- .debug_ranges  0x00000100       0x40 parser_handlers.o
- .debug_ranges  0x00000140      0xc40 uniparser.o
+ .debug_ranges  0x000000c8       0x40 main.o
+ .debug_ranges  0x00000108       0x40 parser_handlers.o
+ .debug_ranges  0x00000148      0xc40 uniparser.o
 
 .debug_macro
  *(.debug_macro)

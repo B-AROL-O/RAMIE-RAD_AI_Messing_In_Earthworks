@@ -52,6 +52,11 @@
 **		2025-11-09
 **	I'm reporpousing UnitZero firmware 
 **	Adding UART and uniparser
+**		2025-11-15
+**	Added uniparser
+**	Redone the project because C++ wasn't working
+**	Linked the parser and the serial commands and the callbacks
+**	Tested operation from PC terminal and it works!
 ****************************************************************************/
 
 /****************************************************************************
@@ -159,11 +164,11 @@
 
 /****************************************************************************
 **	INCLUDE
-**	TIPS: ".h" should not include other ".h", it lower the leggibility of the code
+**	TIPS: ".h" should not include other ".h", it lower the legibility of the code
 **	TIPS: ".h" must not contain anything that generate code, write only declaration or prototype
-**	this help the leggibility and the debug phase
+**	this help the legibility and the debug phase
 **	TIPS: type from the stdint.h have a well defined width and signedness, use them
-**	( uint8_t = unsigned 8 bit, int8_t = signed 8 bit, uint32_t = unsiged 32 bit, ecc... )
+**	( uint8_t = unsigned 8 bit, int8_t = signed 8 bit, uint32_t = unsigned 32 bit, etc... )
 ****************************************************************************/
 
 #include "global.h"
@@ -188,7 +193,7 @@
 /****************************************************************************
 **	PROTOTYPE: FUNCTION
 **	TIPS: use "extern" in function prototype, it's not necessary, but any other
-**	prototype need it, it help the leggibility of the code
+**	prototype need it, it help the legibility of the code
 ****************************************************************************/
 
 extern U8 seesaw();
@@ -201,15 +206,15 @@ extern bool init_parser_commands( Orangebot::Uniparser &i_rcl_parser );
 
 /****************************************************************************
 **	GLOBAL VARIABILE:
-**	TIPS: "const" variabile will be loaded in the flash memory, saving the ram,
+**	TIPS: "const" variable will be loaded in the flash memory, saving the ram,
 **	use it for string that will not be modified
-**	TIPS: if you want a ISR to manipulate a global variabile, than that variabile
+**	TIPS: if you want a ISR to manipulate a global variable, than that variable
 **	**must** be declared "volatile" so that the c compiler will not wipe out the
-**	variabile by optimising the code, use that variabile as less as possibile
-**	because it will not be optimised
-**	TIPS: "volatile int" variabile may give problem, don't use it (uP is 8 bits, while
+**	variable by optimizing the code, use that variable as less as possible
+**	because it will not be optimized
+**	TIPS: "volatile int" variable may give problem, don't use it (uP is 8 bits, while
 **	int is 16 bits, it's implemented by concatenating 2 byte, the volatile statement
-**	disable the optimisation on that variabile, and mess up that code)
+**	disable the optimization on that variable, and mess up that code)
 ****************************************************************************/
 
 	//-----------------------------------------------------------------------
@@ -377,8 +382,6 @@ int main( void )
 			{
 				f.servo_traj = 1;
 			}
-			
-			
 			
 			
 		}	//End If: motor scan flag
@@ -567,3 +570,29 @@ U16 servo_calc_delay( U8 index )
 
 	return ret;
 }	//end function: servo_calc_delay
+
+
+/****************************************************************************
+**	UART PUSH STRING
+*****************************************************************************
+**
+****************************************************************************/
+
+bool uart_send_string( const char * i_pu8_string )
+{
+	
+	uint8_t u8_index = 0;
+	while ((AT_BUF_NUMELEM(uart_tx_buf) < UART_TX_BUF_SIZE) && (i_pu8_string[u8_index] != '\0'))
+	{
+		AT_BUF_PUSH( uart_tx_buf, i_pu8_string[u8_index++] );
+	}
+	
+	if (AT_BUF_NUMELEM(uart_tx_buf) >= UART_TX_BUF_SIZE)
+	{
+		return true; //ERR
+	}
+	
+	AT_BUF_PUSH( uart_tx_buf, '\0' );
+	
+	return false; //OK
+}

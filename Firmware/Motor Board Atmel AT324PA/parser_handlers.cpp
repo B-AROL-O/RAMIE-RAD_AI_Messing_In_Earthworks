@@ -34,9 +34,13 @@
 
 //UART Command Handlers
 extern void handle_ping(void);
+
 extern void handle_sign(void);
+
 extern void handle_revision(void);
+
 extern void handle_stop(void);
+
 extern void handle_set_velocity(int8_t right_speed, int8_t left_speed);
 
 extern void handle_set_velocity_timed(uint8_t time, int8_t right_speed, int8_t left_speed);
@@ -58,9 +62,10 @@ uint8_t g_u8_command_counter = 0;
 
 
 //Board Signature
-const char *g_ps8_board_sign = "Industrious_Resonance";
+//BUG: I couldn't be bothered to do a proper FSM to pick the character as needed, so it's all dumped into the buffer that might not be long enough
+const char *g_ps8_board_sign = "RAMIE";
 //Firmware Revision
-const char *g_ps8_board_revision = "2025-11-09";
+const char *g_ps8_board_revision = "2025-11-16";
 
 //communication timeout counter
 //uint8_t g_uart_timeout_cnt = 0;
@@ -102,7 +107,7 @@ bool init_parser_commands( Orangebot::Uniparser &i_rcl_parser )
 
 	f_ret |= i_rcl_parser.add_cmd( "P", (void *)&handle_ping );
 
-	f_ret |= i_rcl_parser.add_cmd( "F", (void *)&handle_sign );
+	f_ret |= i_rcl_parser.add_cmd( "SIGN", (void *)&handle_sign );
 
 	f_ret |= i_rcl_parser.add_cmd( "REV", (void *)&handle_revision );
 
@@ -160,12 +165,7 @@ void handle_sign(void)
 	DPRINT("EXE | %s  -> Board signature requested\n", __FUNCTION__);
 	DPRINT("Board Signature: %s\n", g_ps8_board_sign);
 	
-	uint8_t u8_index = 0;
-	while (g_ps8_board_sign[u8_index] != '\0')
-	{
-		AT_BUF_PUSH( uart_tx_buf, g_ps8_board_sign[u8_index] );
-	}
-	AT_BUF_PUSH( uart_tx_buf, '\0' );
+	uart_send_string( g_ps8_board_sign );
 	
 	DRETURN();
 	return;
@@ -187,8 +187,10 @@ void handle_revision(void)
 	
 	DPRINT("EXE | %s  -> Firmware revision requested\n", __FUNCTION__);
 	DPRINT("Firmware Revision: %s\n", g_ps8_board_revision);
-	DRETURN();
 	
+	uart_send_string( g_ps8_board_revision );
+	
+	DRETURN();
 	return;
 }
 
@@ -204,8 +206,15 @@ void handle_stop(void)
 {
 	DENTER();
 	
+	g_u8_command_counter++;
+	
 	DPRINT("EXE | %s  -> Stop command received\n", __FUNCTION__);
 	DPRINT("Setting motor speeds to 0\n");
+	
+	servo_target_pos[SERVO_WHEEL_RIGHT] = 0;
+	servo_target_pos[SERVO_WHEEL_LEFT] = 0;
+	
+	uart_send_string( "STOP\0" );
 	
 	DRETURN();
 	return;
@@ -255,10 +264,13 @@ void handle_set_velocity(int8_t i_s8_right_speed, int8_t i_s8_left_speed)
 void handle_set_velocity_timed(uint8_t time, int8_t right_speed, int8_t left_speed)
 {
 	DENTER_ARG("in: Right=%d, Left=%d, Time=%d\n", right_speed, left_speed, time);
+	
 	DPRINT("EXE | %s  -> Set velocity timed command\n", __FUNCTION__);
 	DPRINT("Right motor speed: %d\n", right_speed);
 	DPRINT("Left motor speed: %d\n", left_speed);
 	DPRINT("Duration: %d seconds\n", time);
+	
+	
 	DRETURN();
 	return;
 }
