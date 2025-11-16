@@ -15,11 +15,7 @@ using std::endl;
 /* helper to print a motion i_rst_item */
 void show_item(const St_wheel_speed_duration &i_rst_item, uint8_t u8_step)
 {
-    cout << "Step " << u8_step
-         << ":  R=" << static_cast<int>(i_rst_item.s8_speed_right)
-         << ", L=" << static_cast<int>(i_rst_item.s8_speed_left)
-         << ", dur=" << static_cast<unsigned>(i_rst_item.u8_duration)
-         << endl;
+    printf("Step: %3d | R: %5d | L: %5d\n", u8_step, i_rst_item.s8_speed_right, i_rst_item.s8_speed_left );
 }
 
 int main()
@@ -32,6 +28,7 @@ int main()
     St_wheel_speed_duration mov3{-15, 15, 4 };     // spin opposite direction
 
     cl_queue.push(mov1);
+    std::cout << "Time: " << mov1.u8_duration << std::endl;
     cl_queue.push(mov2);
     cl_queue.push(mov3);
 
