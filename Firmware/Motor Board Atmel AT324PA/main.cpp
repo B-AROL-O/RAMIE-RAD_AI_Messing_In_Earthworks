@@ -211,6 +211,9 @@ extern uint8_t demo_timed_velocity();
 
 extern bool init_parser_commands( Orangebot::Uniparser &i_rcl_parser );
 
+//visible to the parser handler, used to connect parser and motion orchestration
+extern bool add_timed_speed( uint8_t i_u8_time, int8_t i_s8_speed_right, int8_t i_s8_speed_left );
+
 /****************************************************************************
 **	PROTOTYPE: GLOBAL VARIABILE
 ****************************************************************************/
@@ -285,15 +288,10 @@ U16 servo_global_time 	= 0;
 //Current motion plan
 //Trajectories trajectory = MOVE_IDLE;
 
-//Enumerates modes of operation of the servo motors
-enum E_servo_mode
-{
-	SERVO_SPEED_MODE,
-	SERVO_TIMED_SPEED_MODE	
-};
+
 
 //Operation mode of the servomotors
-E_servo_mode e_servo_mode = SERVO_SPEED_MODE;
+E_servo_mode g_e_servo_mode = SERVO_SPEED_MODE;
 
 /****************************************************************************
 **	MAIN
@@ -404,6 +402,27 @@ int main( void )
 				f.servo_traj = 1;
 			}
 			
+			//In timed servo mode
+			if (g_e_servo_mode == E_servo_mode::SERVO_TIMED_SPEED_MODE)
+			{
+				St_wheel_speed_duration st_timed_speed;
+				//Ask the orchestrator for a motion
+				bool x_fail = g_cl_motion_queue.execute_time_step( st_timed_speed );
+				//If no motion in the queue
+				if (x_fail == true)
+				{
+					//Stop the motors
+					servo_target_pos[SERVO_WHEEL_RIGHT] = 0;
+					servo_target_pos[SERVO_WHEEL_LEFT] = 0;
+				}
+				else
+				{
+					
+					servo_target_pos[SERVO_WHEEL_RIGHT] = st_timed_speed.s8_speed_right;
+					servo_target_pos[SERVO_WHEEL_LEFT] = st_timed_speed.s8_speed_left;
+				}
+				
+			}
 			
 		}	//End If: motor scan flag
 
@@ -416,6 +435,16 @@ int main( void )
 			f.servo_traj = 0;
 			
 			lcd_print_u16( LCD_POS(0,11), g_u8_command_counter );
+			
+			//Signal to user the speed mode
+			if (g_e_servo_mode == E_servo_mode::SERVO_SPEED_MODE)
+			{
+				lcd_print_str( LCD_POS(1,14), (U8 *)"DS" );
+			}
+			else if (g_e_servo_mode == E_servo_mode::SERVO_TIMED_SPEED_MODE)
+			{
+				lcd_print_str( LCD_POS(1,14), (U8 *)"TS" );
+			}
 			
 			//Debug send via UART
 			//AT_BUF_PUSH( uart_tx_buf, 'A'+g_u8_command_counter );

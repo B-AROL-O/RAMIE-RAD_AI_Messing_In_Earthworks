@@ -234,6 +234,9 @@ void handle_set_velocity(int8_t i_s8_right_speed, int8_t i_s8_left_speed)
 {
 	DENTER_ARG("in: Right=%d, Left=%d\n", i_s8_right_speed, i_s8_left_speed);
 	
+	//Engage direct speed mode
+	g_e_servo_mode = E_servo_mode::SERVO_SPEED_MODE;
+	
 	g_u8_command_counter++;
 	
 	DPRINT("EXE | %s  -> Set velocity command\n", __FUNCTION__);
@@ -269,6 +272,9 @@ void handle_set_velocity_timed(uint8_t time, int8_t right_speed, int8_t left_spe
 	DPRINT("Right motor speed: %d\n", right_speed);
 	DPRINT("Left motor speed: %d\n", left_speed);
 	DPRINT("Duration: %d seconds\n", time);
+	
+	//Engage orchestrated speed mode
+	g_e_servo_mode = E_servo_mode::SERVO_TIMED_SPEED_MODE;
 	
 	
 	DRETURN();

@@ -133,6 +133,15 @@
 	#define MOVE_STEP_TIME		20
 	//Maximum movement speed
 	#define MOVE_SPEED			80
+	
+	//Enumerates modes of operation of the servo motors
+	enum E_servo_mode
+	{
+		//Direct speed mode will sustain the speed given until different instruction
+		SERVO_SPEED_MODE,
+		//Timed servo mode will fetch from the orchestrator
+		SERVO_TIMED_SPEED_MODE
+	};
 
 	/****************************************************************************
 	**	MACRO
@@ -293,6 +302,12 @@
 	//The servo will rotate at this speed [unit/second]
 	extern U8 servo_target_speed[ N_SERVOS ];
 
+		///----------------------------------------------------------------------
+		///	TRAJECTORY
+		///----------------------------------------------------------------------
+
+	//Operation mode of the servomotors
+	extern E_servo_mode g_e_servo_mode;
 
 #else
 	#warning "multiple inclusion of the header file global.h"
