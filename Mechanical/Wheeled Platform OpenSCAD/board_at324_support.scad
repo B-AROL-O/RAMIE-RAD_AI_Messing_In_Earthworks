@@ -20,23 +20,26 @@ gc_wi_board_hole = 35.0;
 
 module shape_sloped_beam
 (
+	//	OUTER PROFILE
 	//Depth of the wall
 	i_l_wall = 50,
 	//Thickness of the wall
 	i_t_wall = 5,
 	//Height of the wall
 	i_h_wall = 70,
+
+	//	SLOPE
 	//Vertical section leading to the slope
 	i_h_wall_vertical = 50,
-
 	//Angle of the slope
 	i_a_slope = 60,
 
+	//	HOLE
+	i_d_drill = 3,
 	//Distance of the upper hole from the start of the slope
-	i_d_hole_upper = 10,
-
+	i_li_hole_upper = 10,
 	//Distance of the lower hole from the start of the slope
-	i_d_hole_lower = 30,
+	i_li_hole_lower = 30,
 
 
 	dummy
@@ -66,8 +69,8 @@ module shape_sloped_beam
 	//Upper Hole
 	an_upper_hole = 
 	[
-		l_slope - i_d_hole_upper * sin(i_a_slope),
-		i_h_wall -i_d_hole_upper * cos(i_a_slope)
+		l_slope - i_li_hole_upper * sin(i_a_slope),
+		i_h_wall -i_li_hole_upper * cos(i_a_slope)
 
 	];
 
@@ -75,8 +78,8 @@ module shape_sloped_beam
 	//Lower Hole
 	an_lower_hole = 
 	[
-		l_slope - i_d_hole_lower * sin(i_a_slope),
-		i_h_wall -i_d_hole_lower * cos(i_a_slope)
+		l_slope - i_li_hole_lower * sin(i_a_slope),
+		i_h_wall -i_li_hole_lower * cos(i_a_slope)
 
 	];
 
@@ -110,9 +113,44 @@ module shape_sloped_beam
 
 	];
 
+	difference()
+	{
+		union()
+		{
+			linear_extrude( i_t_wall,center=true )
+			polygon(aan_points);
 
-	linear_extrude( i_t_wall,center=true )
-	polygon(aan_points);
+			
+		}
+		union()
+		{
+			//	UPPER HOLE
+			//Translate in position
+			translate(an_upper_hole)
+			//Rotate toward the slope
+			rotate([0,0,-i_a_slope+90])
+			//Point it toward the structure down
+			rotate([90,0,0])
+			//This points up
+			cylinder(h=100, d=i_d_drill, $fn = 100);
+
+			//	LOWER HOLE
+			//Translate in position
+			translate(an_lower_hole)
+			//Rotate toward the slope
+			rotate([0,0,-i_a_slope+90])
+			//Point it toward the structure down
+			rotate([90,0,0])
+			//This points up
+			cylinder(h=100, d=i_d_drill, $fn = 100);
+			
+			
+		}
+
+	}
+
+
+	
 
 	//Drilling is done at 
 }
