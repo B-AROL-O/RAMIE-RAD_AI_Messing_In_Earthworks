@@ -1,0 +1,64 @@
+{
+  "manifest_version": "1.0.0",
+  "robot": {
+    "name": "RAMIE",
+    "model": "LattePanda",
+    "firmware_version": "0.0.0"
+  },
+  "communication": {
+    "protocols": ["http", "websocket", "mqtt"],
+    "interfaces": ["wifi", "bluetooth"],
+    "ros_support": false,
+    "api_version": "1.0"
+  },
+  "capabilities": {
+    "motion": {
+      "available": true,
+      "directions": {
+        "forward": true,
+        "backward": true,
+        "left": true,
+        "right": true
+      },
+      "speed": {
+        "min": 0,
+        "max": 255
+      }
+    },
+    "sensors": {
+      "ultrasonic": {
+        "available": false
+      }
+    },
+    "camera": {
+      "available": true,
+      "count": 1,
+      "resolution": {
+        "width": 512,
+        "height": 512,
+        "unit": "pixels"
+      },
+      "formats": ["jpeg", "png"],
+      "features": {
+        "auto_focus": false,
+        "flash": false
+      },
+      "frame_rate": {
+        "max": 30,
+        "unit": "fps"
+      }
+    },
+    "audio": {
+        "tts": {
+          "available": true,
+          "model": "openai_tts",
+          "languages": ["en-US"]
+        },
+        "stt": {
+          "available": true,
+          "model": "whisper",
+          "languages": ["en-US"]
+        }
+      }
+  }
+}
