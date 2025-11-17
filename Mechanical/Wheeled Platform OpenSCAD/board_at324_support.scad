@@ -26,41 +26,95 @@ module shape_sloped_beam
 	i_t_wall = 5,
 	//Height of the wall
 	i_h_wall = 70,
-	//Flat section on top of the pillar
-	i_l_wall_top = 20,
+	//Vertical section leading to the slope
+	i_h_wall_vertical = 50,
 
 	//Angle of the slope
-	i_a_slope = 45,
+	i_a_slope = 60,
+
+	//Distance of the upper hole from the start of the slope
+	i_d_hole_upper = 10,
+
+	//Distance of the lower hole from the start of the slope
+	i_d_hole_lower = 30,
 
 
 	dummy
 )
 {
 
-	//Length of the slope
-	l_slope = i_l_wall -i_l_wall_top;
-	//I need to compute the height of the slope
-	//It's some trigonometry
-	h_slope = l_slope * tan(i_a_slope);
+	h_slope = i_h_wall -i_h_wall_vertical;
+	echo("h_slope", h_slope);
+
+	l_slope = h_slope * tan(i_a_slope);
+	echo("l_slope", l_slope);
+
+	//Flat section at the top
+	l_wall_horizontal = i_l_wall - l_slope;
+	echo("l_wall_horizontal", l_wall_horizontal);
+
+
+	//echo("Tan:", tan(i_a_slope));
+
+	//Halfway point slope
+	an_slope_halfway =
+	[
+		l_slope/2,
+		i_h_wall -h_slope/2
+	];
+
+	//Upper Hole
+	an_upper_hole = 
+	[
+		l_slope - i_d_hole_upper * sin(i_a_slope),
+		i_h_wall -i_d_hole_upper * cos(i_a_slope)
+
+	];
+
+
+	//Lower Hole
+	an_lower_hole = 
+	[
+		l_slope - i_d_hole_lower * sin(i_a_slope),
+		i_h_wall -i_d_hole_lower * cos(i_a_slope)
+
+	];
+
+	
+
+
 
 	aan_points = 
 	[
 		//X = Length Y = Height
+		//Bottom Left
 		[0,0],
+		//Bottom Right
 		[i_l_wall,0],
-		
+		//Top Right
 		[i_l_wall,i_h_wall],
 		//Horizontal section leading to the slope
-		[i_l_wall_top,i_h_wall],
+		[l_slope,i_h_wall],
+		
+		//UPPER HOLE
+		an_upper_hole,
+
+		//an_slope_halfway,
+
+		an_lower_hole,
+
 		//Vertical section after the slope
 		[0,i_h_wall-h_slope]
+		
 
 
 	];
 
 
-	linear_extrude( i_t_wall )
+	linear_extrude( i_t_wall,center=true )
 	polygon(aan_points);
+
+	//Drilling is done at 
 }
 
 
