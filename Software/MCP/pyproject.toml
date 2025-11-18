@@ -1,0 +1,10 @@
+[project]
+name = "mcp"
+version = "0.1.0"
+description = "MCP server that exposes RAMIE's functionalities to LLMs"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "gradio[oauth]>=5.49.1",
+    "huggingface-hub>=1.1.4",
+]
