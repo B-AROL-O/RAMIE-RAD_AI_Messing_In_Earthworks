@@ -11,26 +11,34 @@ include <board_at324.scad>
 
 module at324_module_with_support_sloped
 (
-	i_l_wall = 0,
-	i_w_wall = 0,
+	//	SIZE
+	i_w_wall = 50,
 	i_h_wall = 70,
 	i_h_wall_vertical = 50,
 	i_t_wall = 5,
-
+	//	ANGLE AND SLOPE
 	i_a_slope = 60,
 	//Interaxis between holes
 	i_wi_hole = gc_li_at324_hole,
-
 	//Distance of the upper hole from the start of the slope
-	i_li_hole_upper = 10,
+	i_li_hole_upper = 5,
 	//Distance of the lower hole from the start of the slope
-	i_li_hole_lower = 30,
+	i_li_hole_lower = 5+gc_wi_at324_hole,
+	//	HOLE
+	//Drill diameter
+	i_d_bolt_drill = 2.5+0.3,
+	//Length of the bolt
+	i_h_bolt = 10,
+	//Nut slot width and height
+	i_w_nut = 5+0.5,
+	i_h_nut = 3,
 
+	//	SHOW
 	//Show extra models
-	i_x_show_at324_module = true,
-	dummy
+	i_x_show_at324_module = true
 )
 {
+	/*
 	//Size of the slope
 	h_slope = i_h_wall -i_h_wall_vertical;
 	l_slope = h_slope * tan(i_a_slope);
@@ -50,16 +58,16 @@ module at324_module_with_support_sloped
 		i_h_wall -i_li_hole_lower * cos(i_a_slope)
 
 	];
-
+	*/
 
 	union()
 	{
 		if (i_x_show_at324_module==true)
 		{
-
-
+			translate([0,0,i_h_wall])
+			rotate([i_a_slope-90,0,-90])
+			at324_board();
 		}
-
 
 		//Spawn sloped walls
 		for (wo_temp = [-i_wi_hole/2,i_wi_hole/2])
@@ -69,9 +77,9 @@ module at324_module_with_support_sloped
 			(
 				//	OUTER PROFILE
 				//Depth of the wall
-				i_l_wall = gc_w_at324,
+				i_l_wall = i_w_wall,
 				//Height of the wall
-				i_h_wall = 70,
+				i_h_wall = i_h_wall,
 				//Thickness of the wall
 				i_t_wall = i_t_wall,
 				
@@ -83,18 +91,18 @@ module at324_module_with_support_sloped
 
 				// SLOPE HOLE POSITION
 				//Distance of the upper hole from the start of the slope
-				i_li_hole_upper = 10,
+				i_li_hole_upper = i_li_hole_upper,
 				//Distance of the lower hole from the start of the slope
-				i_li_hole_lower = 30,
+				i_li_hole_lower = i_li_hole_lower,
 
 				//	HOLE
 				//Drill diameter
-				i_d_bolt_drill = 3,
+				i_d_bolt_drill = i_d_bolt_drill,
 				//Length of the bolt
-				i_h_bolt = 20,
+				i_h_bolt = i_h_bolt,
 				//Nut slot width and height
-				i_w_nut = 6,
-				i_h_nut = 3
+				i_w_nut = i_w_nut,
+				i_h_nut = i_h_nut
 				
 			);
 		}
@@ -102,5 +110,5 @@ module at324_module_with_support_sloped
 
 }
 
-//if (false)
+if (false)
 at324_module_with_support_sloped();
