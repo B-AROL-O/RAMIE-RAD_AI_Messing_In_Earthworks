@@ -76,7 +76,10 @@ module shape_wall_sloped_with_bolt_nut
 	i_h_bolt = 20,
 	//Nut slot width and height
 	i_w_nut = 6,
-	i_h_nut = 3
+	i_h_nut = 3,
+
+	//extra hole meant for a bolt
+	i_d_extra_hole = 6.6
 	
 )
 {
@@ -117,10 +120,6 @@ module shape_wall_sloped_with_bolt_nut
 		i_h_wall -i_li_hole_lower * cos(i_a_slope)
 
 	];
-
-	
-
-
 
 	aan_points = 
 	[
@@ -205,6 +204,20 @@ module shape_wall_sloped_with_bolt_nut
 			//This points up
 			cube([i_w_nut, i_h_nut, i_t_wall*1.1], center=true);
 			
+			if (i_d_extra_hole>0)
+			translate
+			([
+				i_l_wall-i_d_extra_hole*1.5,
+				i_d_extra_hole*1.5,
+				0
+			])
+			cylinder
+			(
+				d=i_d_extra_hole,
+				h=i_t_wall,
+				center=true,
+				$fn=100
+			);
 			
 			
 		} //End sub
@@ -213,5 +226,5 @@ module shape_wall_sloped_with_bolt_nut
 
 }
 
-if (false)
+//if (false)
 shape_wall_sloped_with_bolt_nut();
