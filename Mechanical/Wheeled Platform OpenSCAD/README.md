@@ -42,6 +42,12 @@ I have pillars serving as servo holders, I did all the parameters to nail down t
 
 ![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-08-27T1552_HS422_pillar.png)
 
+## AT324 Board
+
+Constructing a sloped wall to support the board
+
+![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/)
+
 ## Final Assembly
 
 I did a bath tub style holder with all the components and it turned out okay
