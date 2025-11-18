@@ -148,6 +148,10 @@ module shape_wall_sloped_with_bolt_nut
 
 	];
 
+	//Center on 0,0
+	translate([i_l_wall/2,0,0])
+	//Put upright
+	rotate([90,0,180])
 	difference()
 	{
 		union()
