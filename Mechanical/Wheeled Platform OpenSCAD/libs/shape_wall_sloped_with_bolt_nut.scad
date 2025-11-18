@@ -82,14 +82,14 @@ module shape_wall_sloped_with_bolt_nut
 {
 
 	h_slope = i_h_wall -i_h_wall_vertical;
-	echo("h_slope", h_slope);
+	//echo("h_slope", h_slope);
 
 	l_slope = h_slope * tan(i_a_slope);
-	echo("l_slope", l_slope);
+	//echo("l_slope", l_slope);
 
 	//Flat section at the top
 	l_wall_horizontal = i_l_wall - l_slope;
-	echo("l_wall_horizontal", l_wall_horizontal);
+	//echo("l_wall_horizontal", l_wall_horizontal);
 
 
 	//echo("Tan:", tan(i_a_slope));

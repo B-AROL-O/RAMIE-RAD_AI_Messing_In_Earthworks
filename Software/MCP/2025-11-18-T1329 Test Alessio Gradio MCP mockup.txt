@@ -1,0 +1,15 @@
+
+D:\Data\Project\Project OrangeBot\RAMIE-RAD_AI_Messing_In_Earthworks\Software\MCP>uv run main.py
+Using CPython 3.13.1 interpreter at: D:\Programs\Python_3_13\python.exe
+Creating virtual environment at:
+ .venv
+░░░░░░░░░░░░░░░░░░░░ [0/61] Instwarning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.                            
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 61 packages in 5.57s  
+Error launching MCP server: The `mcp` package is required to use the Gradio MCP integration. Please install it with the `mcp` extra: `pip install gradio[mcp]`.
+* Running on local URL:  http://127.0.0.1:7860
+* To create a public link, set `share=True` in `launch()`.
+D:\Programs\Python_3_13\Lib\matplotlib\projections\__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+Keyboard interruption in main thread... closing server.
