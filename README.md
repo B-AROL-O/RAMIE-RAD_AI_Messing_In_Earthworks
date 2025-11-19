@@ -60,6 +60,8 @@ Interfaces with a UART bidirectional link with the SBC, answer to a serial proto
 
 I lost count of the SBCs I tested for my ultimate goal of making a general robot that expresses a degree of general intelligence with local compute only. The N100 16GB could be it, it has the memory, bandwidth, compute and power envelope to run useful LLMs on the go.
 
+![](/Electronics/Images/2025-11-19-T1545_electronics_latte_panda.jpg)
+
 
 ## Contributors
 
