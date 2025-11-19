@@ -44,9 +44,23 @@ I have pillars serving as servo holders, I did all the parameters to nail down t
 
 ## AT324 Board
 
-Constructing a sloped wall to support the board
+Constructing a sloped wall to support the microcontroller board with LCD
 
-![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/)
+![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-11-18-T1745_AT324_support.png)
+
+As additional consideration, I can use the support to bolt the power connectors so I have positive and negative side
+
+I whould think of additional structural supports
+
+The rear looks ripe for a camera attachment
+
+Print failed, I did it quick in the evening and failed to use right size and do proper support, it's still useable for the prototype, and I got the bolts right
+
+![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-11-19-T1430_Print_AT324_support.jpg)
+
+Used hotglue to install the support, and it all works well enough.
+
+![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-11-19-T1455_Print_AT324_support.jpg)
 
 ## Final Assembly
 
@@ -65,3 +79,7 @@ Generated the STL and Printed with my Creality K2 with auto loader. I decided to
 ### BOTTOM VIEW
 
 ![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-11-08-T2104_assembled_powered_below.jpg)
+
+### WITH LATTE PANDA
+
+![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-11-18-roaming.png)

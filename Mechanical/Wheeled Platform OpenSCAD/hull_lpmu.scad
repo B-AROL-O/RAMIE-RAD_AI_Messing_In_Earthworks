@@ -26,6 +26,8 @@ include <battery-18650-holder.scad>
 
 include <sbc_lattepanda_mu_lite_board.scad>
 
+include <board_at324_support.scad>
+
 
 module ellipse
 (
@@ -49,6 +51,7 @@ module industrious_resonance
 	i_x_show_servo = false,
 	i_x_show_battery = false,
 	i_x_show_pivot = false,
+	i_x_show_at324 = false,
 	//Thickness of the base
 	i_t_base = 2.0,
 	//Precision
@@ -172,6 +175,12 @@ module industrious_resonance
 	//------------------------------------------------------------------
 
 	d_switch_hole = 6.0 + 1.0;
+
+	//------------------------------------------------------------------
+	//	AT324 MODULE
+	//------------------------------------------------------------------
+
+	lo_at324_module = -80;
 
 	//------------------------------------------------------------------
 	//	GEOMETRY
@@ -564,16 +573,52 @@ module industrious_resonance
 	);
 
 
+	//---------------------------------------------------------------------
+			//	AT324 MODULE
+	//---------------------------------------------------------------------
+
+	translate([lo_at324_module,0,t_base])
+	//Face to the rear of the robot
+	rotate([0,0,180])
+	at324_module_with_support_sloped
+	(
+		//	SIZE
+		i_w_wall = 50,
+		i_h_wall = 55,
+		i_h_wall_vertical = 30,
+		i_t_wall = 5,
+		//	ANGLE AND SLOPE
+		i_a_slope = 60,
+		//Interaxis between holes
+		i_wi_hole = gc_li_at324_hole,
+		//Distance of the upper hole from the start of the slope
+		i_li_hole_upper = 5,
+		//Distance of the lower hole from the start of the slope
+		i_li_hole_lower = 5+gc_wi_at324_hole,
+		//	HOLE
+		//Drill diameter
+		i_d_bolt_drill = 2.5+0.3,
+		//Length of the bolt
+		i_h_bolt = 10,
+		//Nut slot width and height
+		i_w_nut = 5+0.5,
+		i_h_nut = 3,
+
+		//	SHOW
+		//Show extra models
+		i_x_show_at324_module = i_x_show_at324
+	);
 }
 
-//industrious_resonance();
+industrious_resonance();
 
-//if (false)
+if (false)
 industrious_resonance
 (
 	i_x_show_sbc = true,
 	i_x_show_battery = true,
 	i_x_show_servo = true,
 	i_x_show_pivot = true,
+	i_x_show_at324 = true,
 	i_e_precision = 0.01
 );

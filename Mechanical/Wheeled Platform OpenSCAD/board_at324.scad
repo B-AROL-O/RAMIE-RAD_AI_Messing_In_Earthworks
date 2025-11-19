@@ -74,5 +74,5 @@ module at324_board
 	}
 }
 
-//if (false)
+if (false)
 at324_board();
