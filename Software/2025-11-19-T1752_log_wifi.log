@@ -80,8 +80,8 @@ network:
     wlp2s0:
       dhcp4: true
       access-points:
-        "OrangeFi":
-          password: "SephirothYolo1993"
+        "":
+          password: ""
 sona@lpn10016gb:~$ ^C
 sona@lpn10016gb:~$ sudo reboot
 
@@ -161,8 +161,8 @@ network:
     wlp2s0:
       dhcp4: true
       access-points:
-        "OrangeFi":
-          password: "SephirothYolo1993"
+        "":
+          password: ""
 sona@lpn10016gb:~$ ^C
 sona@lpn10016gb:~$ nmcli device wifi list
 Command 'nmcli' not found, but can be installed with:
