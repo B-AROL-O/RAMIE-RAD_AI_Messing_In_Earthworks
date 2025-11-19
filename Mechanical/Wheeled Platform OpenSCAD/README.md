@@ -54,6 +54,14 @@ I whould think of additional structural supports
 
 The rear looks ripe for a camera attachment
 
+Print failed, I did it quick in the evening and failed to use right size and do proper support, it's still useable for the prototype, and I got the bolts right
+
+![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-11-19-T1430_Print_AT324_support.jpg)
+
+Used hotglue to install the support, and it all works well enough.
+
+![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-11-19-T1455_Print_AT324_support.jpg)
+
 ## Final Assembly
 
 I did a bath tub style holder with all the components and it turned out okay
