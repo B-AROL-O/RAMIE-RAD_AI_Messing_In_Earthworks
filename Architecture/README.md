@@ -1,57 +1,84 @@
 # ARCHITECTURE
 
-TODO
+## RAMIE
 
+RAMIE is an acronym for:
+- RAD Radical
+- AI
+- Messing
+- In
+- Earthworks
 
-# SBC <-> Board Servomotor LCD Communication
+RAMIE is an MVP AI robot meant to use local 4B LLMs as poor's man AGI and achieve general robotics to an extent.
 
-I use a UART 250Kb/s link
+RAMIE showcasses an end to end STT LLM TTS workflow using MCP tools to sense the robot state and control the robot actions.
 
-The communication is done in clear ASCII characters, easy to do by hand
+RAMIE is menat to run 100% locally without internet connection, all within a small mobile robots, cost, power, memory and compute envelopes.
 
-I use the uniparser library that allows to link commands with % delimiter like a printf to do automatic callback functions with arguments that works really well
+It has proven most challenging finding an SBC capable of such feats.
 
-Define the callback functions
+## SPECIFICATIONS
 
-```cpp
-extern void handle_ping(void);
+- Power: 40 W
+- Batttery Duration: ? h
+- DoF: 2
+- Complexity: MVP
 
-extern void handle_sign(void);
+# HARDWARE ARCHITECTURE
 
-extern void handle_revision(void);
+## SBC
 
-extern void handle_stop(void);
+The single board computer takes care of high level user application and running AI models and required python glue.
 
-extern void handle_set_velocity(int8_t right_speed, int8_t left_speed);
+RAMIE is powered by the ```Latte Panda Mu N100 16GB``` mounted on a ```Latte Panda Mu Lite Carrier Board```
 
-extern void handle_set_velocity_timed(uint8_t time, int8_t right_speed, int8_t left_speed);
-```
+This board was choosen because of a combination of RAM, RAM bandwidth, compute, power envelope and Intel being one of the two companies in the world that knows how to write drivers and ML frameworks.
 
-Register what command triggers what callback function
+## Microcontroller
 
-```cpp
-parser.add_cmd( "P", (void *)&handle_ping );
+RAMIE is equipped with a microcontroller board takes care of real time applications, like motor control.
 
-parser.add_cmd( "F", (void *)&handle_sign );
+- ```Atmel 324 PA``` 32KB Flash, 4KB SRAM
+- ```LCD 2x16``` Display board status
+- ```UART 250Kb/s``` Link with the SBC
 
-parser.add_cmd( "REV", (void *)&handle_revision );
+## Motors
 
-parser.add_cmd( "STOP", (void *)&handle_stop );
+RAMIE moves using two continuous rotation servos using PPM protocol and two wheels with pivot.
 
-parser.add_cmd( "VR%sL%s", (void *)&handle_set_velocity );
+Motors are labeled left and right, in this order. The table below will show the robot action when a given speed is sent to the microcontroller board.
 
-parser.add_cmd( "T%uVR%sL%s", (void *)&handle_set_velocity_timed );
-```
+| Left Speed  | Right Speed | Robot Motion | 
+|-------------|-------------|--------------|
+| 0           | 0           | STOP         |
+| +10         | +10         | FORWARD 100mm/s          |
+| -10         | -10         | BACKWARD 100mm/s          |
+| -10         | +10         | COUNTERCLOCKWISE 180°/s |
+| +10         | -10         | CLOCKWISE 180°/s |
 
-From here the uniparser will take care of everything, and automatically do the function call once the command is received
+## Communication Protocol SBC <-> 
 
-## TIMEOUT
+Hardware link uses full duplex 250Kb/s link on UART ```ttys4```
 
-The firmware is configured to kill the motors if no communications is received, assuming that something went wrong.
+The protocol is meant to allow the SBC to read the robot state, and emit robot actions, with the microcontroller firmware taking care of real time operation.
 
-TODO: Is it implemented? check.
+### FEATURE: COMMUNICATION TIMEOUT
 
-## PING
+The firmware is configured to STOP the motors automatically if no communications is received within a given time limit.
+
+This feature is meant to mitigate the scenario where the SBC application has stalled and the robot will keep executing the last given command, preventing a collision and making it convenient to rearm the robot.
+
+Typical timeout configuration is 1000ms
+
+### COMMANDS
+
+Commands are simply executed by sending an appropriate ASCII string with terminator via UART link.
+
+| SBC Message | Microcontroller Response | Robot Motion | 
+|-------------|-------------|--------------|
+| ```P/0``` | 0           | STOP         |
+
+## COMMAND PING
 
 This command simply refreshes the communication timeout. 
 
