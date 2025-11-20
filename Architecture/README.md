@@ -70,71 +70,58 @@ This feature is meant to mitigate the scenario where the SBC application has sta
 
 Typical timeout configuration is 1000ms
 
-### COMMANDS
+### FEATURE: DIRECT MODE VS. TIMED MODE
 
-Commands are simply executed by sending an appropriate ASCII string with terminator via UART link.
+I thought a lot about it, and designed to set of velocity commands to be sent to the SBC.
 
-| SBC Message | Microcontroller Response | Robot Motion | 
-|-------------|-------------|--------------|
-| ```P/0``` | 0           | STOP         |
+- Direct Mode: The SBC send a velocity for left and right wheel, and the wheel will move at that speed unless commanded otherwise.
+- Timed Mode: The SBC send a timed velocity command that specify a duration in servo step (50Hz). The microcontroller has a queue. This allows the SBC to send a number of motion commands and the microcontroller will execute the commands in sequence for the specified time, then when queue is empty, stop the motors.
 
-## COMMAND PING
+Direct Mode is convenient for teleoperation, by binding a velocity to a keystroke down, and velocity zero to keystroke up.
 
-This command simply refreshes the communication timeout. 
+Timed Mode is convenient for LLM orchestration, where the LLM can come up in a single query with a number of motion instructions, and the microcontroller will execute them in sequence. THe SBC isn't going to be convenient for real time anyway, let the microcontroller deal with it.
 
-SBC REQUEST: ```P/0```
+The microcontroller will seamless switch mode based on last received command, switching will flush the queue of timed commands.
 
-BOARD ANSWER: none
+### UART Command Reference (SBC <-> MICROCONTROLLER)
 
-## SIGN
+*All messages are ASCII strings terminated by the literal sequence `"/0"` (slash zero). The SBC always sends the terminator; the micro‑controller never sends any data except the replies listed below.*
 
-This command Ask the board to send the signature, it can be the name of the robot
+**RAMIE UART Command Reference (SBC ↔ MC‑U)**  
 
-SBC REQUEST: ```SIGN/0```
+| Command | Syntax | Arguments | Meaning | Reply (if any) |
+|---------|--------|-----------|---------|----------------|
+| **PING** – refresh communication timeout | `P/0` | – | Resets the internal timeout timer. | None |
+| **SIGN** – get robot signature | `SIGN/0` | – | Returns a string identifying the robot. | `RAMIE/0` |
+| **REV** – firmware revision | `REV/0` | – | Returns date of current firmware (ISO‑8601). | `2025-11-16/0` |
+| **STOP** – emergency stop | `STOP/0` | – | Immediately cuts power to both motors, bypassing acceleration limits and flushes the motion queue. | `STOP/0` |
+| **SET VELOCITY** – set constant wheel speed (bypass orchestration) | `VR%sL%s/0` | `R`: right‑wheel speed  (–127 … +127)<br>`L`: left‑wheel speed  (–127 … +127) | Motor controller accepts the two signed bytes and drives each wheel at the requested PWM value. The values are clipped to the legal range. | None |
+| **SET TIMED VELOCITY** – enqueue a motion segment | `VT%uR%sL%s/0` | `T`: duration (steps) at 50Hz <br>`R`, `L`: wheel speeds as above | The controller stores the tuple *(right, left, duration)* in its internal queue. When no other command is received, it executes each queued segment sequentially and stops automatically after the last step. Duration is an integer multiple of **1 step = 20 ms** (i.e., one 50Hz cycle). | None |
+| **GET BATTERY** – read battery voltage | `GETBAT/0` | – | ? | ? |
 
-BOARD ANSWER: ```RAMIE/0```
 
-## REV
+### Common Notes
 
-This command ask the board for the firmware revision. It's a date in yyyy-mm-dd ISO format
+- **Terminators** – Every command string must end with the literal characters `/0`. The micro‑controller responds in exactly the same way (if a reply is defined).  
+- **Error Handling** – If an unknown or malformed command arrives, the micro‑controller sends back `ERR/0`. No other action is taken.  
+- **Speed Units** – The signed byte values represent PPM 
+- **Queue Size** – Timed Mode supports up to 16 motion commands before overflowing. Overflow behaviour is flush.
+- **Safety** – The servo driver implements a change in command limit from time step to time step, that is speed for position servos, and acceleration for speed servos.
 
-SBC REQUEST: ```REV/0```
 
-BOARD ANSWER: ```2025-11-16/0```
+#### Example Session
 
-## STOP
+```
+# Reset timeout
+P/0
 
-This command is the emergency stop. It stops the motors bypassing the speed and acceleration limits.
+# Query signature
+SIGN/0   → RAMIE/0
 
-SBC REQUEST: ```STOP/0```
-
-BOARD ANSWER: ```STOP/0```
-
-TODO: implements the limit removal
-
-##  SET VELOCITY
-
-Set target velocity of left and right wheels. It is limited by the acceleration of the driver, a safety and continuity measure.
-
-Using this command sets a constant velocity, and bypasses the motion orchestration. Set speed to zero or ask for STOP to stop.
-
-It has S8 arguments, range -127 to +127.
-
-SBC REQUEST: ```VR%sL%s/0```
-
-BOARD ANSWER: none
-
-##  SET TIMED VELOCITY
-
-This specify a time and two velocities. This will engage the motion orchestration, allowing the SBC to queue up motions in a queue, so that when a new speed is sent, it's queued up for execution.
-
-Robot will automatically stop once the last command in the queue is executed.
-
-It's done it this way so that the SBC driver doesn't have to care for the real time orchestration of motion sequences.
-
-SBC REQUEST: ```VT%uR%sL%s```
-
-BOARD ANSWER: none
+# Set constant speeds for 2 seconds
+VR10L-10/0
+VT20R20L20/0      # queue: forward 3 s (since duration=30 steps)
+```
 
 The test bench shows the response to orchestration
 
@@ -160,6 +147,3 @@ Step:  10 | R:   -15 | L:    15
 Step:  11 | R:   -15 | L:    15
 Step:  12 | R:   -15 | L:    15
 ```
-
-I need to decide how big is an orchestration step. It should be a finite multiple of 50Hz. I'm thinking 1 mean 100ms. So the maximum 255 means 25.5s
-
