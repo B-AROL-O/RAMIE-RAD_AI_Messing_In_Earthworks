@@ -1,0 +1,209 @@
+login as: sona
+sona@192.168.1.240's password:
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-86-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Wed Nov 19 03:25:39 PM UTC 2025
+
+  System load:  0.0                Temperature:             48.0 C
+  Usage of /:   18.0% of 55.99GB   Processes:               142
+  Memory usage: 2%                 Users logged in:         0
+  Swap usage:   0%                 IPv4 address for enp3s0: 192.168.1.240
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Sun Oct 26 13:19:06 2025 from 192.168.1.100
+sona@lpn10016gb:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group defaul                                                                                                                                                                             t qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: enp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP gr                                                                                                                                                                             oup default qlen 1000
+    link/ether d2:f7:f7:c0:0c:13 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.240/23 metric 100 brd 192.168.1.255 scope global dynamic enp3                                                                                                                                                                             s0
+       valid_lft 99850sec preferred_lft 99850sec
+    inet6 fe80::d0f7:f7ff:fec0:c13/64 scope link
+       valid_lft forever preferred_lft forever
+3: wlp2s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default ql                                                                                                                                                                             en 1000
+    link/ether 10:b1:df:bd:b3:b9 brd ff:ff:ff:ff:ff:ff
+sona@lpn10016gb:~$ sudo cat /etc/netplan/50-cloud-init.yaml
+[sudo] password for sona:
+network:
+  version: 2
+  ethernets:
+    enp3s0:
+      dhcp4: true
+sona@lpn10016gb:~$ ^C
+sona@lpn10016gb:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: enp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether d2:f7:f7:c0:0c:13 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.240/23 metric 100 brd 192.168.1.255 scope global dynamic enp3s0
+       valid_lft 97509sec preferred_lft 97509sec
+    inet6 fe80::d0f7:f7ff:fec0:c13/64 scope link
+       valid_lft forever preferred_lft forever
+3: wlp2s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 10:b1:df:bd:b3:b9 brd ff:ff:ff:ff:ff:ff
+sona@lpn10016gb:~$ ^C
+sona@lpn10016gb:~$ ls
+test_microphone
+sona@lpn10016gb:~$ ^C
+sona@lpn10016gb:~$ sudo nano /etc/netplan/50-cloud-init.yaml
+[sudo] password for sona:
+sona@lpn10016gb:~$ sudo cat /etc/netplan/50-cloud-init.yaml
+network:
+  version: 2
+  ethernets:
+    enp3s0:
+      dhcp4: true
+  wifis:
+    wlp2s0:
+      dhcp4: true
+      access-points:
+        "":
+          password: ""
+sona@lpn10016gb:~$ ^C
+sona@lpn10016gb:~$ sudo reboot
+
+Broadcast message from root@lpn10016gb on pts/1 (Wed 2025-11-19 16:35:51 UTC):
+
+The system will reboot now!
+
+sona@lpn10016gb:~$
+login as: sona
+sona@192.168.1.240's password:
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-86-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Wed Nov 19 04:37:32 PM UTC 2025
+
+  System load:  0.05               Temperature:             60.0 C
+  Usage of /:   18.0% of 55.99GB   Processes:               137
+  Memory usage: 2%                 Users logged in:         0
+  Swap usage:   0%                 IPv4 address for enp3s0: 192.168.1.240
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Wed Nov 19 15:25:40 2025 from 192.168.1.100
+sona@lpn10016gb:~$ ls
+test_microphone
+sona@lpn10016gb:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: enp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether d2:f7:f7:c0:0c:13 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.240/23 metric 100 brd 192.168.1.255 scope global dynamic enp3s0
+       valid_lft 99923sec preferred_lft 99923sec
+    inet6 fe80::d0f7:f7ff:fec0:c13/64 scope link
+       valid_lft forever preferred_lft forever
+3: wlp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 10:b1:df:bd:b3:b9 brd ff:ff:ff:ff:ff:ff
+sona@lpn10016gb:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: enp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether d2:f7:f7:c0:0c:13 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.240/23 metric 100 brd 192.168.1.255 scope global dynamic enp3s0
+       valid_lft 99813sec preferred_lft 99813sec
+    inet6 fe80::d0f7:f7ff:fec0:c13/64 scope link
+       valid_lft forever preferred_lft forever
+3: wlp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 10:b1:df:bd:b3:b9 brd ff:ff:ff:ff:ff:ff
+sona@lpn10016gb:~$ sudo cat /etc/netplan/50-cloud-init.yaml
+[sudo] password for sona:
+network:
+  version: 2
+  ethernets:
+    enp3s0:
+      dhcp4: true
+  wifis:
+    wlp2s0:
+      dhcp4: true
+      access-points:
+        "":
+          password: ""
+sona@lpn10016gb:~$ ^C
+sona@lpn10016gb:~$ nmcli device wifi list
+Command 'nmcli' not found, but can be installed with:
+sudo snap install network-manager  # version 1.2.2-32, or
+sudo apt  install network-manager  # version 1.46.0-1ubuntu2.3
+See 'snap info network-manager' for additional versions.
+sona@lpn10016gb:~$ ^C
+sona@lpn10016gb:~$ ^C
+sona@lpn10016gb:~$ sudo netplan --debug generate
+DEBUG:command generate: running ['/usr/libexec/netplan/generate']
+** (generate:2587): DEBUG: 16:46:52.269: starting new processing pass
+** (generate:2587): DEBUG: 16:46:52.269: wlp2s0: adding wifi AP 'OrangeFi'
+** (generate:2587): DEBUG: 16:46:52.269: We have some netdefs, pass them through a final round of validation
+** (generate:2587): DEBUG: 16:46:52.270: enp3s0: setting default backend to 1
+** (generate:2587): DEBUG: 16:46:52.270: Configuration is valid
+** (generate:2587): DEBUG: 16:46:52.270: wlp2s0: setting default backend to 1
+** (generate:2587): DEBUG: 16:46:52.270: Configuration is valid
+** (generate:2587): DEBUG: 16:46:52.270: Generating output files..
+** (generate:2587): DEBUG: 16:46:52.270: Open vSwitch: definition enp3s0 is not for us (backend 1)
+** (generate:2587): DEBUG: 16:46:52.270: NetworkManager: definition enp3s0 is not for us (backend 1)
+** (generate:2587): DEBUG: 16:46:52.270: Creating wpa_supplicant config
+** (generate:2587): DEBUG: 16:46:52.270: wlp2s0: Creating wpa_supplicant configuration file run/netplan/wpa-wlp2s0.conf
+** (generate:2587): DEBUG: 16:46:52.270: Creating wpa_supplicant unit /run/systemd/system/netplan-wpa-wlp2s0.service
+** (generate:2587): DEBUG: 16:46:52.273: Creating wpa_supplicant service enablement link /run/systemd/system/systemd-networkd.service.wants/netplan-wpa-wlp2s0.service
+** (generate:2587): DEBUG: 16:46:52.273: Open vSwitch: definition wlp2s0 is not for us (backend 1)
+** (generate:2587): DEBUG: 16:46:52.273: NetworkManager: definition wlp2s0 is not for us (backend 1)
+sona@lpn10016gb:~$ ^C
+sona@lpn10016gb:~$ ^C
+sona@lpn10016gb:~$ sudo nano /etc/netplan/50-cloud-init.yaml
+sona@lpn10016gb:~$ sudo netplan --debug generate
+DEBUG:command generate: running ['/usr/libexec/netplan/generate']
+** (generate:3127): DEBUG: 16:50:06.413: starting new processing pass
+** (generate:3127): DEBUG: 16:50:06.413: wlp2s0: adding wifi AP 'OrangeFi'
+** (generate:3127): DEBUG: 16:50:06.413: We have some netdefs, pass them through a final round of validation
+** (generate:3127): DEBUG: 16:50:06.413: enp3s0: setting default backend to 2
+** (generate:3127): DEBUG: 16:50:06.413: Configuration is valid
+** (generate:3127): DEBUG: 16:50:06.413: wlp2s0: setting default backend to 2
+** (generate:3127): DEBUG: 16:50:06.413: Configuration is valid
+** (generate:3127): DEBUG: 16:50:06.413: Generating output files..
+** (generate:3127): DEBUG: 16:50:06.413: networkd: definition enp3s0 is not for us (backend 2)
+** (generate:3127): DEBUG: 16:50:06.413: Open vSwitch: definition enp3s0 is not for us (backend 2)
+** (generate:3127): DEBUG: 16:50:06.413: networkd: definition wlp2s0 is not for us (backend 2)
+** (generate:3127): DEBUG: 16:50:06.413: Open vSwitch: definition wlp2s0 is not for us (backend 2)
+sona@lpn10016gb:~$ sudo netplan apply
