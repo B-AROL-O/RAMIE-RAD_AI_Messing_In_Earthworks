@@ -108,3 +108,10 @@ sudo systemctl restart NetworkManager
 ```
 
 Of course it bricked the network -.-
+
+
+### Luckfox PicoKVM
+
+I always have trouble accessing SBC headless, I finally got a 49€ KVM to mitigate the issue and free myself from using discrete keyboard and mouse
+
+[Luckfox PicoKVM](/Software/Luckfox%20PicoKVM/README.md)
