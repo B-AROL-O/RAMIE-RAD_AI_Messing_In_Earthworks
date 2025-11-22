@@ -1,3 +1,21 @@
+# Operating System
+
+Using Ubuntu 24.04 LTS
+
+## UART TERMINAL
+
+Ubuntu is hooked to a serial port to do the UART terminal, it is more reliable than screen, keyboard ethernet and wifi
+
+```
+
+```
+
+
+
+
+
+
+
 # CONFIGURE NETWORK
 
 For reasons I do not understand the network interfaces change name and stop working...
