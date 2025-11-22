@@ -29,6 +29,7 @@ N305 16GB (BRICKED Sent back to DF Robot)
 Modify GRUB so that the operating system connects tothe serial port for access
 
 ```
+cat /etc/default/grub
 sudo nano /etc/default/grub
 ```
 
@@ -48,9 +49,9 @@ GRUB_TIMEOUT=0
 GRUB_DISTRIBUTOR=`( . /etc/os-release; echo ${NAME:-Ubuntu} ) 2>/dev/null || echo Ubuntu`
 
  #2025-11-22 Adding the serial port access via ttyS0 that I ound is the debug consol
-GRUB_CMDLINE_LINUX_DEFAULT="console=ttyS0,250000n8"
+GRUB_CMDLINE_LINUX_DEFAULT="console=ttyS0,115200n8"
 GRUB_TERMINAL="console serial"
-GRUB_SERIAL_COMMAND="serial --speed=250000 --unit=0 --word=8 --parity=no --stop=1"
+GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=0 --word=8 --parity=no --stop=1"
 
 
 # If your computer has multiple operating systems installed, then you

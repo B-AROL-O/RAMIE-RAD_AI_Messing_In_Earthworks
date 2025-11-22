@@ -162,22 +162,21 @@ sudo apt upgrade
 
 ![](/Software/Ubuntu%2024_04%20server%20LTS/Images/2025-11-22-T1222%20AptUpdate%20Upgrade.png)
 
+### TTYS0 SSH PUTTY SERIAL
 
+Configure the GRUB to use ttyS0 as UART serial interface to let the host connect via putty via USB to UART FTDI adapter
 
+[TTYS0 SERIAL GRUB CONFIGURATION](/Software/ttys0%20SSH)
 
-## UART TERMINAL
+![](/Software/ttys0%20SSH/Images/2025-11-22T1349%20Putty%20Configuration.png)
 
-Ubuntu is hooked to a serial port to do the UART terminal, it is more reliable than screen, keyboard ethernet and wifi
+### Luckfox PicoKVM
 
-```
+I always have trouble accessing SBC headless, I finally got a 49€ KVM to mitigate the issue and free myself from using discrete keyboard and mouse
 
-```
+[Luckfox PicoKVM](/Software/Luckfox%20PicoKVM/README.md)
 
-
-
-
-
-
+![](/Software/Luckfox%20PicoKVM/Images/2025-11-22_11_11_IMG_20251122_111122.jpg)
 
 ## (OLD) CONFIGURE NETWORK
 
@@ -273,8 +272,3 @@ sudo systemctl restart NetworkManager
 Of course it bricked the network -.-
 
 
-### Luckfox PicoKVM
-
-I always have trouble accessing SBC headless, I finally got a 49€ KVM to mitigate the issue and free myself from using discrete keyboard and mouse
-
-[Luckfox PicoKVM](/Software/Luckfox%20PicoKVM/README.md)

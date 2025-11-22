@@ -69,6 +69,15 @@ Install Ubuntu 24.04 LTS, configure network and drive structure
 
 [Install Ubuntu Server 24.04 LTS](/Software/Ubuntu%2024_04%20server%20LTS)
 
+### TTYS0 SSH PUTTY SERIAL
+
+Configure the GRUB to use ttyS0 as UART serial interface to let the host connect via putty via USB to UART FTDI adapter
+
+[TTYS0 SERIAL GRUB CONFIGURATION](/Software/ttys0%20SSH)
+
+![](/Software/ttys0%20SSH/Images/2025-11-22T1349%20Putty%20Configuration.png)
+
+
 ### Luckfox PicoKVM
 
 I always have trouble accessing SBC headless, I finally got a 49€ KVM to mitigate the issue and free myself from using discrete keyboard and mouse
@@ -76,7 +85,6 @@ I always have trouble accessing SBC headless, I finally got a 49€ KVM to mitig
 [Luckfox PicoKVM](/Software/Luckfox%20PicoKVM)
 
 ![](/Software/Luckfox%20PicoKVM/Images/2025-11-22_11_11_IMG_20251122_111122.jpg)
-
 
 ## Contributors
 
