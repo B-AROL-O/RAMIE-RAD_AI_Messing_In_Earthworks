@@ -65,15 +65,15 @@ I lost count of the SBCs I tested for my ultimate goal of making a general robot
 
 ## Operating System
 
-Ubuntu 24.04 LTS
+Install Ubuntu 24.04 LTS, configure network and drive structure
 
-
+[Install Ubuntu Server 24.04 LTS](/Software/Ubuntu%2024_04%20server%20LTS)
 
 ### Luckfox PicoKVM
 
 I always have trouble accessing SBC headless, I finally got a 49€ KVM to mitigate the issue and free myself from using discrete keyboard and mouse
 
-[Luckfox PicoKVM](/Software/Luckfox%20PicoKVM/README.md)
+[Luckfox PicoKVM](/Software/Luckfox%20PicoKVM)
 
 
 
