@@ -75,7 +75,7 @@ I always have trouble accessing SBC headless, I finally got a 49€ KVM to mitig
 
 [Luckfox PicoKVM](/Software/Luckfox%20PicoKVM)
 
-
+![](/Software/Luckfox%20PicoKVM/Images/2025-11-22_11_11_IMG_20251122_111122.jpg)
 
 
 ## Contributors
