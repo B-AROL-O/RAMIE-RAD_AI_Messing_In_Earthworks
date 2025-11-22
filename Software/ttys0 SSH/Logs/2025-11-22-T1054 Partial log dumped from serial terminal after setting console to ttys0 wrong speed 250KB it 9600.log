@@ -1,0 +1,35 @@
+Terminal log file
+Date: 2025-11-22 - 10:54:06
+-----------------------------------------------
+  0;32m  OK   - Accounts Service.
+[mpower-profiles-daemon.service
+[-remote-desktop.service2m  OK           Starting odemManager.service        Starting k Manager...
+         Starting alsa-restore.service
+         Starting rub-initrd-fallback.service         Starting imedated.service       Starting plicant...
+[[0;1;39mModemManager.service2m  OK   Card State.
+[-initrd-fallback.service[] Started - Network Manager.
+[target  Network Manager Wait Online...
+         Starting          Starting penVPN service...
+         Starting 
+         Starting essions.service[nattended-upgrades.service.
+         Starting sman.serviceK  
+[0m - OpenVPN service.
+[m] Finished s.
+[ OpenBSD Secure Shell server.
+         Starting ..
+         Starting it.servic…0;32m  OK  it-wait.servic…[yS0.service0m] Reached target 
+         Starting erviceinished 
+[dp-sesman.service32m  OK  getty.sliceg 
+[nager.
+[ e of UID 1000.
+         Starting -dir@1000.ser…[user-runtime-dir@1000.ser…ctory /run/user/1000.
+         Starting muser@1000.service1000...
+[00.service0;32m  OK  on 1 of User sona.
+         Starting ice0;32m  OK  rtkit-daemon.serviceice.
+
+Ubuntu 24.04.3 LTS sona-lp-n100-8gb ttyS0
+
+sona-lp-n100-8gb login: 
+-----------------------------------------------
+Date: 2025-11-22 - 10:54:19
+End log file

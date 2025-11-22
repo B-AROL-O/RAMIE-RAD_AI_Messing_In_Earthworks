@@ -1,0 +1,175 @@
+
+lpmu8gb login: sona
+Password:
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-88-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat Nov 22 12:49:43 PM UTC 2025
+
+  System load:  0.04               Temperature:             35.0 C
+  Usage of /:   11.9% of 55.99GB   Processes:               144
+  Memory usage: 4%                 Users logged in:         0
+  Swap usage:   0%                 IPv4 address for wlp2s0: 192.168.1.227
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+sona@lpmu8gb:~$ sudo shutdown now
+[sudo] password for sona:
+
+Broadcast message from root@lpmu8gb on pts/0 (Sat 2025-11-22 12:55:06 UTC):
+
+The system will power off now!
+
+sona@lpmu8gb:~$   OK  ] Removed slice system-modprobe.slice - Slice /system/modprobe.
+[  OK  ] Stopped target bluetooth.target - Bluetooth Support.
+[  OK  ] Stopped target graphical.target - Graphical Interface.
+[  OK  ] Stopped target multi-user.target - Multi-User System.
+[  OK  ] Stopped target getty.target - Login Prompts.
+[  OK  ] Stopped target nss-lookup.target - Host and Network Name Lookups.
+[  OK  ] Stopped target sound.target - Sound Card.
+[  OK  ] Stopped target timers.target - Timer Units.
+[  OK  ] Stopped apt-daily-upgrade.timer - …y apt upgrade and clean activities.
+[  OK  ] Stopped apt-daily.timer - Daily apt download activities.
+[  OK  ] Stopped dpkg-db-backup.timer - Daily dpkg database backup timer.
+[  OK  ] Stopped e2scrub_all.timer - Period…Metadata Check for All Filesystems.
+[  OK  ] Stopped fstrim.timer - Discard unused filesystem blocks once a week.
+[  OK  ] Stopped fwupd-refresh.timer - Refresh fwupd metadata regularly.
+[  OK  ] Stopped logrotate.timer - Daily rotation of log files.
+[  OK  ] Stopped man-db.timer - Daily man-db regeneration.
+[  OK  ] Stopped motd-news.timer - Message of the Day.
+[  OK  ] Stopped sysstat-collect.timer - Ru…y accounting tool every 10 minutes.
+[  OK  ] Stopped sysstat-summary.timer - Ge… of yesterday's process accounting.
+[  OK  ] Stopped systemd-tmpfiles-clean.tim…y Cleanup of Temporary Directories.
+[  OK  ] Stopped update-notifier-download.t…hat failed at package install time.
+[  OK  ] Stopped update-notifier-motd.timer… a new version of Ubuntu available.
+[  OK  ] Stopped target network-online.target - Network is Online.
+[  OK  ] Stopped target time-set.target - System Time Set.
+[  OK  ] Closed lvm2-lvmpolld.socket - LVM2 poll daemon socket.
+[  OK  ] Closed systemd-rfkill.socket - Loa…ll Switch Status /dev/rfkill Watch.
+         Stopping ModemManager.service - Modem Manager...
+         Stopping apport.service - automatic crash report generation...
+         Stopping blk-availability.service - Availability of block devices...
+         Stopping cron.service - Regular ba…ground program processing daemon...
+         Stopping finalrd.service - Create …time dir for shutdown pivot root...
+         Stopping getty@tty1.service - Getty on tty1...
+[  OK  ] Stopped plymouth-quit.service - Terminate Plymouth Boot Screen.
+         Stopping rsyslog.service - System Logging Service...
+         Stopping serial-getty@ttyS0.service - Serial Getty on ttyS0...
+[  OK  ] Stopped snapd.seeded.service - Wait until snapd is fully seeded.
+[  OK  ] Stopped sysstat.service - Resets System Activity Logs.
+         Stopping systemd-random-seed.service - Load/Save OS Random Seed...
+         Stopping thermald.service - Thermal Daemon Service...
+         Stopping udisks2.service - Disk Manager...
+[  OK  ] Stopped udisks2.service - Disk Manager.
+[  OK  ] Stopped rsyslog.service - System Logging Service.
+[  OK  ] Stopped cron.service - Regular background program processing daemon.
+[  OK  ] Stopped ModemManager.service - Modem Manager.
+[  OK  ] Stopped serial-getty@ttyS0.service - Serial Getty on ttyS0.
+[  OK  ] Stopped getty@tty1.service - Getty on tty1.
+[  OK  ] Stopped apport.service - automatic crash report generation.
+[  OK  ] Stopped blk-availability.service - Availability of block devices.
+[  OK  ] Stopped systemd-random-seed.service - Load/Save OS Random Seed.
+[  OK  ] Stopped session-1.scope - Session 1 of User sona.
+[  OK  ] Removed slice system-getty.slice - Slice /system/getty.
+[  OK  ] Removed slice system-serial\x2dget…slice - Slice /system/serial-getty.
+[  OK  ] Stopped target getty-pre.target - Preparation for Logins.
+[  OK  ] Stopped plymouth-quit-wait.service…old until boot process finishes up.
+         Starting plymouth-switch-root-init…ll Plymouth To Jump To initramfs...
+         Stopping polkit.service - Authorization Manager...
+         Stopping systemd-logind.service - User Login Management...
+         Stopping user@1000.service - User Manager for UID 1000...
+[  OK  ] Stopped polkit.service - Authorization Manager.
+[  OK  ] Finished plymouth-switch-root-init…Tell Plymouth To Jump To initramfs.
+[  OK  ] Stopped user@1000.service - User Manager for UID 1000.
+[  OK  ] Stopped finalrd.service - Create f…untime dir for shutdown pivot root.
+[  OK  ] Stopped systemd-logind.service - User Login Management.
+         Stopping systemd-user-sessions.service - Permit User Sessions...
+         Stopping user-runtime-dir@1000.ser…Runtime Directory /run/user/1000...
+[  OK  ] Stopped systemd-user-sessions.service - Permit User Sessions.
+[  OK  ] Unmounted run-user-1000.mount - /run/user/1000.
+[  OK  ] Stopped user-runtime-dir@1000.serv…r Runtime Directory /run/user/1000.
+[  OK  ] Removed slice user-1000.slice - User Slice of UID 1000.
+[  OK  ] Stopped target network.target - Network.
+[  OK  ] Stopped target remote-fs.target - Remote File Systems.
+[  OK  ] Stopped target remote-fs-pre.targe…reparation for Remote File Systems.
+         Stopping systemd-networkd.service - Network Configuration...
+         Stopping wpa_supplicant.service - WPA supplicant...
+[  OK  ] Stopped systemd-networkd.service - Network Configuration.
+[  OK  ] Stopped wpa_supplicant.service - WPA supplicant.
+[  OK  ] Stopped target network-pre.target - Preparation for Network.
+[  OK  ] Stopped thermald.service - Thermal Daemon Service.
+[  OK  ] Stopped target basic.target - Basic System.
+[  OK  ] Stopped target paths.target - Path Units.
+[  OK  ] Stopped target slices.target - Slice Units.
+[  OK  ] Removed slice user.slice - User and Session Slice.
+[  OK  ] Stopped target sockets.target - Socket Units.
+[  OK  ] Closed iscsid.socket - Open-iSCSI iscsid Socket.
+[  OK  ] Closed lxd-installer.socket - Helper to install lxd snap on demand.
+[  OK  ] Closed snapd.socket - Socket activation for snappy daemon.
+[  OK  ] Closed ssh.socket - OpenBSD Secure Shell server socket.
+[  OK  ] Closed syslog.socket - Syslog Socket.
+[  OK  ] Closed systemd-networkd.socket - Network Service Netlink Socket.
+[  OK  ] Closed uuidd.socket - UUID daemon activation socket.
+[  OK  ] Stopped target sysinit.target - System Initialization.
+[  OK  ] Stopped target cryptsetup.target - Local Encrypted Volumes.
+[  OK  ] Stopped systemd-ask-password-conso…equests to Console Directory Watch.
+[  OK  ] Stopped systemd-ask-password-wall.…d Requests to Wall Directory Watch.
+[  OK  ] Stopped target integritysetup.targ… Local Integrity Protected Volumes.
+[  OK  ] Stopped target swap.target - Swaps.
+[  OK  ] Stopped target veritysetup.target - Local Verity Protected Volumes.
+         Deactivating swap swap.img.swap - /swap.img...
+         Stopping systemd-binfmt.service - Set Up Additional Binary Formats...
+         Stopping systemd-resolved.service - Network Name Resolution...
+         Stopping systemd-timesyncd.service - Network Time Synchronization...
+         Stopping systemd-update-utmp.servi…ord System Boot/Shutdown in UTMP...
+[  OK  ] Stopped systemd-resolved.service - Network Name Resolution.
+[  OK  ] Stopped systemd-timesyncd.service - Network Time Synchronization.
+[  OK  ] Deactivated swap swap.img.swap - /swap.img.
+[  OK  ] Stopped systemd-binfmt.service - Set Up Additional Binary Formats.
+[  OK  ] Unset automount proc-sys-fs-binfmt…ormats File System Automount Point.
+[  OK  ] Stopped systemd-sysctl.service - Apply Kernel Variables.
+[  OK  ] Stopped systemd-modules-load.service - Load Kernel Modules.
+[  OK  ] Stopped systemd-update-utmp.servic…ecord System Boot/Shutdown in UTMP.
+[  OK  ] Stopped systemd-tmpfiles-setup.ser…ate Volatile Files and Directories.
+[  OK  ] Stopped target local-fs.target - Local File Systems.
+[  OK  ] Stopped target snapd.mounts.target - Mounted snaps.
+[  OK  ] Stopped target snapd.mounts-pre.target - Mounting snaps.
+         Unmounting boot-efi.mount - /boot/efi...
+         Unmounting mnt-ext\x2ddrive.mount - /mnt/ext-drive...
+[  OK  ] Unmounted boot-efi.mount - /boot/efi.
+[  OK  ] Unmounted mnt-ext\x2ddrive.mount - /mnt/ext-drive.
+[  OK  ] Reached target umount.target - Unmount All Filesystems.
+[  OK  ] Stopped systemd-fsck@dev-disk-by\x…eck on /dev/disk/by-uuid/01A1-271F.
+[  OK  ] Stopped systemd-fsck@dev-disk-by\x…e3256c-c1c3-400b-ad26-5f77f6ebc475.
+[  OK  ] Removed slice system-systemd\x2dfs…slice - Slice /system/systemd-fsck.
+[  OK  ] Stopped target local-fs-pre.target…Preparation for Local File Systems.
+         Stopping lvm2-monitor.service - Mo…ing dmeventd or progress polling...
+         Stopping multipathd.service - Devi…pper Multipath Device Controller...
+[  OK  ] Stopped systemd-tmpfiles-setup-dev…Create Static Device Nodes in /dev.
+[  OK  ] Stopped systemd-tmpfiles-setup-dev…ic Device Nodes in /dev gracefully.
+[  OK  ] Stopped multipathd.service - Devic…Mapper Multipath Device Controller.
+[  OK  ] Stopped lvm2-monitor.service - Mon…using dmeventd or progress polling.
+[  OK  ] Stopped systemd-remount-fs.service…mount Root and Kernel File Systems.
+[  OK  ] Reached target shutdown.target - System Shutdown.
+[  OK  ] Reached target final.target - Late Shutdown Services.
+[  OK  ] Finished systemd-poweroff.service - System Power Off.
+[  OK  ] Reached target poweroff.target - System Power Off.
+[  530.499558] snd_hda_intel 0000:00:1f.3: azx_get_response timeout, switching to polling mode: last cmd=0x203f0d00
+[  531.510614] snd_hda_intel 0000:00:1f.3: No response from codec, disabling MSI: last cmd=0x203f0d00
+[  532.520687] snd_hda_intel 0000:00:1f.3: azx_get_response timeout, switching to single_cmd mode: last cmd=0x203f0d00
+[  532.768551] reboot: Power down
+▒
