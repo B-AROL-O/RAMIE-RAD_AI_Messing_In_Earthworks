@@ -52,7 +52,8 @@ Interfaces with a UART bidirectional link with the SBC, answer to a serial proto
 - [FW: Board Motor Screen](/Firmware/Motor%20Board%20Atmel%20AT324PA) *(not qualifying for hackaton)*
 - [FW: Test Bench Serial Communication](/Firmware/Test%20Bench%20Parser) *(not qualifying for hackaton)*
 - [FW: Test Bench Motion Orchestrator](/Firmware/Test%20bench%20motion%20orchestration)
-- [SW: Python demos to test communication between computer and board](/Software/Demo%201%20-%20Serial%20Communication%20Host/)
+- [SW: Python demos to test communication between Host computer and board](/Software/Demo_Host_Serial_Communication/)
+- [SW: Python demos to test communication between SBC and board](/Software/Demo_SBC_Serial_Communication/)
 
 ![](/Firmware/Images/2025-11-16_13_41_IMG_20251116_134154.jpg)
 
