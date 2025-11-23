@@ -52,33 +52,17 @@ Interfaces with a UART bidirectional link with the SBC, answer to a serial proto
 - [FW: Board Motor Screen](/Firmware/Motor%20Board%20Atmel%20AT324PA) *(not qualifying for hackaton)*
 - [FW: Test Bench Serial Communication](/Firmware/Test%20Bench%20Parser) *(not qualifying for hackaton)*
 - [FW: Test Bench Motion Orchestrator](/Firmware/Test%20bench%20motion%20orchestration)
-- [SW: Python demos to test communication between computer and board](/Software/Demo%201%20-%20Serial%20Communication)
+- [SW: Python demos to test communication between computer and board](/Software/Demo%201%20-%20Serial%20Communication%20Host/)
 
 ![](/Firmware/Images/2025-11-16_13_41_IMG_20251116_134154.jpg)
 
-## SBC Latte Panda Mu N100 16GB
+# SBC Latte Panda Mu N100 16GB
 
 I lost count of the SBCs I tested for my ultimate goal of making a general robot that expresses a degree of general intelligence with local compute only. The N100 16GB could be it, it has the memory, bandwidth, compute and power envelope to run useful LLMs on the go.
 
 ![](/Electronics/Images/2025-11-19-T1545_electronics_latte_panda.jpg)
 
-
-## Operating System
-
-Install Ubuntu 24.04 LTS, configure network and drive structure
-
-[Install Ubuntu Server 24.04 LTS](/Software/Ubuntu%2024_04%20server%20LTS)
-
-### TTYS0 SSH PUTTY SERIAL
-
-Configure the GRUB to use ttyS0 as UART serial interface to let the host connect via putty via USB to UART FTDI adapter
-
-[TTYS0 SERIAL GRUB CONFIGURATION](/Software/ttys0%20SSH)
-
-![](/Software/ttys0%20SSH/Images/2025-11-22T1349%20Putty%20Configuration.png)
-
-
-### Luckfox PicoKVM
+## Luckfox PicoKVM
 
 I always have trouble accessing SBC headless, I finally got a 49€ KVM to mitigate the issue and free myself from using discrete keyboard and mouse
 
@@ -86,7 +70,31 @@ I always have trouble accessing SBC headless, I finally got a 49€ KVM to mitig
 
 ![](/Software/Luckfox%20PicoKVM/Images/2025-11-22_11_11_IMG_20251122_111122.jpg)
 
-### VS Code Remote
+## INSTALL UBUNTU
+
+Install Ubuntu 24.04 Server LTS on the SBC and configure network and storage
+
+[Ubuntu 24.04 Server Install Instructions](/Software/Ubuntu%2024_04%20server%20LTS)
+
+![](/Software/Ubuntu%2024_04%20server%20LTS/Images/2025-11-22-T1311%20Test%20ping%20dev%20drive%20network.png)
+
+## Luckfox PicoKVM
+
+I always have trouble accessing SBC headless, I finally got a 49€ KVM to mitigate the issue and free myself from using discrete keyboard and mouse
+
+[Luckfox PicoKVM Instructions](/Software/Luckfox%20PicoKVM)
+
+![](/Software/Luckfox%20PicoKVM/Images/2025-11-22_11_11_IMG_20251122_111122.jpg)
+
+## TTYS0 SSH PUTTY SERIAL
+
+Configure the GRUB to use ttyS0 as UART serial interface to let the host connect via putty via USB to UART FTDI adapter
+
+[TTYS0 SERIAL GRUB CONFIGURATION](/Software/ttys0%20SSH)
+
+![](/Electronics/TTYS0%20PUTTY/2025-11-22-T1001%20TTYS0%20Connected.jpg)
+
+## VS Code Remote
 
 Use VS code on host machine with remote SSH plugin to evelop and run code directly on the SBC via WiFi radio
 
