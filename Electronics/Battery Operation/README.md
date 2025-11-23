@@ -20,3 +20,7 @@ Powered from batteries 16.2 V
 Video of the robot roaming teleoperated
 
 https://github.com/user-attachments/assets/86d634cf-5507-45de-8ebf-013d29c1c32a
+
+## ISSUES
+
+ISSUE: I have grave issues trying to power the SBC. There are checksum errors when it powers, and it seems to power only when I remove the ttyS4 connection. It needs to be checked WHY

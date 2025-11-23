@@ -104,6 +104,12 @@ Use VS code on host machine with remote SSH plugin to evelop and run code direct
 ![](/Software/VS%20Code%20Remote%20Development%20on%20SBC/Images/2025-11-23-T0956%20Connected%20to%20SBC%20Home.png)
 
 
+# Battery Teleoperation SSH WiFI
+
+Final test with the robot under battery power with SBC, AT324, WiFI and motors running with SSH teleoperation form keyboard
+
+https://github.com/user-attachments/assets/86d634cf-5507-45de-8ebf-013d29c1c32a
+
 ## Contributors
 
 - [Orso Eric](https://github.com/OrsoEric)
