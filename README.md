@@ -82,9 +82,18 @@ Configure the GRUB to use ttyS0 as UART serial interface to let the host connect
 
 I always have trouble accessing SBC headless, I finally got a 49€ KVM to mitigate the issue and free myself from using discrete keyboard and mouse
 
-[Luckfox PicoKVM](/Software/Luckfox%20PicoKVM)
+[Luckfox PicoKVM Instructions](/Software/Luckfox%20PicoKVM)
 
 ![](/Software/Luckfox%20PicoKVM/Images/2025-11-22_11_11_IMG_20251122_111122.jpg)
+
+### VS Code Remote
+
+Use VS code on host machine with remote SSH plugin to evelop and run code directly on the SBC via WiFi radio
+
+[VS Code Remote Instructions](/Software/VS%20Code%20Remote%20Development%20on%20SBC)
+
+![](/Software/VS%20Code%20Remote%20Development%20on%20SBC/Images/2025-11-23-T0956%20Connected%20to%20SBC%20Home.png)
+
 
 ## Contributors
 
