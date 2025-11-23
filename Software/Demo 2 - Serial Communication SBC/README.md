@@ -433,3 +433,73 @@ Testing port: /dev/ttyS4
 Response from /dev/ttyS4: b'RAMIE\x00'
 Testing port: /dev/ttyS4
 ```
+
+
+# DEMO 4 - Direct speed
+
+
+Works really well, it finds a serial port that answer with something, and uses that to communicate with the board
+
+```
+sona@lpmu8gb:~/Demo 2 - Serial Communication SBC$ uv run demo_4_serial_direct_speed.py 
+Failed to open /dev/ttyS31: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS30: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS29: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS28: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS27: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS26: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS25: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS24: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS23: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS22: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS21: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS20: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS19: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS18: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS17: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS16: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS15: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS14: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS13: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS12: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS11: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS10: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS9: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS8: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS7: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS3: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS2: Could not configure port: (5, 'Input/output error')
+Failed to open /dev/ttyS1: Could not configure port: (5, 'Input/output error')
+Testing port: /dev/ttyS6
+Testing port: /dev/ttyS5
+Testing port: /dev/ttyS4
+Response from /dev/ttyS4: b'RAMIE\x00'
+Testing port: /dev/ttyS0
+
+Responsive ports:
+/dev/ttyS4
+Connected to /dev/ttyS4. Press any key to stop...
+Sent: b'VR1L0\x00'
+Sent: b'VR2L0\x00'
+Sent: b'VR3L0\x00'
+Sent: b'VR4L0\x00'
+Sent: b'VR5L0\x00'
+Sent: b'VR6L0\x00'
+Sent: b'VR7L0\x00'
+Sent: b'VR8L0\x00'
+Sent: b'VR9L0\x00'
+Sent: b'VR10L0\x00'
+Sent: b'VR10L0\x00'
+Sent: b'VR9L0\x00'
+Sent: b'VR8L0\x00'
+Sent: b'VR7L0\x00'
+Sent: b'VR6L0\x00'
+Sent: b'VR5L0\x00'
+Sent: b'VR4L0\x00'
+Sent: b'VR3L0\x00'
+Sent: b'VR2L0\x00'
+Sent: b'VR1L0\x00'
+Sent: b'VR0L0\x00'
+Sent: b'VR-1L0\x00'
+Sent: b'VR-2L0\x00'
+```
