@@ -24,6 +24,14 @@ N305 16GB (BRICKED Sent back to DF Robot)
 
 
 
+# Battery Teleoperation SSH WiFI
+
+Final test with the robot under battery power with SBC, AT324, WiFI and motors running with SSH teleoperation form keyboard
+
+https://github.com/user-attachments/assets/86d634cf-5507-45de-8ebf-013d29c1c32a
+
+
+
 ## SETUP UART ACCESS TO TTYS0 DEBUG UART
 
 Modify GRUB so that the operating system connects tothe serial port for access
