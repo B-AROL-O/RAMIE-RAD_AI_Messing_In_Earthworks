@@ -812,18 +812,18 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x639b
+.debug_info     0x00000000     0x639d
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x6cc F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  .debug_info    0x000006cc      0x8ce at_lcd.o
  .debug_info    0x00000f9a      0x2d1 at_string.o
  .debug_info    0x0000126b      0x26c initialisation.o
- .debug_info    0x000014d7      0x250 interrupt.o
- .debug_info    0x00001727     0x104b main.o
- .debug_info    0x00002772      0x83e parser_handlers.o
- .debug_info    0x00002fb0     0x33eb uniparser.o
+ .debug_info    0x000014d7      0x251 interrupt.o
+ .debug_info    0x00001728     0x104b main.o
+ .debug_info    0x00002773      0x83f parser_handlers.o
+ .debug_info    0x00002fb2     0x33eb uniparser.o
 
-.debug_abbrev   0x00000000     0x16de
+.debug_abbrev   0x00000000     0x16f3
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x66e F:/Programs/Microchip/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  .debug_abbrev  0x0000066e      0x26a at_lcd.o
@@ -831,8 +831,8 @@ END GROUP
  .debug_abbrev  0x00000a0e      0x132 initialisation.o
  .debug_abbrev  0x00000b40      0x14f interrupt.o
  .debug_abbrev  0x00000c8f      0x43b main.o
- .debug_abbrev  0x000010ca      0x288 parser_handlers.o
- .debug_abbrev  0x00001352      0x38c uniparser.o
+ .debug_abbrev  0x000010ca      0x29d parser_handlers.o
+ .debug_abbrev  0x00001367      0x38c uniparser.o
 
 .debug_line     0x00000000     0x2fa6
  *(.debug_line .debug_line.* .debug_line_end)

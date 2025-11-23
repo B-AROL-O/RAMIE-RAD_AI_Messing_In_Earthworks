@@ -15,19 +15,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
   5 .debug_aranges 00000228  00000000  00000000  00002b1c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   0000639b  00000000  00000000  00002d44  2**0
+  6 .debug_info   0000639d  00000000  00000000  00002d44  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000016de  00000000  00000000  000090df  2**0
+  7 .debug_abbrev 000016f3  00000000  00000000  000090e1  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00002fa6  00000000  00000000  0000a7bd  2**0
+  8 .debug_line   00002fa6  00000000  00000000  0000a7d4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  000005b8  00000000  00000000  0000d764  2**2
+  9 .debug_frame  000005b8  00000000  00000000  0000d77c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    0000179c  00000000  00000000  0000dd1c  2**0
+ 10 .debug_str    0000179c  00000000  00000000  0000dd34  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    0000b33b  00000000  00000000  0000f4b8  2**0
+ 11 .debug_loc    0000b33b  00000000  00000000  0000f4d0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000d98  00000000  00000000  0001a7f3  2**0
+ 12 .debug_ranges 00000d98  00000000  00000000  0001a80b  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -1003,7 +1003,7 @@ U8 u16_to_str( U16 num, U8 *str )
 	UBRR0H = 0;
      68c:	10 92 c5 00 	sts	0x00C5, r1	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
 	UBRR0L = UART_UBRR;
-     690:	84 e0       	ldi	r24, 0x04	; 4
+     690:	8a e0       	ldi	r24, 0x0A	; 10
      692:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
      696:	08 95       	ret
 

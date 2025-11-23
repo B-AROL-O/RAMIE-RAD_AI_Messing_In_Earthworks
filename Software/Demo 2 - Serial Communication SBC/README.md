@@ -346,3 +346,90 @@ Testing port: /dev/ttyS5
 Testing port: /dev/ttyS4
 Testing port: /dev/ttyS0
 ```
+
+
+
+
+
+Loopback test
+
+```
+Response from /dev/ttyS4: b'SIGN\x00'
+Testing port: /dev/ttyS4
+Response from /dev/ttyS4: b'SIGN\x00'
+Testing port: /dev/ttyS4
+Response from /dev/ttyS4: b'SIGN\x00'
+Testing port: /dev/ttyS4
+Response from /dev/ttyS4: b'SIGN\x00'
+Testing port: /dev/ttyS4
+Response from /dev/ttyS4: b'SIGN\x00'
+Testing port: /dev/ttyS4
+Response from /dev/ttyS4: b'SIGN\x00'
+Testing port: /dev/ttyS4
+Response from /dev/ttyS4: b'SIGN\x00'
+Testing port: /dev/ttyS4
+Response from /dev/ttyS4: b'SIGN\x00'
+Testing port: /dev/ttyS4
+Response from /dev/ttyS4: b'SIGN\x00'
+Testing port: /dev/ttyS4
+```
+
+I can send, but it seems the TX baud rate is too low and the microcontroller is not receiving
+
+Yes, I can't configure the UART at that speed
+
+115200 is supported, I can change firmware to try and work with that?
+
+I suspect it's from a table in pyserial
+
+```
+#serialposix.py:96
+BAUDRATE_CONSTANTS = {
+            0:       0o000000,  # hang up
+            50:      0o000001,
+            75:      0o000002,
+            110:     0o000003,
+            134:     0o000004,
+            150:     0o000005,
+            200:     0o000006,
+            300:     0o000007,
+            600:     0o000010,
+            1200:    0o000011,
+            1800:    0o000012,
+            2400:    0o000013,
+            4800:    0o000014,
+            9600:    0o000015,
+            19200:   0o000016,
+            38400:   0o000017,
+            57600:   0o010001,
+            115200:  0o010002,
+            230400:  0o010003,
+            460800:  0o010004,
+            500000:  0o010005,
+            576000:  0o010006,
+            921600:  0o010007,
+            1000000: 0o010010,
+            1152000: 0o010011,
+            1500000: 0o010012,
+            2000000: 0o010013,
+            2500000: 0o010014,
+            3000000: 0o010015,
+            3500000: 0o010016,
+            4000000: 0o010017
+        }
+```
+
+I moved application to 115200 b/s
+I moved the firmware to 113636 b/s
+Now it communicates fine.
+I'll need to significantly accelerate the communication for the future
+
+```
+esting port: /dev/ttyS4
+Response from /dev/ttyS4: b'RAMIE\x00'
+Testing port: /dev/ttyS4
+Response from /dev/ttyS4: b'RAMIE\x00'
+Testing port: /dev/ttyS4
+Response from /dev/ttyS4: b'RAMIE\x00'
+Testing port: /dev/ttyS4
+```
