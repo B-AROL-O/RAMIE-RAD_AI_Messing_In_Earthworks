@@ -110,7 +110,28 @@ Final test with the robot under battery power with SBC, AT324, WiFI and motors r
 
 https://github.com/user-attachments/assets/86d634cf-5507-45de-8ebf-013d29c1c32a
 
-## Contributors
+
+# Ollama GRADIO LLamaindex
+
+The robot hosts and run locally GRADIO
+
+There are two chats
+
+One is the chat to ask about RAMIE capability using LLamaindex to rag the specifications
+
+The second has a tool that attaches with a MCP tool to the motors and genereate serial command for the robot to execute
+
+![](/Software/Demo_ollama/Images/2025-11-29-T1731%20GRADIO%20Interface.png)
+
+![](/Software/Demo_ollama/Images/2025-11-29-T1740%20HTOP.png)
+
+
+
+
+
+
+
+# Contributors
 
 - [Orso Eric](https://github.com/OrsoEric)
 
