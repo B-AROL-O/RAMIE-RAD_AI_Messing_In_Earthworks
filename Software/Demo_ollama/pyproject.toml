@@ -1,0 +1,10 @@
+[project]
+name = "ollama-qwen"
+version = "0.1.0"
+description = "Python interface to Ollama using qwen3:4b-instruct"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "requests>=2.32",
+]
