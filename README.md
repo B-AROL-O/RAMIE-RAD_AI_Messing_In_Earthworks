@@ -30,21 +30,21 @@ A local Gradio MCP AI powered wheeled robot, capable of listening, speaking and 
 
 ## Scope
 
-The scope of this repository is to document the Hugging Face MCP 1° birthday hackaton
+The scope of this repository is to document the Hugging Face MCP 1° birthday hackathon
 
 The scope of this repository is to document all instruction to replicate in full the robot project
 
 Work is divided in two parts:
 
-- Work that is qualifying for the hackaton itself, that was started 2025-11-14, this includes learning GRADIO, learning MPC, preparing the MCP tools, interfacing ollama with AI models needed
+- Work that is qualifying for the hackathon itself, that was started 2025-11-14, this includes learning GRADIO, learning MPC, preparing the MCP tools, interfacing ollama with AI models needed
 
-- Work that is not qualifying for the hackaton and was recycled from previous projects and is in this repository in order to make a complete set of instructions to replicate this project. This include the electronics, the mechanical part of the robot, learning the compute board, and learning that was done for ollama testing of the microphone
+- Work that is not qualifying for the hackathon and was recycled from previous projects and is in this repository in order to make a complete set of instructions to replicate this project. This include the electronics, the mechanical part of the robot, learning the compute board, and learning that was done for ollama testing of the microphone
 
 This felt like a good chance to gather all the disparate documentation and work done over the years in one tidy set of insttructions that can be followed to make one complete platform end to end with the GRADIO/MCP/OLLAMA software being the keystone that glue it all together.
 
 # Documentation
 
-Designs marked with '*(not qualifying for hackaton)* ' are older recycled design that are here for documentation, instruction and completeness purposes and are not qualifying for the scope of the hackaton.  They are either taken as is, or lightly/heavily adapted to serve for the scope of the Hackaton.
+Designs marked with '*(not qualifying for hackathon)* ' are older recycled design that are here for documentation, instruction and completeness purposes and are not qualifying for the scope of the hackathon.  They are either taken as is, or lightly/heavily adapted to serve for the scope of the Hackathon.
 
 ## Mechanical Design
 
@@ -52,10 +52,10 @@ I design in OpenSCAD as I like making geometries as code and I like doing everyt
 
 I decided that the robots should be powered by 18650 batteries. Target configuration is 2S2P. For RAMIE I went with an inverted design that is soldered 4S1P to get 14.8V nominal voltage to be compatible with the input regulator for the Latte Panda Lite Board.
 
-- [MEC: 18650 Battery Holder](/Mechanical/Battery%20Holder%2018650%20OpenSCAD) *(not qualifying for hackaton)*
-- [MEC: Wheeled Platform](/Mechanical/Wheeled%20Platform%20OpenSCAD) *(not qualifying for hackaton)*
+- [MEC: 18650 Battery Holder](/Mechanical/Battery%20Holder%2018650%20OpenSCAD) *(not qualifying for hackathon)*
+- [MEC: Wheeled Platform](/Mechanical/Wheeled%20Platform%20OpenSCAD) *(not qualifying for hackathon)*
 
-The robot platform is the one I am designing for Latte Panda Lite Board powered AI robots, it was a good fit for this hackaton
+The robot platform is the one I am designing for Latte Panda Lite Board powered AI robots, it was a good fit for this hackathon
 
 ![](/Mechanical/Wheeled%20Platform%20OpenSCAD/Images/2025-11-08-T1437_Slicing.png)
 
@@ -64,9 +64,9 @@ The robot platform is the one I am designing for Latte Panda Lite Board powered 
 
 Interfaces with a UART bidirectional link with the SBC, answer to a serial protocol, controls two servos and a LCD screen. Choosen because I had a bounch assembled in a drawer and working firmware to start from.
 
-- [ELN: Board Motor Screen](/Electronics/Board%20motor%20screen) *(not qualifying for hackaton)*
-- [FW: Board Motor Screen](/Firmware/Motor%20Board%20Atmel%20AT324PA) *(not qualifying for hackaton)*
-- [FW: Test Bench Serial Communication](/Firmware/Test%20Bench%20Parser) *(not qualifying for hackaton)*
+- [ELN: Board Motor Screen](/Electronics/Board%20motor%20screen) *(not qualifying for hackathon)*
+- [FW: Board Motor Screen](/Firmware/Motor%20Board%20Atmel%20AT324PA) *(not qualifying for hackathon)*
+- [FW: Test Bench Serial Communication](/Firmware/Test%20Bench%20Parser) *(not qualifying for hackathon)*
 - [FW: Test Bench Motion Orchestrator](/Firmware/Test%20bench%20motion%20orchestration)
 - [SW: Python demos to test communication between Host computer and board](/Software/Demo_Host_Serial_Communication/)
 - [SW: Python demos to test communication between SBC and board](/Software/Demo_SBC_Serial_Communication/)
@@ -153,7 +153,7 @@ The second has a tool that attaches with a MCP tool to the motors and genereate 
 
 ## Useful Links
 
-- [Huggingface Hackaton](https://huggingface.co/MCP-1st-Birthday) 
+- [Huggingface Hackathon](https://huggingface.co/MCP-1st-Birthday) 
 - [Huggingface Example Track 2 Creative](https://huggingface.co/spaces/ysharma/sample5-hackathon-space-submission/blob/main/README.md)
 - [Huggingface space](https://huggingface.co/spaces/MCP-1st-Birthday/RAMIE-RAD_AI_Messing_In_Earthworks)
 - [Huggingface Organization](https://huggingface.co/RAMIE-RAD-AI-Messing-In-Earthworks)
