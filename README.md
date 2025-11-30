@@ -1,3 +1,19 @@
+---
+title: RAMIE-RAD AI Messing In Earthworks
+emoji: 🐨
+colorFrom: gray
+colorTo: pink
+sdk: gradio
+sdk_version: 5.49.1
+app_file: app.py
+pinned: false
+license: cc-by-sa-4.0
+short_description: A local Gradio MCP server controlling a robot platform
+tags:
+  - mcp-in-action-track-creative
+---
+
+
 # RAMIE
 
 - **Radical**
