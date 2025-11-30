@@ -37,7 +37,7 @@ jobs:
           # Assume a default value for undefined GitHub Action Variables
           HF_USERNAME: ${{ env.HF_USERNAME || 'aleche28' }}
           HF_ORGNAME: ${{ env.HF_ORGNAME || 'MCP-1st-Birthday' }}
-          HF_SPACENAME: ${{ env.HF_SPACENAME || 'RAMIE-RAD_AI_Messing_In_Earthworks' }}
+          HF_SPACENAME: ${{ env.HF_SPACENAME || 'RAMIE_LastMinute' }}
           # The token is fetched from a GitHub Action Secret and must be defined
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
